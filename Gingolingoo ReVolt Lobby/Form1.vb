@@ -17,7 +17,11 @@ Public Class MainWindow
 
     Private Sub AddItem(ByVal s As String)
         'ListBox1.Items.Add(s)
-        RichTextBox1.AppendText(s.ToString + vbNewLine)
+        If s = "Refresh" Then
+            reloadall()
+        Else
+            RichTextBox1.AppendText(s.ToString + vbNewLine)
+        End If
     End Sub
 
     <DllImport("kernel32")>
@@ -121,8 +125,6 @@ Public Class MainWindow
         TreeView1.Nodes.Add(Nodes(1))
         TreeView1.Nodes.Add(Nodes(2))
         TreeView1.Nodes.Add(Nodes(3))
-
-
 
 
         Dim users()
@@ -445,6 +447,7 @@ Public Class MainWindow
         If mutebtn.CheckState = CheckState.Unchecked Then
             My.Computer.Audio.Play(My.Resources.message, AudioPlayMode.Background)
         End If
+        RichTextBox1.ScrollToCaret()
     End Sub
 
     Private Sub mutebtn_Click(sender As Object, e As EventArgs) Handles mutebtn.Click
@@ -462,6 +465,9 @@ Public Class MainWindow
             client.Close()
             t.Interrupt()
             t.Abort()
+            Using wc As New System.Net.WebClient()
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
+            End Using
         Catch ex As Exception
         End Try
         Application.ExitThread()
@@ -470,6 +476,30 @@ Public Class MainWindow
 
     Private Sub ModsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mods.Click
         modloader.Show()
+    End Sub
+
+    Private Sub onlinemenu_Click(sender As Object, e As EventArgs) Handles onlinemenu.Click
+        Using wc As New System.Net.WebClient()
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=1")
+        End Using
+    End Sub
+
+    Private Sub ingamemenu_Click(sender As Object, e As EventArgs) Handles ingamemenu.Click
+        Using wc As New System.Net.WebClient()
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=2")
+        End Using
+    End Sub
+
+    Private Sub dndmenu_Click(sender As Object, e As EventArgs) Handles dndmenu.Click
+        Using wc As New System.Net.WebClient()
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=3")
+        End Using
+    End Sub
+
+    Private Sub invismenu_Click(sender As Object, e As EventArgs) Handles invismenu.Click
+        Using wc As New System.Net.WebClient()
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
+        End Using
     End Sub
 End Class
 
