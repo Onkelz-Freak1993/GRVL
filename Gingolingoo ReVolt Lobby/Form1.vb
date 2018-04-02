@@ -463,8 +463,10 @@ Public Class MainWindow
         grvlClose = True
         Try
             client.Close()
+            stream.Close()
             t.Interrupt()
             t.Abort()
+            streamw.Close()
             Using wc As New System.Net.WebClient()
                 Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
             End Using
