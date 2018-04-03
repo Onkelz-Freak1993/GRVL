@@ -71,20 +71,20 @@ Public Class MainWindow
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
         Try
+            console.RichTextBox1.AppendText("Connection establishing to 134.255.217.252:9999 ... ")
             client.Connect("134.255.217.252", 9999) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
             If client.Connected Then
+                console.RichTextBox1.AppendText("Connected." & vbNewLine)
                 stream = client.GetStream
                 streamw = New StreamWriter(stream)
                 streamr = New StreamReader(stream)
-                streamw.WriteLine(nick) ' das ist optional.
+                streamw.WriteLine(nick) ' optional.
                 streamw.Flush()
                 t.Start()
-            Else
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
             End If
         Catch ex As Exception
-            MessageBox.Show("Verbindung zum Server nicht möglich!")
+            console.RichTextBox1.AppendText("failed" & vbNewLine & "Couldn't connect to 134.255.217.252:9999" & vbNewLine)
+            MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
         End Try
     End Sub
 
@@ -134,7 +134,9 @@ Public Class MainWindow
 
         Try
             Using wc As New System.Net.WebClient()
+                console.RichTextBox1.AppendText("Trying API call 'udata' ..." & vbNewLine)
                 Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+
                 users = udata.Split(";")
                 For Each item As String In users
 
@@ -160,11 +162,11 @@ Public Class MainWindow
                         End If
                     End If
                 Next
-
             End Using
         Catch ex As Exception
             If devtools.Visible = True Then
                 MsgBox(ex.ToString)
+                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
             Else
                 MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
             End If
@@ -189,6 +191,7 @@ Public Class MainWindow
             console.RichTextBox1.AppendText(ex.Message.ToString)
         End Try
         Return Response 'show the IP-Adress in the Statusbar
+        console.RichTextBox1.AppendText("External IP " & Response & " resolved" & vbNewLine)
     End Function
 
     Private Sub SettingsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles settingsmenu.Click
@@ -216,6 +219,7 @@ Public Class MainWindow
             ElseIf TextBox1.Text = "/fl" Then
                 'friendlist.Show() [not implemented yet]
             Else
+                console.RichTextBox1.AppendText("Attempting to send Message: " & TextBox1.Text & vbNewLine)
                 streamw.WriteLine(TextBox1.Text)
                 streamw.Flush()
             End If
@@ -275,7 +279,7 @@ Public Class MainWindow
     Private Sub savechatas_Click(sender As Object, e As EventArgs) Handles savechatas.Click
         SaveFileDialog1.ShowDialog()
         Try
-            RichTextBox1.SaveFile(SaveFileDialog1.FileName)
+            RichTextBox1.SaveFile(SaveFileDialog1.FileName, RichTextBoxStreamType.PlainText)
         Catch exc As Exception
             If devtools.Visible = True Then
                 console.RichTextBox1.AppendText(exc.Message.ToString)

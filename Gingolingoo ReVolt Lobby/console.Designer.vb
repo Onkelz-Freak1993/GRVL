@@ -25,6 +25,7 @@ Partial Class console
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(console))
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.SuspendLayout()
         '
         'RichTextBox1
@@ -51,6 +52,10 @@ Partial Class console
         Me.TextBox1.Size = New System.Drawing.Size(680, 20)
         Me.TextBox1.TabIndex = 1
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.CheckPathExists = False
+        '
         'console
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -68,4 +73,5 @@ Partial Class console
 
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

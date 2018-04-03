@@ -31,6 +31,7 @@ Public Class login
     End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
         If TextBox2.Text = "" Then
+            console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)
             My.Settings.nickname = TextBox1.Text
             My.Settings.Save()
             MainWindow.Show()
@@ -41,12 +42,14 @@ Public Class login
             Using wd As New System.Net.WebClient()
                 Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
                 If loginCheck <> "0" Then
+                    console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & vbNewLine)
                     My.Settings.nickname = loginCheck
                     My.Settings.Save()
                     MainWindow.Show()
                     MainWindow.reloadall()
                     Me.Close()
                 Else
+                    console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & " failed: Username or password wrong." & vbNewLine)
                     MsgBox("Username or password wrong!")
                 End If
             End Using
