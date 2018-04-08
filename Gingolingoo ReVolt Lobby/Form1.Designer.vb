@@ -55,11 +55,10 @@ Partial Class MainWindow
         Me.userimagelist = New System.Windows.Forms.ImageList(Me.components)
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.serverlist = New System.Windows.Forms.ListView()
+        Me.pwd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.servernamecol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playercountcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ipcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.pwd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.friendsonly = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.savechatas = New System.Windows.Forms.ToolStripButton()
         Me.delchathistory = New System.Windows.Forms.ToolStripButton()
@@ -81,9 +80,14 @@ Partial Class MainWindow
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.refreshall = New System.Windows.Forms.ToolStripButton()
         Me.about = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.userlistContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.addAsFriend = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +100,7 @@ Partial Class MainWindow
         Me.SplitContainer2.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
+        Me.userlistContext.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -296,6 +301,7 @@ Partial Class MainWindow
         '
         'TreeView1
         '
+        Me.TreeView1.ContextMenuStrip = Me.userlistContext
         Me.TreeView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TreeView1.FullRowSelect = True
         Me.TreeView1.ImageIndex = 0
@@ -341,7 +347,7 @@ Partial Class MainWindow
         '
         'serverlist
         '
-        Me.serverlist.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.servernamecol, Me.playercountcol, Me.ipcol, Me.pwd, Me.friendsonly})
+        Me.serverlist.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.pwd, Me.servernamecol, Me.playercountcol, Me.ipcol})
         Me.serverlist.Dock = System.Windows.Forms.DockStyle.Fill
         Me.serverlist.FullRowSelect = True
         Me.serverlist.Location = New System.Drawing.Point(0, 0)
@@ -351,6 +357,11 @@ Partial Class MainWindow
         Me.ToolTip1.SetToolTip(Me.serverlist, "$serverlist")
         Me.serverlist.UseCompatibleStateImageBehavior = False
         Me.serverlist.View = System.Windows.Forms.View.Details
+        '
+        'pwd
+        '
+        Me.pwd.Text = ""
+        Me.pwd.Width = 20
         '
         'servernamecol
         '
@@ -366,16 +377,6 @@ Partial Class MainWindow
         '
         Me.ipcol.Text = "$ip"
         Me.ipcol.Width = 100
-        '
-        'pwd
-        '
-        Me.pwd.Text = "$is_pwd_protected"
-        Me.pwd.Width = 100
-        '
-        'friendsonly
-        '
-        Me.friendsonly.Text = "$is_friends_only"
-        Me.friendsonly.Width = 100
         '
         'ToolStrip2
         '
@@ -451,7 +452,7 @@ Partial Class MainWindow
         'ToolStrip1
         '
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.quit, Me.ToolStripSeparator1, Me.create_server, Me.connect_server, Me.refreshserver, Me.ToolStripSeparator2, Me.settingstoolstrip, Me.ToolStripSeparator7, Me.friendlist, Me.ToolStripSeparator6, Me.refreshall, Me.about})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.quit, Me.ToolStripSeparator1, Me.create_server, Me.connect_server, Me.refreshserver, Me.ToolStripSeparator2, Me.settingstoolstrip, Me.ToolStripSeparator7, Me.friendlist, Me.ToolStripSeparator6, Me.refreshall, Me.about, Me.ToolStripButton1, Me.ToolStripLabel2, Me.ToolStripLabel3})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(5, 0, 1, 0)
@@ -559,6 +560,35 @@ Partial Class MainWindow
         Me.about.Text = "ToolStripButton1"
         Me.about.ToolTipText = "$about"
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.ActiveLinkColor = System.Drawing.Color.Black
+        Me.ToolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel2.LinkColor = System.Drawing.Color.Black
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(43, 22)
+        Me.ToolStripLabel2.Text = "$token"
+        Me.ToolStripLabel2.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(42, 22)
+        Me.ToolStripLabel3.Text = "Token:"
+        Me.ToolStripLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Timer1
         '
         Me.Timer1.Interval = 1500
@@ -569,6 +599,20 @@ Partial Class MainWindow
         Me.SaveFileDialog1.DefaultExt = "*.txt"
         Me.SaveFileDialog1.Filter = "Text-Dateien|*.txt|Alle Dateien|*.*"
         Me.SaveFileDialog1.SupportMultiDottedExtensions = True
+        '
+        'userlistContext
+        '
+        Me.userlistContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.addAsFriend})
+        Me.userlistContext.Name = "userlistContext"
+        Me.userlistContext.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.userlistContext.Size = New System.Drawing.Size(131, 26)
+        '
+        'addAsFriend
+        '
+        Me.addAsFriend.Enabled = False
+        Me.addAsFriend.Name = "addAsFriend"
+        Me.addAsFriend.Size = New System.Drawing.Size(130, 22)
+        Me.addAsFriend.Text = "Add friend"
         '
         'MainWindow
         '
@@ -603,6 +647,7 @@ Partial Class MainWindow
         Me.ToolStrip2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.userlistContext.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -665,7 +710,11 @@ Partial Class MainWindow
     Friend WithEvents devtools As ToolStripMenuItem
     Friend WithEvents ConsoleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pwd As ColumnHeader
-    Friend WithEvents friendsonly As ColumnHeader
     Friend WithEvents mutebtn As ToolStripButton
     Friend WithEvents mods As ToolStripMenuItem
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
+    Friend WithEvents ToolStripLabel3 As ToolStripLabel
+    Friend WithEvents userlistContext As ContextMenuStrip
+    Friend WithEvents addAsFriend As ToolStripMenuItem
 End Class

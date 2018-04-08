@@ -71,22 +71,47 @@ Public Class MainWindow
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
         Try
+            console.RichTextBox1.AppendText("Connection establishing to 134.255.217.252:9999 ... ")
             client.Connect("134.255.217.252", 9999) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
             If client.Connected Then
+                console.RichTextBox1.AppendText("Connected." & vbNewLine)
                 stream = client.GetStream
                 streamw = New StreamWriter(stream)
                 streamr = New StreamReader(stream)
-                streamw.WriteLine(nick) ' das ist optional.
+                streamw.WriteLine(nick) ' optional.
                 streamw.Flush()
                 t.Start()
-            Else
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
             End If
         Catch ex As Exception
-            MessageBox.Show("Verbindung zum Server nicht möglich!")
+            console.RichTextBox1.AppendText("failed" & vbNewLine & "Couldn't connect to 134.255.217.252:9999" & vbNewLine)
+            MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
         End Try
     End Sub
+
+    Private Sub refreshServerlist()
+        Dim server()
+        Dim servercount As Integer = 0
+        Using wc As New System.Net.WebClient()
+            console.RichTextBox1.AppendText("Trying API call 'gServer' ..." & vbNewLine)
+            Dim sData = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getServer")
+            server = sData.Split(";")
+            For Each mData As String In server
+                If mData <> "" Then
+                    Dim mdt() = mData.Split("|")
+                    If mdt(3) <> "" Then
+                        serverlist.Items.Add("🔒")
+                    Else
+                        serverlist.Items.Add("")
+                    End If
+                    serverlist.Items(servercount).SubItems.Add(mdt(0))
+                    serverlist.Items(servercount).SubItems.Add(mdt(1) & " / " & mdt(2))
+                    serverlist.Items(servercount).SubItems.Add(" - ")
+                    servercount = servercount + 1
+                End If
+            Next
+        End Using
+    End Sub
+
 
     Private Sub Listen()
         While client.Connected
@@ -134,7 +159,9 @@ Public Class MainWindow
 
         Try
             Using wc As New System.Net.WebClient()
+                console.RichTextBox1.AppendText("Trying API call 'udata' ..." & vbNewLine)
                 Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+
                 users = udata.Split(";")
                 For Each item As String In users
 
@@ -143,15 +170,19 @@ Public Class MainWindow
                         Nodes(uCount) = New TreeNode(userdata(0))
                         If userdata(1) = 0 Then
                             Nodes(uCount).ImageIndex = 1
+                            Nodes(uCount).SelectedImageIndex = 1
                         End If
                         If userdata(1) = 1 Then
                             Nodes(uCount).ImageIndex = 2
+                            Nodes(uCount).SelectedImageIndex = 2
                         End If
                         If userdata(1) = 2 Then
                             Nodes(uCount).ImageIndex = 3
+                            Nodes(uCount).SelectedImageIndex = 3
                         End If
                         If userdata(1) = 3 Then
                             Nodes(uCount).ImageIndex = 4
+                            Nodes(uCount).SelectedImageIndex = 4
                         End If
                         If userdata(1) = 0 Then
                             tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
@@ -160,11 +191,11 @@ Public Class MainWindow
                         End If
                     End If
                 Next
-
             End Using
         Catch ex As Exception
             If devtools.Visible = True Then
                 MsgBox(ex.ToString)
+                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
             Else
                 MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
             End If
@@ -189,6 +220,7 @@ Public Class MainWindow
             console.RichTextBox1.AppendText(ex.Message.ToString)
         End Try
         Return Response 'show the IP-Adress in the Statusbar
+        console.RichTextBox1.AppendText("External IP " & Response & " resolved" & vbNewLine)
     End Function
 
     Private Sub SettingsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles settingsmenu.Click
@@ -216,6 +248,7 @@ Public Class MainWindow
             ElseIf TextBox1.Text = "/fl" Then
                 'friendlist.Show() [not implemented yet]
             Else
+                console.RichTextBox1.AppendText("Attempting to send Message: " & TextBox1.Text & vbNewLine)
                 streamw.WriteLine(TextBox1.Text)
                 streamw.Flush()
             End If
@@ -275,7 +308,7 @@ Public Class MainWindow
     Private Sub savechatas_Click(sender As Object, e As EventArgs) Handles savechatas.Click
         SaveFileDialog1.ShowDialog()
         Try
-            RichTextBox1.SaveFile(SaveFileDialog1.FileName)
+            RichTextBox1.SaveFile(SaveFileDialog1.FileName, RichTextBoxStreamType.PlainText)
         Catch exc As Exception
             If devtools.Visible = True Then
                 console.RichTextBox1.AppendText(exc.Message.ToString)
@@ -359,8 +392,8 @@ Public Class MainWindow
         delchathistory.Text = GetIniValue("language", "$delete_chat_history", My.Settings.languagefile, "$delete_chat_history")
         about.ToolTipText = GetIniValue("language", "$about", My.Settings.languagefile, "$about")
         mods.Text = GetIniValue("language", "$mods", My.Settings.languagefile, "$mods")
-        pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
-        friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
+        'pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
+        'friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
 
         'Settings
         settings.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
@@ -463,12 +496,10 @@ Public Class MainWindow
         grvlClose = True
         Try
             client.Close()
-            stream.Close()
             t.Interrupt()
             t.Abort()
-            streamw.Close()
             Using wc As New System.Net.WebClient()
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0&removeToken=1")
             End Using
         Catch ex As Exception
         End Try
@@ -502,6 +533,14 @@ Public Class MainWindow
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
         End Using
+    End Sub
+
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+        Clipboard.SetText(ToolStripLabel2.Text)
+    End Sub
+
+    Private Sub refreshserver_Click(sender As Object, e As EventArgs) Handles refreshserver.Click
+        refreshServerlist()
     End Sub
 End Class
 
@@ -551,7 +590,7 @@ Public Class WindowsApi
             End With
 
             Return FlashWindowEx(fwi)
-        Catch ex As exception
+        Catch ex As Exception
             console.RichTextBox1.AppendText(ex.Message.ToString)
             Return False
         End Try
