@@ -317,6 +317,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\dbg.png" />
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -88,6 +88,31 @@ Public Class MainWindow
         End Try
     End Sub
 
+    Private Sub refreshServerlist()
+        Dim server()
+        Dim servercount As Integer = 0
+        Using wc As New System.Net.WebClient()
+            console.RichTextBox1.AppendText("Trying API call 'gServer' ..." & vbNewLine)
+            Dim sData = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getServer")
+            server = sData.Split(";")
+            For Each mData As String In server
+                If mData <> "" Then
+                    Dim mdt() = mData.Split("|")
+                    If mdt(3) <> "" Then
+                        serverlist.Items.Add("🔒")
+                    Else
+                        serverlist.Items.Add("")
+                    End If
+                    serverlist.Items(servercount).SubItems.Add(mdt(0))
+                    serverlist.Items(servercount).SubItems.Add(mdt(1) & " / " & mdt(2))
+                    serverlist.Items(servercount).SubItems.Add(" - ")
+                    servercount = servercount + 1
+                End If
+            Next
+        End Using
+    End Sub
+
+
     Private Sub Listen()
         While client.Connected
             Try
@@ -145,15 +170,19 @@ Public Class MainWindow
                         Nodes(uCount) = New TreeNode(userdata(0))
                         If userdata(1) = 0 Then
                             Nodes(uCount).ImageIndex = 1
+                            Nodes(uCount).SelectedImageIndex = 1
                         End If
                         If userdata(1) = 1 Then
                             Nodes(uCount).ImageIndex = 2
+                            Nodes(uCount).SelectedImageIndex = 2
                         End If
                         If userdata(1) = 2 Then
                             Nodes(uCount).ImageIndex = 3
+                            Nodes(uCount).SelectedImageIndex = 3
                         End If
                         If userdata(1) = 3 Then
                             Nodes(uCount).ImageIndex = 4
+                            Nodes(uCount).SelectedImageIndex = 4
                         End If
                         If userdata(1) = 0 Then
                             tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
@@ -363,8 +392,8 @@ Public Class MainWindow
         delchathistory.Text = GetIniValue("language", "$delete_chat_history", My.Settings.languagefile, "$delete_chat_history")
         about.ToolTipText = GetIniValue("language", "$about", My.Settings.languagefile, "$about")
         mods.Text = GetIniValue("language", "$mods", My.Settings.languagefile, "$mods")
-        pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
-        friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
+        'pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
+        'friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
 
         'Settings
         settings.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
@@ -470,7 +499,7 @@ Public Class MainWindow
             t.Interrupt()
             t.Abort()
             Using wc As New System.Net.WebClient()
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0&removeToken=1")
             End Using
         Catch ex As Exception
         End Try
@@ -504,6 +533,14 @@ Public Class MainWindow
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
         End Using
+    End Sub
+
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+        Clipboard.SetText(ToolStripLabel2.Text)
+    End Sub
+
+    Private Sub refreshserver_Click(sender As Object, e As EventArgs) Handles refreshserver.Click
+        refreshServerlist()
     End Sub
 End Class
 
@@ -553,7 +590,7 @@ Public Class WindowsApi
             End With
 
             Return FlashWindowEx(fwi)
-        Catch ex As exception
+        Catch ex As Exception
             console.RichTextBox1.AppendText(ex.Message.ToString)
             Return False
         End Try

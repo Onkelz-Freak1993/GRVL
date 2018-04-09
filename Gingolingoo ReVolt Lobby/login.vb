@@ -5,6 +5,8 @@ Imports System.Text
 Imports System.Security.Cryptography
 
 Public Class login
+    Dim chatBold As New Font("Arial", 12, FontStyle.Bold)
+    Dim chatStandart As New Font("Arial", 9, FontStyle.Regular)
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox1.Text = My.Settings.nickname
 
@@ -31,19 +33,29 @@ Public Class login
     End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
         If TextBox2.Text = "" Then
-            console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)
-            My.Settings.nickname = TextBox1.Text
-            My.Settings.Save()
-            MainWindow.Show()
-            MainWindow.reloadall()
-            Me.Close()
+            Using wd As New System.Net.WebClient()
+                Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=playAsGuest&uname=" + TextBox1.Text)
+                If loginCheck <> "0" Then
+                    console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)
+                    My.Settings.nickname = TextBox1.Text
+                    My.Settings.Save()
+                    MainWindow.Show()
+                    MainWindow.reloadall()
+                    Me.Close()
+                Else
+                    MsgBox("Username already taken")
+                End If
+            End Using
         Else
             Dim pass As String = GenerateSHA256String(TextBox2.Text)
             Using wd As New System.Net.WebClient()
                 Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
                 If loginCheck <> "0" Then
                     console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & vbNewLine)
-                    My.Settings.nickname = loginCheck
+                    My.Settings.nickname = TextBox1.Text
+                    MainWindow.RichTextBox1.SelectionFont = chatBold
+                    MainWindow.ToolStripLabel2.Text = loginCheck
+                    MainWindow.RichTextBox1.SelectionFont = chatStandart
                     My.Settings.Save()
                     MainWindow.Show()
                     MainWindow.reloadall()
