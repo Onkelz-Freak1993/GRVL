@@ -232,6 +232,16 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property loading_circle() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loading-circle", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property loginbg() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("loginbg", resourceCulture)
@@ -304,6 +314,16 @@ Namespace My.Resources
         Friend ReadOnly Property s() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("s", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property scp_ajax_loader() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("scp-ajax-loader", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

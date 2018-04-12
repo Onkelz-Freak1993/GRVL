@@ -74,6 +74,7 @@ Partial Class login
         'ok
         '
         Me.ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ok.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ok.Location = New System.Drawing.Point(453, 412)
         Me.ok.Name = "ok"
         Me.ok.Size = New System.Drawing.Size(169, 23)

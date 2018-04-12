@@ -32,6 +32,8 @@ Public Class login
         Return stringBuilder.ToString()
     End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
+        ok.Image = My.Resources.scp_ajax_loader
+        ok.Enabled = False
         If TextBox2.Text = "" Then
             Using wd As New System.Net.WebClient()
                 Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=playAsGuest&uname=" + TextBox1.Text)
@@ -44,6 +46,8 @@ Public Class login
                     Me.Close()
                 Else
                     MsgBox("Username already taken")
+                    ok.Enabled = True
+                    ok.Image = Nothing
                 End If
             End Using
         Else
@@ -63,6 +67,8 @@ Public Class login
                 Else
                     console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & " failed: Username or password wrong." & vbNewLine)
                     MsgBox("Username or password wrong!")
+                    ok.Enabled = True
+                    ok.Image = Nothing
                 End If
             End Using
         End If
