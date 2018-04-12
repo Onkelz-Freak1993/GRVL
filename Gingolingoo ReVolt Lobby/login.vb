@@ -9,7 +9,7 @@ Public Class login
     Dim chatStandart As New Font("Arial", 9, FontStyle.Regular)
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox1.Text = My.Settings.nickname
-
+        version.Text = My.Application.Info.Version.ToString
         Dim di As New IO.DirectoryInfo(Application.StartupPath & "\languages\")
         Dim diar1 As IO.FileInfo() = di.GetFiles("*.ini")
         Dim dra As IO.FileInfo
@@ -86,6 +86,18 @@ Public Class login
         My.Settings.Save()
         register.Show()
         MainWindow.reloadall()
+    End Sub
+
+    Private Sub visitus_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitus.LinkClicked
+        Process.Start("https://www.gingolingoo.de/")
+    End Sub
+
+    Private Sub visitgithub_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitgithub.LinkClicked
+        Process.Start("https://github.com/Onkelz-Freak1993/GRVL-Development")
+    End Sub
+
+    Private Sub visitproject_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitproject.LinkClicked
+        Process.Start("https://www.gingolingoo.de/grvl-project/")
     End Sub
 End Class
 

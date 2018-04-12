@@ -230,6 +230,46 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property loginbg() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loginbg", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property loginbg1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loginbg1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property loginbg2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loginbg2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property loginbg3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loginbg3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property message() As System.IO.UnmanagedMemoryStream

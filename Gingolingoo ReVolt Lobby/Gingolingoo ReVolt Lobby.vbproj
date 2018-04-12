@@ -187,9 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.vb</DependentUpon>
@@ -317,6 +317,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\loginbg1.png" />
+    <None Include="Resources\loginbg.png" />
     <None Include="Resources\dbg.png" />
     <None Include="Resources\loading.gif" />
   </ItemGroup>
