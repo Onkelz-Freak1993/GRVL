@@ -117,6 +117,7 @@ Partial Class rvglupdater
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rvglupdater"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "$rvgl_updater"
         Me.ResumeLayout(False)
         Me.PerformLayout()

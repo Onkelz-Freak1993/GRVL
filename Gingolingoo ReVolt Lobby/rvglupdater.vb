@@ -8,9 +8,26 @@ Public Class rvglupdater
     Dim client As WebClient = New WebClient()
     Dim reader As StreamReader = New StreamReader(client.OpenRead(rvglver))
 
+    Private Function getInstalledVersion()
+        Dim rvglversion As String
+        Dim a As String
+        rvglversion = GetFileVersionInfo(My.Settings.revolt_path).ToString
+        Try
+            a = rvglversion.Substring(rvglversion.Length - 4)
+        Catch exc As Exception
+            console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
+        End Try
+
+        If a.StartsWith(".") Then
+            rvglversion.Insert(7, "0")
+            Return rvglversion.Substring(4)
+        Else
+            Return rvglversion.Substring(4)
+        End If
+    End Function
+
     Private Sub rvglupdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim strText As String = GetFileVersionInfo(My.Settings.revolt_path).ToString
-        installedrvglver.Text = strText.Substring(4)
+        installedrvglver.Text = getInstalledVersion()
         updatervglver.Text = reader.ReadToEnd
     End Sub
 
