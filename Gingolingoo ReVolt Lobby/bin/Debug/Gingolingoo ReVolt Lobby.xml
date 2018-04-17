@@ -137,12 +137,22 @@ Gingolingoo ReVolt Lobby
   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
 </summary>
 </member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.missing">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.page_edit">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.rosette">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.RVGL_16x16">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>

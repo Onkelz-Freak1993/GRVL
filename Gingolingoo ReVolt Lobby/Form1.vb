@@ -542,6 +542,10 @@ Public Class MainWindow
     Private Sub refreshserver_Click(sender As Object, e As EventArgs) Handles refreshserver.Click
         refreshServerlist()
     End Sub
+
+    Private Sub RVGLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RVGLToolStripMenuItem.Click
+        rvglupdater.Show()
+    End Sub
 End Class
 
 Public Class WindowsApi

@@ -156,6 +156,12 @@
     <Compile Include="register.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="rvglupdater.Designer.vb">
+      <DependentUpon>rvglupdater.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rvglupdater.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="settings.Designer.vb">
       <DependentUpon>settings.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvglupdater.resx">
+      <DependentUpon>rvglupdater.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.vb</DependentUpon>
@@ -317,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\RVGL_16x16.ico" />
     <None Include="Resources\missing.png" />
     <None Include="Resources\scp-ajax-loader.gif" />
     <None Include="Resources\loading-circle.gif" />
