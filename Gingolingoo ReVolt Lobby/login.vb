@@ -3,11 +3,19 @@ Imports System.IO
 Imports System.Collections
 Imports System.Text
 Imports System.Security.Cryptography
+Imports System.Net
+
 
 Public Class login
+
+    Dim changelogad As String = "https://raw.githubusercontent.com/Onkelz-Freak1993/GRVL-Development/master/changelog.txt"
+    Dim client As WebClient = New WebClient()
+    Dim reader As StreamReader = New StreamReader(client.OpenRead(changelogad))
+
     Dim chatBold As New Font("Arial", 12, FontStyle.Bold)
     Dim chatStandart As New Font("Arial", 9, FontStyle.Regular)
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RichTextBox1.Text = reader.ReadToEnd
         TextBox1.Text = My.Settings.nickname
         version.Text = My.Application.Info.Version.ToString
         Dim di As New IO.DirectoryInfo(Application.StartupPath & "\languages\")

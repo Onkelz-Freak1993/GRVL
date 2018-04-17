@@ -317,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\missing.png" />
     <None Include="Resources\scp-ajax-loader.gif" />
     <None Include="Resources\loading-circle.gif" />
     <None Include="Resources\loginbg1.png" />

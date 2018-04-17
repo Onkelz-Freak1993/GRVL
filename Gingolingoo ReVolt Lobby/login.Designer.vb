@@ -49,7 +49,7 @@ Partial Class login
         Me.nickname.AutoSize = True
         Me.nickname.BackColor = System.Drawing.Color.Transparent
         Me.nickname.ForeColor = System.Drawing.Color.White
-        Me.nickname.Location = New System.Drawing.Point(450, 24)
+        Me.nickname.Location = New System.Drawing.Point(446, 27)
         Me.nickname.Name = "nickname"
         Me.nickname.Size = New System.Drawing.Size(59, 13)
         Me.nickname.TabIndex = 0
@@ -57,16 +57,16 @@ Partial Class login
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(453, 40)
+        Me.TextBox1.Location = New System.Drawing.Point(449, 43)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(333, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(323, 20)
         Me.TextBox1.TabIndex = 1
         '
         'quit
         '
-        Me.quit.Location = New System.Drawing.Point(628, 412)
+        Me.quit.Location = New System.Drawing.Point(624, 415)
         Me.quit.Name = "quit"
-        Me.quit.Size = New System.Drawing.Size(158, 23)
+        Me.quit.Size = New System.Drawing.Size(148, 23)
         Me.quit.TabIndex = 2
         Me.quit.Text = "$quit"
         Me.quit.UseVisualStyleBackColor = True
@@ -75,9 +75,9 @@ Partial Class login
         '
         Me.ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ok.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ok.Location = New System.Drawing.Point(453, 412)
+        Me.ok.Location = New System.Drawing.Point(449, 415)
         Me.ok.Name = "ok"
-        Me.ok.Size = New System.Drawing.Size(169, 23)
+        Me.ok.Size = New System.Drawing.Size(159, 23)
         Me.ok.TabIndex = 3
         Me.ok.Text = "$ok"
         Me.ok.UseVisualStyleBackColor = True
@@ -87,7 +87,7 @@ Partial Class login
         Me.lang.AutoSize = True
         Me.lang.BackColor = System.Drawing.Color.Transparent
         Me.lang.ForeColor = System.Drawing.Color.White
-        Me.lang.Location = New System.Drawing.Point(450, 155)
+        Me.lang.Location = New System.Drawing.Point(446, 158)
         Me.lang.Name = "lang"
         Me.lang.Size = New System.Drawing.Size(57, 13)
         Me.lang.TabIndex = 4
@@ -97,17 +97,17 @@ Partial Class login
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(628, 152)
+        Me.ComboBox1.Location = New System.Drawing.Point(624, 155)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(158, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox1.TabIndex = 5
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(453, 90)
+        Me.TextBox2.Location = New System.Drawing.Point(449, 93)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(333, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(323, 20)
         Me.TextBox2.TabIndex = 6
         Me.TextBox2.UseSystemPasswordChar = True
         '
@@ -116,7 +116,7 @@ Partial Class login
         Me.password.AutoSize = True
         Me.password.BackColor = System.Drawing.Color.Transparent
         Me.password.ForeColor = System.Drawing.Color.White
-        Me.password.Location = New System.Drawing.Point(450, 74)
+        Me.password.Location = New System.Drawing.Point(446, 77)
         Me.password.Name = "password"
         Me.password.Size = New System.Drawing.Size(58, 13)
         Me.password.TabIndex = 7
@@ -124,9 +124,9 @@ Partial Class login
         '
         'createAccount
         '
-        Me.createAccount.Location = New System.Drawing.Point(628, 11)
+        Me.createAccount.Location = New System.Drawing.Point(624, 14)
         Me.createAccount.Name = "createAccount"
-        Me.createAccount.Size = New System.Drawing.Size(158, 23)
+        Me.createAccount.Size = New System.Drawing.Size(148, 23)
         Me.createAccount.TabIndex = 8
         Me.createAccount.Text = "$createAccount"
         Me.createAccount.UseVisualStyleBackColor = True
@@ -135,17 +135,19 @@ Partial Class login
         '
         Me.guestplay.BackColor = System.Drawing.Color.Transparent
         Me.guestplay.ForeColor = System.Drawing.Color.White
-        Me.guestplay.Location = New System.Drawing.Point(450, 118)
+        Me.guestplay.Location = New System.Drawing.Point(446, 121)
         Me.guestplay.Name = "guestplay"
-        Me.guestplay.Size = New System.Drawing.Size(336, 13)
+        Me.guestplay.Size = New System.Drawing.Size(326, 13)
         Me.guestplay.TabIndex = 9
         Me.guestplay.Text = "$guestplay"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(453, 209)
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.Location = New System.Drawing.Point(449, 212)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(333, 184)
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(323, 184)
         Me.RichTextBox1.TabIndex = 10
         Me.RichTextBox1.Text = ""
         '
@@ -166,7 +168,7 @@ Partial Class login
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(450, 190)
+        Me.Label2.Location = New System.Drawing.Point(446, 193)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 16)
         Me.Label2.TabIndex = 12
@@ -230,7 +232,7 @@ Partial Class login
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(12, 238)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(391, 79)
+        Me.Label3.Size = New System.Drawing.Size(349, 79)
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "In order to play with others online, just get yourself a Nickname. An Account is " &
     "only needed when you want to manage friends and modifications with GRVL."
@@ -240,9 +242,9 @@ Partial Class login
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(12, 301)
+        Me.Label4.Location = New System.Drawing.Point(12, 317)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(391, 65)
+        Me.Label4.Size = New System.Drawing.Size(349, 65)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "You also can logon as a guest to play online without an account. To do that, just" &
     " get yourself a Nickname, select a language and click 'OK'."
@@ -251,10 +253,9 @@ Partial Class login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.loginbg3
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(794, 447)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.missing
+        Me.ClientSize = New System.Drawing.Size(784, 461)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
