@@ -4,13 +4,15 @@ Imports System.Collections
 Imports System.Text
 Imports System.Security.Cryptography
 Imports System.Net
-
+Imports System.ComponentModel
 
 Public Class login
 
     Dim changelogad As String = "https://raw.githubusercontent.com/Onkelz-Freak1993/GRVL-Development/master/changelog.txt"
     Dim client As WebClient = New WebClient()
     Dim reader As StreamReader = New StreamReader(client.OpenRead(changelogad))
+
+    Dim loginCheck
 
     Dim chatBold As New Font("Arial", 12, FontStyle.Bold)
     Dim chatStandart As New Font("Arial", 9, FontStyle.Regular)
@@ -42,47 +44,7 @@ Public Class login
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
         ok.Image = My.Resources.scp_ajax_loader
         'ok.Enabled = False
-        If TextBox2.Text = "" Then
-            Using wd As New System.Net.WebClient()
-                Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=playAsGuest&uname=" + TextBox1.Text)
-                If loginCheck <> "0" Then
-                    console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)
-                    My.Settings.nickname = TextBox1.Text
-                    My.Settings.Save()
-                    MainWindow.Show()
-                    MainWindow.reloadall()
-                    Me.Close()
-                Else
-                    MsgBox("Username already taken")
-                    ok.Enabled = True
-                    ok.Image = Nothing
-                End If
-            End Using
-        Else
-            Dim pass As String = GenerateSHA256String(TextBox2.Text)
-            Using wd As New System.Net.WebClient()
-                Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
-                If loginCheck <> "0" Then
-                    console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & vbNewLine)
-                    My.Settings.nickname = TextBox1.Text
-                    MainWindow.RichTextBox1.SelectionFont = chatBold
-                    MainWindow.ToolStripLabel2.Text = loginCheck
-                    MainWindow.RichTextBox1.SelectionFont = chatStandart
-                    My.Settings.Save()
-                    MainWindow.Show()
-                    MainWindow.reloadall()
-                    Me.Close()
-                Else
-                    console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & " failed: Username or password wrong." & vbNewLine)
-                    MsgBox("Username or password wrong!")
-                    ok.Enabled = True
-                    ok.Image = Nothing
-                End If
-            End Using
-        End If
-
-
-
+        bgwLogin.RunWorkerAsync()
     End Sub
 
     Private Sub quit_Click(sender As Object, e As EventArgs) Handles quit.Click
@@ -112,6 +74,54 @@ Public Class login
 
     Private Sub visitproject_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitproject.LinkClicked
         Process.Start("https://www.gingolingoo.de/grvl-project/")
+    End Sub
+
+    Private Sub bgwLogin_DoWork(sender As Object, e As ComponentModel.DoWorkEventArgs) Handles bgwLogin.DoWork
+        If TextBox2.Text = "" Then
+            Using wd As New System.Net.WebClient()
+                loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=playAsGuest&uname=" + TextBox1.Text)
+            End Using
+        Else
+            Dim pass As String = GenerateSHA256String(TextBox2.Text)
+            Using wd As New System.Net.WebClient()
+                loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
+            End Using
+        End If
+    End Sub
+
+    Private Sub bgwLogin_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwLogin.RunWorkerCompleted
+        Me.Text = "Loading "
+        If TextBox2.Text = "" Then
+            If loginCheck <> "0" Then
+                console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)
+                My.Settings.nickname = TextBox1.Text
+                My.Settings.Save()
+                MainWindow.Show()
+                MainWindow.reloadall()
+                Me.Close()
+            Else
+                MsgBox("Username already taken")
+                ok.Enabled = True
+                ok.Image = Nothing
+            End If
+        Else
+            If loginCheck <> "0" Then
+                console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & vbNewLine)
+                My.Settings.nickname = TextBox1.Text
+                MainWindow.RichTextBox1.SelectionFont = chatBold
+                MainWindow.ToolStripLabel2.Text = loginCheck
+                MainWindow.RichTextBox1.SelectionFont = chatStandart
+                My.Settings.Save()
+                MainWindow.Show()
+                MainWindow.reloadall()
+                Me.Close()
+            Else
+                console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & " failed: Username or password wrong." & vbNewLine)
+                MsgBox("Username or password wrong!")
+                ok.Enabled = True
+                ok.Image = Nothing
+            End If
+        End If
     End Sub
 End Class
 

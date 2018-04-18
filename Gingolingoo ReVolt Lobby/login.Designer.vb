@@ -42,6 +42,7 @@ Partial Class login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.bgwLogin = New System.ComponentModel.BackgroundWorker()
         Me.SuspendLayout()
         '
         'nickname
@@ -249,6 +250,11 @@ Partial Class login
         Me.Label4.Text = "You also can logon as a guest to play online without an account. To do that, just" &
     " get yourself a Nickname, select a language and click 'OK'."
         '
+        'bgwLogin
+        '
+        Me.bgwLogin.WorkerReportsProgress = True
+        Me.bgwLogin.WorkerSupportsCancellation = True
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,4 +313,5 @@ Partial Class login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents bgwLogin As System.ComponentModel.BackgroundWorker
 End Class

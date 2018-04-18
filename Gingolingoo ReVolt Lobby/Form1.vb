@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices
 Imports System.Text
 Imports System.Net.Sockets
 Imports System.IO
+Imports System.ComponentModel
 
 Public Class MainWindow
     Private stream As NetworkStream
@@ -70,22 +71,8 @@ Public Class MainWindow
         'use this to flash in taskbar:
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
-        Try
-            console.RichTextBox1.AppendText("Connection establishing to 134.255.217.252:9999 ... ")
-            client.Connect("134.255.217.252", 9999) ' hier die ip des servers eintragen. 
-            If client.Connected Then
-                console.RichTextBox1.AppendText("Connected." & vbNewLine)
-                stream = client.GetStream
-                streamw = New StreamWriter(stream)
-                streamr = New StreamReader(stream)
-                streamw.WriteLine(nick) ' optional.
-                streamw.Flush()
-                t.Start()
-            End If
-        Catch ex As Exception
-            console.RichTextBox1.AppendText("failed" & vbNewLine & "Couldn't connect to 134.255.217.252:9999" & vbNewLine)
-            MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
-        End Try
+        bgwChatConnect.RunWorkerAsync()
+        bgwUserlist.RunWorkerAsync()
     End Sub
 
     Private Sub refreshServerlist()
@@ -150,58 +137,6 @@ Public Class MainWindow
         TreeView1.Nodes.Add(Nodes(1))
         TreeView1.Nodes.Add(Nodes(2))
         TreeView1.Nodes.Add(Nodes(3))
-
-
-        Dim users()
-        Dim uCount As Integer = 10
-        Dim tmpNode() As TreeNode = TreeView1.Nodes.Find("global", True)
-        Dim tmpNodeOffline() As TreeNode = TreeView1.Nodes.Find("offline", True)
-
-        Try
-            Using wc As New System.Net.WebClient()
-                console.RichTextBox1.AppendText("Trying API call 'udata' ..." & vbNewLine)
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
-
-                users = udata.Split(";")
-                For Each item As String In users
-
-                    Dim userdata() = item.Split("|")
-                    If userdata(0) <> "" Then
-                        Nodes(uCount) = New TreeNode(userdata(0))
-                        If userdata(1) = 0 Then
-                            Nodes(uCount).ImageIndex = 1
-                            Nodes(uCount).SelectedImageIndex = 1
-                        End If
-                        If userdata(1) = 1 Then
-                            Nodes(uCount).ImageIndex = 2
-                            Nodes(uCount).SelectedImageIndex = 2
-                        End If
-                        If userdata(1) = 2 Then
-                            Nodes(uCount).ImageIndex = 3
-                            Nodes(uCount).SelectedImageIndex = 3
-                        End If
-                        If userdata(1) = 3 Then
-                            Nodes(uCount).ImageIndex = 4
-                            Nodes(uCount).SelectedImageIndex = 4
-                        End If
-                        If userdata(1) = 0 Then
-                            tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
-                        Else
-                            tmpNode(0).Nodes.Add(Nodes(uCount))
-                        End If
-                    End If
-                Next
-            End Using
-        Catch ex As Exception
-            If devtools.Visible = True Then
-                MsgBox(ex.ToString)
-                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
-            Else
-                MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
-            End If
-        End Try
-
-        TreeView1.ExpandAll()
 
         Return Nothing
     End Function
@@ -545,6 +480,93 @@ Public Class MainWindow
 
     Private Sub RVGLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RVGLToolStripMenuItem.Click
         rvglupdater.Show()
+    End Sub
+
+    Private Sub bgwChatConnect_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bgwChatConnect.DoWork
+        Try
+            console.RichTextBox1.AppendText("Connection establishing to 134.255.217.252:9999 ... ")
+            client.Connect("134.255.217.252", 9999) ' hier die ip des servers eintragen. 
+            If client.Connected Then
+                console.RichTextBox1.AppendText("Connected." & vbNewLine)
+                stream = client.GetStream
+                streamw = New StreamWriter(stream)
+                streamr = New StreamReader(stream)
+                streamw.WriteLine(nick) ' optional.
+                streamw.Flush()
+                t.Start()
+            End If
+        Catch ex As Exception
+            console.RichTextBox1.AppendText("failed" & vbNewLine & "Couldn't connect to 134.255.217.252:9999" & vbNewLine)
+            MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
+        End Try
+    End Sub
+    Dim udata
+    Private Sub bgwUserlist_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bgwUserlist.DoWork
+        Try
+            Using wc As New System.Net.WebClient()
+                console.RichTextBox1.AppendText("Trying API call 'udata' ..." & vbNewLine)
+                udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+            End Using
+        Catch ex As Exception
+            If devtools.Visible = True Then
+                MsgBox(ex.ToString)
+                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
+            Else
+                MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
+            End If
+        End Try
+    End Sub
+
+    Private Sub bgwUserlist_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwUserlist.RunWorkerCompleted
+        Dim users()
+        Dim uCount As Integer = 10
+        Dim tmpNode() As TreeNode = TreeView1.Nodes.Find("global", True)
+        Dim tmpNodeOffline() As TreeNode = TreeView1.Nodes.Find("offline", True)
+
+        Try
+            Using wc As New System.Net.WebClient()
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+
+                users = udata.Split(";")
+                For Each item As String In users
+
+                    Dim userdata() = item.Split("|")
+                    If userdata(0) <> "" Then
+                        Nodes(uCount) = New TreeNode(userdata(0))
+                        If userdata(1) = 0 Then
+                            Nodes(uCount).ImageIndex = 1
+                            Nodes(uCount).SelectedImageIndex = 1
+                        End If
+                        If userdata(1) = 1 Then
+                            Nodes(uCount).ImageIndex = 2
+                            Nodes(uCount).SelectedImageIndex = 2
+                        End If
+                        If userdata(1) = 2 Then
+                            Nodes(uCount).ImageIndex = 3
+                            Nodes(uCount).SelectedImageIndex = 3
+                        End If
+                        If userdata(1) = 3 Then
+                            Nodes(uCount).ImageIndex = 4
+                            Nodes(uCount).SelectedImageIndex = 4
+                        End If
+                        If userdata(1) = 0 Then
+                            tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
+                        Else
+                            tmpNode(0).Nodes.Add(Nodes(uCount))
+                        End If
+                    End If
+                Next
+            End Using
+        Catch ex As Exception
+            If devtools.Visible = True Then
+                MsgBox(ex.ToString)
+                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
+            Else
+                MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
+            End If
+        End Try
+
+        TreeView1.ExpandAll()
     End Sub
 End Class
 
