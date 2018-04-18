@@ -32,22 +32,6 @@ Partial Class settings
         Me.chatsettings = New System.Windows.Forms.GroupBox()
         Me.flashonmcmsg = New System.Windows.Forms.CheckBox()
         Me.gamesettings = New System.Windows.Forms.TabPage()
-        Me.devparams = New System.Windows.Forms.GroupBox()
-        Me.gazzasaicar = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.tvtime = New System.Windows.Forms.CheckBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.aspect = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.winmode = New System.Windows.Forms.CheckBox()
-        Me.profile = New System.Windows.Forms.CheckBox()
-        Me.noloadingscr = New System.Windows.Forms.CheckBox()
-        Me.nointro = New System.Windows.Forms.CheckBox()
-        Me.devmode = New System.Windows.Forms.CheckBox()
         Me.pathtoexe = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.addparameter = New System.Windows.Forms.Label()
@@ -56,30 +40,34 @@ Partial Class settings
         Me.cancel = New System.Windows.Forms.Button()
         Me.apply = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.grvlup = New System.Windows.Forms.GroupBox()
-        Me.rvglup = New System.Windows.Forms.GroupBox()
-        Me.grvlcheck = New System.Windows.Forms.CheckBox()
-        Me.rvglcheck = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.devparams = New System.Windows.Forms.GroupBox()
+        Me.devmode = New System.Windows.Forms.CheckBox()
+        Me.nointro = New System.Windows.Forms.CheckBox()
+        Me.noloadingscr = New System.Windows.Forms.CheckBox()
+        Me.profile = New System.Windows.Forms.CheckBox()
+        Me.winmode = New System.Windows.Forms.CheckBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.aspect = New System.Windows.Forms.CheckBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.tvtime = New System.Windows.Forms.CheckBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.gazzasaicar = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.programsettings.SuspendLayout()
         Me.chatsettings.SuspendLayout()
         Me.gamesettings.SuspendLayout()
-        Me.devparams.SuspendLayout()
         Me.pathtoexe.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.grvlup.SuspendLayout()
-        Me.rvglup.SuspendLayout()
+        Me.devparams.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.programsettings)
         Me.TabControl1.Controls.Add(Me.gamesettings)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -89,7 +77,6 @@ Partial Class settings
         '
         'programsettings
         '
-        Me.programsettings.Controls.Add(Me.CheckBox1)
         Me.programsettings.Controls.Add(Me.lang)
         Me.programsettings.Controls.Add(Me.ComboBox1)
         Me.programsettings.Controls.Add(Me.TextBox3)
@@ -98,7 +85,7 @@ Partial Class settings
         Me.programsettings.Location = New System.Drawing.Point(4, 22)
         Me.programsettings.Name = "programsettings"
         Me.programsettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.programsettings.Size = New System.Drawing.Size(314, 223)
+        Me.programsettings.Size = New System.Drawing.Size(314, 210)
         Me.programsettings.TabIndex = 0
         Me.programsettings.Text = "$programsettings"
         Me.programsettings.UseVisualStyleBackColor = True
@@ -140,9 +127,9 @@ Partial Class settings
         'chatsettings
         '
         Me.chatsettings.Controls.Add(Me.flashonmcmsg)
-        Me.chatsettings.Location = New System.Drawing.Point(8, 95)
+        Me.chatsettings.Location = New System.Drawing.Point(8, 89)
         Me.chatsettings.Name = "chatsettings"
-        Me.chatsettings.Size = New System.Drawing.Size(298, 109)
+        Me.chatsettings.Size = New System.Drawing.Size(298, 115)
         Me.chatsettings.TabIndex = 1
         Me.chatsettings.TabStop = False
         Me.chatsettings.Text = "$chatsettings"
@@ -168,168 +155,6 @@ Partial Class settings
         Me.gamesettings.TabIndex = 1
         Me.gamesettings.Text = "$gamesettings"
         Me.gamesettings.UseVisualStyleBackColor = True
-        '
-        'devparams
-        '
-        Me.devparams.Controls.Add(Me.gazzasaicar)
-        Me.devparams.Controls.Add(Me.ComboBox2)
-        Me.devparams.Controls.Add(Me.tvtime)
-        Me.devparams.Controls.Add(Me.TextBox8)
-        Me.devparams.Controls.Add(Me.TextBox7)
-        Me.devparams.Controls.Add(Me.TextBox6)
-        Me.devparams.Controls.Add(Me.aspect)
-        Me.devparams.Controls.Add(Me.Label1)
-        Me.devparams.Controls.Add(Me.TextBox5)
-        Me.devparams.Controls.Add(Me.TextBox4)
-        Me.devparams.Controls.Add(Me.winmode)
-        Me.devparams.Controls.Add(Me.profile)
-        Me.devparams.Controls.Add(Me.noloadingscr)
-        Me.devparams.Controls.Add(Me.nointro)
-        Me.devparams.Controls.Add(Me.devmode)
-        Me.devparams.Location = New System.Drawing.Point(8, 101)
-        Me.devparams.Name = "devparams"
-        Me.devparams.Size = New System.Drawing.Size(298, 116)
-        Me.devparams.TabIndex = 2
-        Me.devparams.TabStop = False
-        Me.devparams.Text = "$devparams"
-        '
-        'gazzasaicar
-        '
-        Me.gazzasaicar.AutoSize = True
-        Me.gazzasaicar.Location = New System.Drawing.Point(105, 87)
-        Me.gazzasaicar.Name = "gazzasaicar"
-        Me.gazzasaicar.Size = New System.Drawing.Size(88, 17)
-        Me.gazzasaicar.TabIndex = 14
-        Me.gazzasaicar.Text = "$gazzasaicar"
-        Me.gazzasaicar.UseVisualStyleBackColor = True
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(198, 62)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(94, 21)
-        Me.ComboBox2.TabIndex = 13
-        '
-        'tvtime
-        '
-        Me.tvtime.AutoSize = True
-        Me.tvtime.Location = New System.Drawing.Point(6, 87)
-        Me.tvtime.Name = "tvtime"
-        Me.tvtime.Size = New System.Drawing.Size(60, 17)
-        Me.tvtime.TabIndex = 12
-        Me.tvtime.Text = "$tvtime"
-        Me.tvtime.UseVisualStyleBackColor = True
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(260, 40)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(32, 20)
-        Me.TextBox8.TabIndex = 11
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(213, 40)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(33, 20)
-        Me.TextBox7.TabIndex = 10
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(176, 40)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(31, 20)
-        Me.TextBox6.TabIndex = 9
-        '
-        'aspect
-        '
-        Me.aspect.AutoSize = True
-        Me.aspect.Location = New System.Drawing.Point(105, 42)
-        Me.aspect.Name = "aspect"
-        Me.aspect.Size = New System.Drawing.Size(64, 17)
-        Me.aspect.TabIndex = 8
-        Me.aspect.Text = "$aspect"
-        Me.aspect.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(234, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(12, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "x"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(250, 17)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox5.TabIndex = 6
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(185, 17)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox4.TabIndex = 5
-        '
-        'winmode
-        '
-        Me.winmode.AutoSize = True
-        Me.winmode.Location = New System.Drawing.Point(105, 19)
-        Me.winmode.Name = "winmode"
-        Me.winmode.Size = New System.Drawing.Size(74, 17)
-        Me.winmode.TabIndex = 4
-        Me.winmode.Text = "$winmode"
-        Me.winmode.UseVisualStyleBackColor = True
-        '
-        'profile
-        '
-        Me.profile.AutoSize = True
-        Me.profile.Location = New System.Drawing.Point(105, 64)
-        Me.profile.Name = "profile"
-        Me.profile.Size = New System.Drawing.Size(88, 17)
-        Me.profile.TabIndex = 3
-        Me.profile.Text = "$profileselect"
-        Me.profile.UseVisualStyleBackColor = True
-        '
-        'noloadingscr
-        '
-        Me.noloadingscr.AutoSize = True
-        Me.noloadingscr.Location = New System.Drawing.Point(6, 64)
-        Me.noloadingscr.Name = "noloadingscr"
-        Me.noloadingscr.Size = New System.Drawing.Size(110, 17)
-        Me.noloadingscr.TabIndex = 2
-        Me.noloadingscr.Text = "$noloadingscreen"
-        Me.noloadingscr.UseVisualStyleBackColor = True
-        '
-        'nointro
-        '
-        Me.nointro.AutoSize = True
-        Me.nointro.Location = New System.Drawing.Point(6, 42)
-        Me.nointro.Name = "nointro"
-        Me.nointro.Size = New System.Drawing.Size(64, 17)
-        Me.nointro.TabIndex = 1
-        Me.nointro.Text = "$nointro"
-        Me.nointro.UseVisualStyleBackColor = True
-        '
-        'devmode
-        '
-        Me.devmode.AutoSize = True
-        Me.devmode.Location = New System.Drawing.Point(6, 19)
-        Me.devmode.Name = "devmode"
-        Me.devmode.Size = New System.Drawing.Size(76, 17)
-        Me.devmode.TabIndex = 0
-        Me.devmode.Text = "$devmode"
-        Me.devmode.UseVisualStyleBackColor = True
         '
         'pathtoexe
         '
@@ -378,7 +203,7 @@ Partial Class settings
         '
         'cancel
         '
-        Me.cancel.Location = New System.Drawing.Point(235, 255)
+        Me.cancel.Location = New System.Drawing.Point(243, 255)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(75, 23)
         Me.cancel.TabIndex = 2
@@ -387,7 +212,7 @@ Partial Class settings
         '
         'apply
         '
-        Me.apply.Location = New System.Drawing.Point(154, 255)
+        Me.apply.Location = New System.Drawing.Point(162, 255)
         Me.apply.Name = "apply"
         Me.apply.Size = New System.Drawing.Size(75, 23)
         Me.apply.TabIndex = 3
@@ -398,89 +223,167 @@ Partial Class settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'TabPage1
+        'devparams
         '
-        Me.TabPage1.Controls.Add(Me.rvglcheck)
-        Me.TabPage1.Controls.Add(Me.grvlcheck)
-        Me.TabPage1.Controls.Add(Me.rvglup)
-        Me.TabPage1.Controls.Add(Me.grvlup)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(314, 223)
-        Me.TabPage1.TabIndex = 2
-        Me.TabPage1.Text = "$updates"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.devparams.Controls.Add(Me.gazzasaicar)
+        Me.devparams.Controls.Add(Me.ComboBox2)
+        Me.devparams.Controls.Add(Me.tvtime)
+        Me.devparams.Controls.Add(Me.TextBox8)
+        Me.devparams.Controls.Add(Me.TextBox7)
+        Me.devparams.Controls.Add(Me.TextBox6)
+        Me.devparams.Controls.Add(Me.aspect)
+        Me.devparams.Controls.Add(Me.Label1)
+        Me.devparams.Controls.Add(Me.TextBox5)
+        Me.devparams.Controls.Add(Me.TextBox4)
+        Me.devparams.Controls.Add(Me.winmode)
+        Me.devparams.Controls.Add(Me.profile)
+        Me.devparams.Controls.Add(Me.noloadingscr)
+        Me.devparams.Controls.Add(Me.nointro)
+        Me.devparams.Controls.Add(Me.devmode)
+        Me.devparams.Location = New System.Drawing.Point(8, 101)
+        Me.devparams.Name = "devparams"
+        Me.devparams.Size = New System.Drawing.Size(298, 116)
+        Me.devparams.TabIndex = 2
+        Me.devparams.TabStop = False
+        Me.devparams.Text = "$devparams"
         '
-        'grvlup
+        'devmode
         '
-        Me.grvlup.Controls.Add(Me.CheckBox3)
-        Me.grvlup.Enabled = False
-        Me.grvlup.Location = New System.Drawing.Point(8, 6)
-        Me.grvlup.Name = "grvlup"
-        Me.grvlup.Size = New System.Drawing.Size(298, 96)
-        Me.grvlup.TabIndex = 0
-        Me.grvlup.TabStop = False
+        Me.devmode.AutoSize = True
+        Me.devmode.Location = New System.Drawing.Point(6, 19)
+        Me.devmode.Name = "devmode"
+        Me.devmode.Size = New System.Drawing.Size(76, 17)
+        Me.devmode.TabIndex = 0
+        Me.devmode.Text = "$devmode"
+        Me.devmode.UseVisualStyleBackColor = True
         '
-        'rvglup
+        'nointro
         '
-        Me.rvglup.Controls.Add(Me.CheckBox4)
-        Me.rvglup.Enabled = False
-        Me.rvglup.Location = New System.Drawing.Point(8, 108)
-        Me.rvglup.Name = "rvglup"
-        Me.rvglup.Size = New System.Drawing.Size(298, 109)
-        Me.rvglup.TabIndex = 1
-        Me.rvglup.TabStop = False
+        Me.nointro.AutoSize = True
+        Me.nointro.Location = New System.Drawing.Point(6, 42)
+        Me.nointro.Name = "nointro"
+        Me.nointro.Size = New System.Drawing.Size(64, 17)
+        Me.nointro.TabIndex = 1
+        Me.nointro.Text = "$nointro"
+        Me.nointro.UseVisualStyleBackColor = True
         '
-        'grvlcheck
+        'noloadingscr
         '
-        Me.grvlcheck.AutoSize = True
-        Me.grvlcheck.Location = New System.Drawing.Point(14, 6)
-        Me.grvlcheck.Name = "grvlcheck"
-        Me.grvlcheck.Size = New System.Drawing.Size(147, 17)
-        Me.grvlcheck.TabIndex = 0
-        Me.grvlcheck.Text = "Check for GRVL Updates"
-        Me.grvlcheck.UseVisualStyleBackColor = True
+        Me.noloadingscr.AutoSize = True
+        Me.noloadingscr.Location = New System.Drawing.Point(6, 64)
+        Me.noloadingscr.Name = "noloadingscr"
+        Me.noloadingscr.Size = New System.Drawing.Size(110, 17)
+        Me.noloadingscr.TabIndex = 2
+        Me.noloadingscr.Text = "$noloadingscreen"
+        Me.noloadingscr.UseVisualStyleBackColor = True
         '
-        'rvglcheck
+        'profile
         '
-        Me.rvglcheck.AutoSize = True
-        Me.rvglcheck.Location = New System.Drawing.Point(14, 108)
-        Me.rvglcheck.Name = "rvglcheck"
-        Me.rvglcheck.Size = New System.Drawing.Size(147, 17)
-        Me.rvglcheck.TabIndex = 0
-        Me.rvglcheck.Text = "Check for RVGL Updates"
-        Me.rvglcheck.UseVisualStyleBackColor = True
+        Me.profile.AutoSize = True
+        Me.profile.Location = New System.Drawing.Point(105, 64)
+        Me.profile.Name = "profile"
+        Me.profile.Size = New System.Drawing.Size(88, 17)
+        Me.profile.TabIndex = 3
+        Me.profile.Text = "$profileselect"
+        Me.profile.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'winmode
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 73)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(114, 17)
-        Me.CheckBox3.TabIndex = 0
-        Me.CheckBox3.Text = "Show Notifications"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.winmode.AutoSize = True
+        Me.winmode.Location = New System.Drawing.Point(105, 19)
+        Me.winmode.Name = "winmode"
+        Me.winmode.Size = New System.Drawing.Size(74, 17)
+        Me.winmode.TabIndex = 4
+        Me.winmode.Text = "$winmode"
+        Me.winmode.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'TextBox4
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(6, 86)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(114, 17)
-        Me.CheckBox4.TabIndex = 0
-        Me.CheckBox4.Text = "Show Notifications"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(185, 17)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox4.TabIndex = 5
         '
-        'CheckBox1
+        'TextBox5
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(77, 72)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(109, 17)
-        Me.CheckBox1.TabIndex = 6
-        Me.CheckBox1.Text = "$minimize_to_tray"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(250, 17)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox5.TabIndex = 6
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(234, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(12, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "x"
+        '
+        'aspect
+        '
+        Me.aspect.AutoSize = True
+        Me.aspect.Location = New System.Drawing.Point(105, 42)
+        Me.aspect.Name = "aspect"
+        Me.aspect.Size = New System.Drawing.Size(64, 17)
+        Me.aspect.TabIndex = 8
+        Me.aspect.Text = "$aspect"
+        Me.aspect.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Location = New System.Drawing.Point(176, 40)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox6.TabIndex = 9
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Enabled = False
+        Me.TextBox7.Location = New System.Drawing.Point(213, 40)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(33, 20)
+        Me.TextBox7.TabIndex = 10
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Enabled = False
+        Me.TextBox8.Location = New System.Drawing.Point(260, 40)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(32, 20)
+        Me.TextBox8.TabIndex = 11
+        '
+        'tvtime
+        '
+        Me.tvtime.AutoSize = True
+        Me.tvtime.Location = New System.Drawing.Point(6, 87)
+        Me.tvtime.Name = "tvtime"
+        Me.tvtime.Size = New System.Drawing.Size(60, 17)
+        Me.tvtime.TabIndex = 12
+        Me.tvtime.Text = "$tvtime"
+        Me.tvtime.UseVisualStyleBackColor = True
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Enabled = False
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(198, 62)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(94, 21)
+        Me.ComboBox2.TabIndex = 13
+        '
+        'gazzasaicar
+        '
+        Me.gazzasaicar.AutoSize = True
+        Me.gazzasaicar.Location = New System.Drawing.Point(105, 87)
+        Me.gazzasaicar.Name = "gazzasaicar"
+        Me.gazzasaicar.Size = New System.Drawing.Size(88, 17)
+        Me.gazzasaicar.TabIndex = 14
+        Me.gazzasaicar.Text = "$gazzasaicar"
+        Me.gazzasaicar.UseVisualStyleBackColor = True
         '
         'settings
         '
@@ -503,16 +406,10 @@ Partial Class settings
         Me.chatsettings.ResumeLayout(False)
         Me.chatsettings.PerformLayout()
         Me.gamesettings.ResumeLayout(False)
-        Me.devparams.ResumeLayout(False)
-        Me.devparams.PerformLayout()
         Me.pathtoexe.ResumeLayout(False)
         Me.pathtoexe.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.grvlup.ResumeLayout(False)
-        Me.grvlup.PerformLayout()
-        Me.rvglup.ResumeLayout(False)
-        Me.rvglup.PerformLayout()
+        Me.devparams.ResumeLayout(False)
+        Me.devparams.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -549,12 +446,4 @@ Partial Class settings
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents tvtime As CheckBox
     Friend WithEvents gazzasaicar As CheckBox
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents rvglcheck As CheckBox
-    Friend WithEvents grvlcheck As CheckBox
-    Friend WithEvents rvglup As GroupBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents grvlup As GroupBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
 End Class

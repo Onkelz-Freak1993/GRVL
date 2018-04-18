@@ -80,6 +80,16 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about.Designer.vb">
@@ -316,10 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
-    <None Include="Resources\folder_page_white.png" />
-    <None Include="Resources\cog_edit.png" />
-    <None Include="Resources\box.png" />
-    <None Include="Resources\application_side_tree.png" />
     <None Include="Resources\RVGL_16x16.ico" />
     <None Include="Resources\missing.png" />
     <None Include="Resources\scp-ajax-loader.gif" />

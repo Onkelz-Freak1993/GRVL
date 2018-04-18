@@ -92,17 +92,6 @@ Partial Class MainWindow
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.bgwChatConnect = New System.ComponentModel.BackgroundWorker()
         Me.bgwUserlist = New System.ComponentModel.BackgroundWorker()
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.systraycontext = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ShowhideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PlayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.notify_new_server = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +105,6 @@ Partial Class MainWindow
         Me.SplitContainer2.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        Me.systraycontext.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -652,79 +640,6 @@ Partial Class MainWindow
         Me.bgwUserlist.WorkerReportsProgress = True
         Me.bgwUserlist.WorkerSupportsCancellation = True
         '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.ContextMenuStrip = Me.systraycontext
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "Gingolingoo Re-Volt Lobby"
-        Me.NotifyIcon1.Visible = True
-        '
-        'systraycontext
-        '
-        Me.systraycontext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowhideToolStripMenuItem, Me.ToolStripMenuItem3, Me.ManageToolStripMenuItem, Me.PlayerToolStripMenuItem, Me.EditToolStripMenuItem, Me.FileToolStripMenuItem, Me.ToolStripMenuItem5, Me.QuitToolStripMenuItem})
-        Me.systraycontext.Name = "systraycontext"
-        Me.systraycontext.Size = New System.Drawing.Size(137, 148)
-        '
-        'ShowhideToolStripMenuItem
-        '
-        Me.ShowhideToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_side_tree
-        Me.ShowhideToolStripMenuItem.Name = "ShowhideToolStripMenuItem"
-        Me.ShowhideToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.ShowhideToolStripMenuItem.Text = "$show_hide"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(133, 6)
-        '
-        'ManageToolStripMenuItem
-        '
-        Me.ManageToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.box
-        Me.ManageToolStripMenuItem.Name = "ManageToolStripMenuItem"
-        Me.ManageToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.ManageToolStripMenuItem.Text = "$manage"
-        '
-        'PlayerToolStripMenuItem
-        '
-        Me.PlayerToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
-        Me.PlayerToolStripMenuItem.Name = "PlayerToolStripMenuItem"
-        Me.PlayerToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.PlayerToolStripMenuItem.Text = "$player"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog_edit
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.EditToolStripMenuItem.Text = "$edit"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notify_new_server})
-        Me.FileToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.folder_page_white
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.FileToolStripMenuItem.Text = "$file"
-        '
-        'notify_new_server
-        '
-        Me.notify_new_server.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
-        Me.notify_new_server.Name = "notify_new_server"
-        Me.notify_new_server.Size = New System.Drawing.Size(152, 22)
-        Me.notify_new_server.Text = "$new_server"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(133, 6)
-        '
-        'QuitToolStripMenuItem
-        '
-        Me.QuitToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
-        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.QuitToolStripMenuItem.Text = "$quit"
-        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -759,7 +674,6 @@ Partial Class MainWindow
         Me.ToolStrip2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.systraycontext.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -833,15 +747,4 @@ Partial Class MainWindow
     Friend WithEvents RVGLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents bgwChatConnect As System.ComponentModel.BackgroundWorker
     Friend WithEvents bgwUserlist As System.ComponentModel.BackgroundWorker
-    Friend WithEvents NotifyIcon1 As NotifyIcon
-    Friend WithEvents systraycontext As ContextMenuStrip
-    Friend WithEvents ShowhideToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
-    Friend WithEvents ManageToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PlayerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripSeparator
-    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents notify_new_server As ToolStripMenuItem
 End Class

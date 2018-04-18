@@ -64,7 +64,6 @@ Public Class rvglupdater
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Button2.Image = My.Resources.scp_ajax_loader
         If ComboBox1.Text = "Alpha" Then
             rvglas = "a"
         ElseIf ComboBox1.Text = "Shader" Then
@@ -118,6 +117,9 @@ Public Class rvglupdater
             End Try
         End If
     End Sub
+
+
+
 
     Private Sub downloadrvglbgw_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles downloadrvglbgw.RunWorkerCompleted
         Dim localpath As String = Application.StartupPath & "/rvgl-installer/rvgl_setup_" & rvglarch & ".exe"

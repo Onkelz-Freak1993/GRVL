@@ -225,7 +225,12 @@ Public Class MainWindow
         reloadall()
     End Sub
 
-    Private Sub NewserverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles newservermenu.Click, notify_new_server.Click, create_server.Click
+    Private Sub create_server_Click(sender As Object, e As EventArgs) Handles create_server.Click
+        'show the New-Server-Window
+        createserver.Show()
+    End Sub
+
+    Private Sub NewserverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles newservermenu.Click
         'show the New-Server-Window
         createserver.Show()
     End Sub

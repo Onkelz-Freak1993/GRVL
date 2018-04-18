@@ -47,20 +47,4 @@
         My.Settings.language = ComboBox1.Text
         MainWindow.SetLang()
     End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles grvlcheck.CheckedChanged
-        If grvlcheck.Checked = True Then
-            grvlup.Enabled = True
-        Else
-            grvlup.Enabled = False
-        End If
-    End Sub
-
-    Private Sub rvglcheck_CheckedChanged(sender As Object, e As EventArgs) Handles rvglcheck.CheckedChanged
-        If rvglcheck.Checked = True Then
-            rvglup.Enabled = True
-        Else
-            rvglup.Enabled = False
-        End If
-    End Sub
 End Class
