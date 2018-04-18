@@ -41,7 +41,7 @@ Public Class login
     End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
         ok.Image = My.Resources.scp_ajax_loader
-        ok.Enabled = False
+        'ok.Enabled = False
         If TextBox2.Text = "" Then
             Using wd As New System.Net.WebClient()
                 Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=playAsGuest&uname=" + TextBox1.Text)

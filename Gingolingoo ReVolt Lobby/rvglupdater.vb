@@ -1,38 +1,147 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports System.Net
+Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 
 Public Class rvglupdater
+
+    Dim rvglas As String = "a"
+    Dim rvglarch As String
+    Dim rvglfilesize As Double
 
     Dim rvglver As String = "https://distribute.re-volt.io/releases/rvgl_version.txt"
     Dim client As WebClient = New WebClient()
     Dim reader As StreamReader = New StreamReader(client.OpenRead(rvglver))
 
-    Private Function getInstalledVersion()
-        Dim rvglversion As String
-        Dim a As String
-        rvglversion = GetFileVersionInfo(My.Settings.revolt_path).ToString
-        Try
-            a = rvglversion.Substring(rvglversion.Length - 4)
-        Catch exc As Exception
-            console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
-        End Try
-
-        If a.StartsWith(".") Then
-            rvglversion.Insert(7, "0")
-            Return rvglversion.Substring(4)
-        Else
-            Return rvglversion.Substring(4)
-        End If
-    End Function
+    Dim changelogad As String = "http://rvgl.re-volt.io/downloads/rvgl_changelog.txt"
+    Dim changelogcl As WebClient = New WebClient()
+    Dim changelocrd As StreamReader = New StreamReader(client.OpenRead(changelogad))
 
     Private Sub rvglupdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        installedrvglver.Text = getInstalledVersion()
-        updatervglver.Text = reader.ReadToEnd
+        ComboBox1.Text = "Alpha"
+        OpenFileDialog1.FileName = My.Settings.revolt_path
+        Dim fs As Stream = OpenFileDialog1.OpenFile()
+        Dim br As BinaryReader = New BinaryReader(fs)
+        Dim mz As UInt16 = br.ReadUInt16()
+        If mz = 23117 Then
+            fs.Position = 60
+            Dim peoffset As UInt32 = br.ReadUInt32()
+            fs.Position = peoffset + 4
+            Dim machine As UInt16 = br.ReadUInt16()
+            If machine = 34404 Then
+                architecture.Text = "x64"
+                rvglarch = "win64"
+            ElseIf machine = 332 Then
+                architecture.Text = "x86"
+                rvglarch = "win32"
+            ElseIf machine = 512 Then
+                architecture.Text = "IA64_x64"
+                rvglarch = "win32"
+            Else
+                architecture.Text = "Unknown"
+            End If
+        Else
+            architecture.Text = "Invalid image"
+        End If
+        br.Close()
+        RichTextBox1.Text = changelocrd.ReadToEnd
+        installedrvglver.Text = GetFileVersionInfo(My.Settings.revolt_path).ToString.Substring(4)
+        updatervglver.Text = reader.ReadToEnd.ToString.Normalize
+
+        Dim downloadpath As String = "http://rvgl.re-volt.io/downloads/rvgl_" & updatervglver.Text & rvglas & "_setup_" & rvglarch & ".exe"
+        Try
+            rvglfilesize = GetDownloadSize(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
+            rvglsize.Text = Math.Round(rvglfilesize / 1024 / 1024, 2, MidpointRounding.AwayFromZero) & " MB"
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            MsgBox(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
+        End Try
     End Sub
 
-    Private Function GetFileVersionInfo(ByVal filename As String) As Version
-        Return Version.Parse(FileVersionInfo.GetVersionInfo(filename).FileVersion)
+    Private Function GetFileVersionInfo(ByVal filename As String) As String
+        Return FileVersionInfo.GetVersionInfo(filename).FileVersion
     End Function
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If ComboBox1.Text = "Alpha" Then
+            rvglas = "a"
+        ElseIf ComboBox1.Text = "Shader" Then
+            rvglas = "s"
+        End If
+        If architecture.Text = "x86" Then
+            rvglarch = "win32"
+        ElseIf architecture.Text = "x64" Then
+            rvglarch = "win64"
+        ElseIf architecture.Text = "IA64_x64" Then
+            rvglarch = "win32"
+        Else
+            'error?
+        End If
+        downloadrvglbgw.RunWorkerAsync()
+        Button2.Enabled = False
+    End Sub
+
+    Public Function GetDownloadSize(ByVal URL As String) As Long
+        Dim r As Net.WebRequest = Net.WebRequest.Create(URL)
+        r.Method = Net.WebRequestMethods.Http.Head
+        Using rsp = r.GetResponse()
+            Return rsp.ContentLength
+        End Using
+    End Function
+
+    Public WithEvents downloader As WebClient
+
+
+    Private Sub downloadrvglbgw_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles downloadrvglbgw.DoWork
+        Dim downloadpath As String = "http://rvgl.re-volt.io/downloads/rvgl_" & updatervglver.Text & rvglas & "_setup_" & rvglarch & ".exe"
+        Dim localpath As String = Application.StartupPath & "/rvgl-installer/rvgl_setup_" & rvglarch & ".exe"
+        Dim client As WebClient = New WebClient
+        If My.Computer.FileSystem.DirectoryExists(Application.StartupPath & "\rvgl-installer\") = False Then
+            My.Computer.FileSystem.CreateDirectory(Application.StartupPath & "\rvgl-installer\")
+        End If
+        'MsgBox(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
+        If My.Computer.FileSystem.FileExists(localpath) Then
+            Try
+                My.Computer.FileSystem.DeleteFile(localpath)
+            Catch
+                downloadrvglbgw.CancelAsync()
+                MsgBox("Could not overwrite file. Is the file in use?")
+            End Try
+        Else
+            Try
+                My.Computer.Network.DownloadFile(New Uri(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", "")), localpath)
+            Catch ex As Exception
+                downloadrvglbgw.CancelAsync()
+                MsgBox("File not found. Try another Version of " & updatervglver.Text)
+            End Try
+        End If
+    End Sub
+
+
+
+
+    Private Sub downloadrvglbgw_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles downloadrvglbgw.RunWorkerCompleted
+        Dim localpath As String = Application.StartupPath & "/rvgl-installer/rvgl_setup_" & rvglarch & ".exe"
+        Try
+            If My.Computer.FileSystem.FileExists(localpath) Then
+                Process.Start(localpath)
+            Else
+                Try
+                    downloadrvglbgw.RunWorkerAsync()
+                Catch ex As Exception
+                    downloadrvglbgw.CancelAsync()
+                    MsgBox("File not found. Try another Version of " & updatervglver.Text)
+                End Try
+            End If
+
+        Catch
+        End Try
+        Button2.Enabled = True
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        downloadrvglbgw.CancelAsync()
+    End Sub
 End Class
