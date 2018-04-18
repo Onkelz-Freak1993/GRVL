@@ -64,6 +64,8 @@ Public Class rvglupdater
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Button2.Text = ""
+        Button2.Image = My.Resources.scp_ajax_loader
         If ComboBox1.Text = "Alpha" Then
             rvglas = "a"
         ElseIf ComboBox1.Text = "Shader" Then
@@ -78,8 +80,12 @@ Public Class rvglupdater
         Else
             'error?
         End If
-        downloadrvglbgw.RunWorkerAsync()
-        Button2.Enabled = False
+        Try
+            downloadrvglbgw.RunWorkerAsync()
+        Catch exc As Exception
+            MsgBox("Keep calm, the updater is currently working in the background.")
+        End Try
+
     End Sub
 
     Public Function GetDownloadSize(ByVal URL As String) As Long
@@ -137,7 +143,8 @@ Public Class rvglupdater
 
         Catch
         End Try
-        Button2.Enabled = True
+        Button2.Text = "Update"
+        Button2.Image = Nothing
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
