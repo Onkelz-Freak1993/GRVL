@@ -12,6 +12,7 @@ Public Class login
     Dim client As WebClient = New WebClient()
     Dim reader As StreamReader = New StreamReader(client.OpenRead(changelogad))
 
+    Dim token
     Dim loginCheck
 
     Dim chatBold As New Font("Arial", 12, FontStyle.Bold)
@@ -84,13 +85,15 @@ Public Class login
         Else
             Dim pass As String = GenerateSHA256String(TextBox2.Text)
             Using wd As New System.Net.WebClient()
-                loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
+                Dim logR = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
+                Dim logD() = logR.Split(";")
+                loginCheck = logD(0)
+                My.Settings.token = logD(1)
             End Using
         End If
     End Sub
 
     Private Sub bgwLogin_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwLogin.RunWorkerCompleted
-        Me.Text = "Loading "
         If TextBox2.Text = "" Then
             If loginCheck <> "0" Then
                 console.RichTextBox1.AppendText("Logging on as guest " & TextBox1.Text & vbNewLine)

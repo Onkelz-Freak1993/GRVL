@@ -434,7 +434,7 @@ Public Class MainWindow
             t.Interrupt()
             t.Abort()
             Using wc As New System.Net.WebClient()
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0&removeToken=1")
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=0&removeToken=1")
             End Using
         Catch ex As Exception
         End Try
@@ -448,25 +448,25 @@ Public Class MainWindow
 
     Private Sub onlinemenu_Click(sender As Object, e As EventArgs) Handles onlinemenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=1")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=1")
         End Using
     End Sub
 
     Private Sub ingamemenu_Click(sender As Object, e As EventArgs) Handles ingamemenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=2")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=2")
         End Using
     End Sub
 
     Private Sub dndmenu_Click(sender As Object, e As EventArgs) Handles dndmenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=3")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=3")
         End Using
     End Sub
 
     Private Sub invismenu_Click(sender As Object, e As EventArgs) Handles invismenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&ip=" + GetExternalIP() + "&state=0")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=0")
         End Using
     End Sub
 
@@ -497,7 +497,6 @@ Public Class MainWindow
             End If
         Catch ex As Exception
             console.RichTextBox1.AppendText("failed" & vbNewLine & "Couldn't connect to 134.255.217.252:9999" & vbNewLine)
-            MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
         End Try
     End Sub
     Dim udata
