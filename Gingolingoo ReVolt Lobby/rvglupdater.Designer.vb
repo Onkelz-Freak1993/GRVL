@@ -31,7 +31,6 @@ Partial Class rvglupdater
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.downloadrvglbgw = New System.ComponentModel.BackgroundWorker()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.installedrvglver = New System.Windows.Forms.TextBox()
         Me.architecture = New System.Windows.Forms.TextBox()
         Me.updatervglver = New System.Windows.Forms.MaskedTextBox()
@@ -44,9 +43,9 @@ Partial Class rvglupdater
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 472)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 13)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "$installed_rvgl:"
+        Me.Label1.Text = "Installed:"
         '
         'Label3
         '
@@ -54,9 +53,9 @@ Partial Class rvglupdater
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(12, 491)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 13)
+        Me.Label3.Size = New System.Drawing.Size(57, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "$uptodate_rvgl:"
+        Me.Label3.Text = "Update to:"
         '
         'Button1
         '
@@ -65,17 +64,19 @@ Partial Class rvglupdater
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "$cancel"
+        Me.Button1.Text = "Cancel"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(466, 479)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(433, 479)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(108, 23)
         Me.Button2.TabIndex = 5
-        Me.Button2.Text = "$update"
+        Me.Button2.Text = "Update"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'RichTextBox1
@@ -87,7 +88,7 @@ Partial Class rvglupdater
         Me.RichTextBox1.Location = New System.Drawing.Point(15, 12)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(607, 428)
+        Me.RichTextBox1.Size = New System.Drawing.Size(607, 451)
         Me.RichTextBox1.TabIndex = 7
         Me.RichTextBox1.Text = ""
         '
@@ -105,23 +106,16 @@ Partial Class rvglupdater
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Alpha", "Shader"})
-        Me.ComboBox1.Location = New System.Drawing.Point(339, 480)
+        Me.ComboBox1.Location = New System.Drawing.Point(306, 480)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 9
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(15, 446)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(607, 17)
-        Me.ProgressBar1.TabIndex = 10
         '
         'installedrvglver
         '
         Me.installedrvglver.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.installedrvglver.ForeColor = System.Drawing.Color.Gray
-        Me.installedrvglver.Location = New System.Drawing.Point(104, 469)
+        Me.installedrvglver.Location = New System.Drawing.Point(75, 469)
         Me.installedrvglver.Name = "installedrvglver"
         Me.installedrvglver.ReadOnly = True
         Me.installedrvglver.Size = New System.Drawing.Size(60, 20)
@@ -130,7 +124,7 @@ Partial Class rvglupdater
         '
         'architecture
         '
-        Me.architecture.Location = New System.Drawing.Point(163, 469)
+        Me.architecture.Location = New System.Drawing.Point(134, 469)
         Me.architecture.Name = "architecture"
         Me.architecture.ReadOnly = True
         Me.architecture.Size = New System.Drawing.Size(57, 20)
@@ -140,7 +134,7 @@ Partial Class rvglupdater
         'updatervglver
         '
         Me.updatervglver.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.updatervglver.Location = New System.Drawing.Point(104, 488)
+        Me.updatervglver.Location = New System.Drawing.Point(75, 488)
         Me.updatervglver.Name = "updatervglver"
         Me.updatervglver.ReadOnly = True
         Me.updatervglver.Size = New System.Drawing.Size(60, 20)
@@ -150,7 +144,7 @@ Partial Class rvglupdater
         'rvglsize
         '
         Me.rvglsize.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rvglsize.Location = New System.Drawing.Point(163, 488)
+        Me.rvglsize.Location = New System.Drawing.Point(134, 488)
         Me.rvglsize.Name = "rvglsize"
         Me.rvglsize.ReadOnly = True
         Me.rvglsize.Size = New System.Drawing.Size(57, 20)
@@ -166,7 +160,6 @@ Partial Class rvglupdater
         Me.Controls.Add(Me.updatervglver)
         Me.Controls.Add(Me.architecture)
         Me.Controls.Add(Me.installedrvglver)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Button2)
@@ -179,7 +172,7 @@ Partial Class rvglupdater
         Me.MinimizeBox = False
         Me.Name = "rvglupdater"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "$updated_rvgl_is_available"
+        Me.Text = "A RVGL Update may be available!"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -193,7 +186,6 @@ Partial Class rvglupdater
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents downloadrvglbgw As System.ComponentModel.BackgroundWorker
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents installedrvglver As TextBox
     Friend WithEvents architecture As TextBox
     Friend WithEvents updatervglver As MaskedTextBox
