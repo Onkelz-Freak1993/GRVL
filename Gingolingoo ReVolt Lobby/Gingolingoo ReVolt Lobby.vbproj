@@ -326,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\re-volt_logo.png" />
     <None Include="Resources\RVGL_16x16.ico" />
     <None Include="Resources\missing.png" />
     <None Include="Resources\scp-ajax-loader.gif" />

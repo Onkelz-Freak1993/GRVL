@@ -43,6 +43,8 @@ Partial Class login
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.bgwLogin = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'nickname
@@ -50,7 +52,7 @@ Partial Class login
         Me.nickname.AutoSize = True
         Me.nickname.BackColor = System.Drawing.Color.Transparent
         Me.nickname.ForeColor = System.Drawing.Color.White
-        Me.nickname.Location = New System.Drawing.Point(446, 27)
+        Me.nickname.Location = New System.Drawing.Point(446, 24)
         Me.nickname.Name = "nickname"
         Me.nickname.Size = New System.Drawing.Size(59, 13)
         Me.nickname.TabIndex = 0
@@ -157,7 +159,7 @@ Partial Class login
         Me.version.AutoSize = True
         Me.version.BackColor = System.Drawing.Color.Transparent
         Me.version.ForeColor = System.Drawing.Color.White
-        Me.version.Location = New System.Drawing.Point(12, 425)
+        Me.version.Location = New System.Drawing.Point(26, 409)
         Me.version.Name = "version"
         Me.version.Size = New System.Drawing.Size(44, 13)
         Me.version.TabIndex = 11
@@ -180,12 +182,12 @@ Partial Class login
         Me.visitus.AutoSize = True
         Me.visitus.BackColor = System.Drawing.Color.Transparent
         Me.visitus.LinkColor = System.Drawing.Color.White
-        Me.visitus.Location = New System.Drawing.Point(84, 425)
+        Me.visitus.Location = New System.Drawing.Point(26, 425)
         Me.visitus.Name = "visitus"
-        Me.visitus.Size = New System.Drawing.Size(85, 13)
+        Me.visitus.Size = New System.Drawing.Size(99, 13)
         Me.visitus.TabIndex = 13
         Me.visitus.TabStop = True
-        Me.visitus.Text = "Visit Gingolingoo"
+        Me.visitus.Text = "©2018 Gingolingoo"
         Me.visitus.VisitedLinkColor = System.Drawing.Color.White
         '
         'visitgithub
@@ -193,7 +195,7 @@ Partial Class login
         Me.visitgithub.AutoSize = True
         Me.visitgithub.BackColor = System.Drawing.Color.Transparent
         Me.visitgithub.LinkColor = System.Drawing.Color.White
-        Me.visitgithub.Location = New System.Drawing.Point(271, 425)
+        Me.visitgithub.Location = New System.Drawing.Point(306, 425)
         Me.visitgithub.Name = "visitgithub"
         Me.visitgithub.Size = New System.Drawing.Size(90, 13)
         Me.visitgithub.TabIndex = 14
@@ -206,7 +208,7 @@ Partial Class login
         Me.visitproject.AutoSize = True
         Me.visitproject.BackColor = System.Drawing.Color.Transparent
         Me.visitproject.LinkColor = System.Drawing.Color.White
-        Me.visitproject.Location = New System.Drawing.Point(175, 425)
+        Me.visitproject.Location = New System.Drawing.Point(210, 425)
         Me.visitproject.Name = "visitproject"
         Me.visitproject.Size = New System.Drawing.Size(90, 13)
         Me.visitproject.TabIndex = 15
@@ -220,7 +222,7 @@ Partial Class login
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(11, 204)
+        Me.Label1.Location = New System.Drawing.Point(25, 204)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(261, 24)
         Me.Label1.TabIndex = 16
@@ -231,7 +233,7 @@ Partial Class login
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(12, 238)
+        Me.Label3.Location = New System.Drawing.Point(26, 238)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(349, 79)
         Me.Label3.TabIndex = 17
@@ -243,7 +245,7 @@ Partial Class login
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(12, 317)
+        Me.Label4.Location = New System.Drawing.Point(26, 317)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(349, 65)
         Me.Label4.TabIndex = 17
@@ -255,12 +257,24 @@ Partial Class login
         Me.bgwLogin.WorkerReportsProgress = True
         Me.bgwLogin.WorkerSupportsCancellation = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.re_volt_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(784, 100)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.missing
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(784, 461)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -281,6 +295,7 @@ Partial Class login
         Me.Controls.Add(Me.quit)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.nickname)
+        Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -289,6 +304,7 @@ Partial Class login
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -314,4 +330,5 @@ Partial Class login
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents bgwLogin As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
