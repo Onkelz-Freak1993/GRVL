@@ -57,3 +57,4 @@ C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.exe
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.xml
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.pdb
+C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
