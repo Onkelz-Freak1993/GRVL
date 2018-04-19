@@ -18,7 +18,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="language" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">english.ini</Value>
     </Setting>
     <Setting Name="muted" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

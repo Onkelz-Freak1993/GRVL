@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,11 +9,11 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("Gingolingoo ReVolt Lobby")>
+<Assembly: AssemblyTitle("Gingolingoo Re-Volt Lobby")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("Gingolingoo")>
-<Assembly: AssemblyProduct("Gingolingoo ReVolt Lobby")>
-<Assembly: AssemblyCopyright("Copyright ©  2018 Gingolingoo")>
+<Assembly: AssemblyProduct("Gingolingoo Re-Volt Lobby")>
+<Assembly: AssemblyCopyright("Copyright ©2018 Gingolingoo")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +32,7 @@ Imports System.Runtime.InteropServices
 ' übernehmen, indem Sie "*" eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.0.1")>
-<Assembly: AssemblyFileVersion("0.0.0.1")>
+'Backup: <Assembly: AssemblyVersion("0.0.0.1")>
+<Assembly: AssemblyVersion("0.0.1.*")>
+<Assembly: AssemblyFileVersion("0.0.1.*")>
+<Assembly: NeutralResourcesLanguage("en")>

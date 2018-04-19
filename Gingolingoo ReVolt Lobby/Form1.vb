@@ -71,6 +71,9 @@ Public Class MainWindow
         'use this to flash in taskbar:
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
+
+        lanip.Text = GetIpV4()
+
         bgwChatConnect.RunWorkerAsync()
         bgwUserlist.RunWorkerAsync()
     End Sub
@@ -157,6 +160,30 @@ Public Class MainWindow
         Return Response 'show the IP-Adress in the Statusbar
         console.RichTextBox1.AppendText("External IP " & Response & " resolved" & vbNewLine)
     End Function
+
+    Public Function GetIpV4() As String
+
+        Dim myHost As String = Dns.GetHostName
+        Dim ipEntry As IPHostEntry = Dns.GetHostEntry(myHost)
+        Dim ip As String = ""
+
+        For Each tmpIpAddress As IPAddress In ipEntry.AddressList
+            If tmpIpAddress.AddressFamily = Sockets.AddressFamily.InterNetwork Then
+                Dim ipAddress As String = tmpIpAddress.ToString
+                ip = ipAddress
+                Exit For
+            End If
+        Next
+
+        If ip = "" Then
+            Throw New Exception("No 10. IP found!")
+        End If
+
+        Return ip
+
+    End Function
+
+
 
     Private Sub SettingsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles settingsmenu.Click
         'Shows the Settings-Window
@@ -566,6 +593,14 @@ Public Class MainWindow
         End Try
 
         TreeView1.ExpandAll()
+    End Sub
+
+    Private Sub wanip_ButtonClick(sender As Object, e As EventArgs) Handles wanip.ButtonClick
+        Clipboard.SetText(wanip.Text)
+    End Sub
+
+    Private Sub lanip_Click(sender As Object, e As EventArgs) Handles lanip.Click
+        Clipboard.SetText(lanip.Text)
     End Sub
 End Class
 

@@ -26,7 +26,8 @@ Partial Class MainWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.extip = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.wanip = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.wanip = New System.Windows.Forms.ToolStripSplitButton()
+        Me.lanip = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.grvlversion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -124,9 +125,16 @@ Partial Class MainWindow
         '
         'wanip
         '
+        Me.wanip.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lanip})
         Me.wanip.Name = "wanip"
-        Me.wanip.Size = New System.Drawing.Size(50, 18)
+        Me.wanip.Size = New System.Drawing.Size(66, 21)
         Me.wanip.Text = "$wan_ip"
+        '
+        'lanip
+        '
+        Me.lanip.Name = "lanip"
+        Me.lanip.Size = New System.Drawing.Size(152, 22)
+        Me.lanip.Text = "$lan_ip_1"
         '
         'ToolStripSeparator3
         '
@@ -142,8 +150,8 @@ Partial Class MainWindow
         'ToolStripStatusLabel4
         '
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(44, 18)
-        Me.ToolStripStatusLabel4.Text = "#.#.#.#"
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(72, 18)
+        Me.ToolStripStatusLabel4.Text = "#.#.#.#####"
         '
         'ToolStripSeparator4
         '
@@ -680,7 +688,6 @@ Partial Class MainWindow
     End Sub
 
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents wanip As ToolStripStatusLabel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents file As ToolStripMenuItem
     Friend WithEvents newservermenu As ToolStripMenuItem
@@ -747,4 +754,6 @@ Partial Class MainWindow
     Friend WithEvents RVGLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents bgwChatConnect As System.ComponentModel.BackgroundWorker
     Friend WithEvents bgwUserlist As System.ComponentModel.BackgroundWorker
+    Friend WithEvents wanip As ToolStripSplitButton
+    Friend WithEvents lanip As ToolStripMenuItem
 End Class
