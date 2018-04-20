@@ -32,6 +32,22 @@ Partial Class settings
         Me.chatsettings = New System.Windows.Forms.GroupBox()
         Me.flashonmcmsg = New System.Windows.Forms.CheckBox()
         Me.gamesettings = New System.Windows.Forms.TabPage()
+        Me.devparams = New System.Windows.Forms.GroupBox()
+        Me.gazzasaicar = New System.Windows.Forms.CheckBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.tvtime = New System.Windows.Forms.CheckBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.aspect = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.winmode = New System.Windows.Forms.CheckBox()
+        Me.profile = New System.Windows.Forms.CheckBox()
+        Me.noloadingscr = New System.Windows.Forms.CheckBox()
+        Me.nointro = New System.Windows.Forms.CheckBox()
+        Me.devmode = New System.Windows.Forms.CheckBox()
         Me.pathtoexe = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.addparameter = New System.Windows.Forms.Label()
@@ -40,28 +56,12 @@ Partial Class settings
         Me.cancel = New System.Windows.Forms.Button()
         Me.apply = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.devparams = New System.Windows.Forms.GroupBox()
-        Me.devmode = New System.Windows.Forms.CheckBox()
-        Me.nointro = New System.Windows.Forms.CheckBox()
-        Me.noloadingscr = New System.Windows.Forms.CheckBox()
-        Me.profile = New System.Windows.Forms.CheckBox()
-        Me.winmode = New System.Windows.Forms.CheckBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.aspect = New System.Windows.Forms.CheckBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.tvtime = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.gazzasaicar = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.programsettings.SuspendLayout()
         Me.chatsettings.SuspendLayout()
         Me.gamesettings.SuspendLayout()
-        Me.pathtoexe.SuspendLayout()
         Me.devparams.SuspendLayout()
+        Me.pathtoexe.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -85,7 +85,7 @@ Partial Class settings
         Me.programsettings.Location = New System.Drawing.Point(4, 22)
         Me.programsettings.Name = "programsettings"
         Me.programsettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.programsettings.Size = New System.Drawing.Size(314, 210)
+        Me.programsettings.Size = New System.Drawing.Size(314, 223)
         Me.programsettings.TabIndex = 0
         Me.programsettings.Text = "$programsettings"
         Me.programsettings.UseVisualStyleBackColor = True
@@ -156,6 +156,168 @@ Partial Class settings
         Me.gamesettings.Text = "$gamesettings"
         Me.gamesettings.UseVisualStyleBackColor = True
         '
+        'devparams
+        '
+        Me.devparams.Controls.Add(Me.gazzasaicar)
+        Me.devparams.Controls.Add(Me.ComboBox2)
+        Me.devparams.Controls.Add(Me.tvtime)
+        Me.devparams.Controls.Add(Me.TextBox8)
+        Me.devparams.Controls.Add(Me.TextBox7)
+        Me.devparams.Controls.Add(Me.TextBox6)
+        Me.devparams.Controls.Add(Me.aspect)
+        Me.devparams.Controls.Add(Me.Label1)
+        Me.devparams.Controls.Add(Me.TextBox5)
+        Me.devparams.Controls.Add(Me.TextBox4)
+        Me.devparams.Controls.Add(Me.winmode)
+        Me.devparams.Controls.Add(Me.profile)
+        Me.devparams.Controls.Add(Me.noloadingscr)
+        Me.devparams.Controls.Add(Me.nointro)
+        Me.devparams.Controls.Add(Me.devmode)
+        Me.devparams.Location = New System.Drawing.Point(8, 101)
+        Me.devparams.Name = "devparams"
+        Me.devparams.Size = New System.Drawing.Size(298, 116)
+        Me.devparams.TabIndex = 2
+        Me.devparams.TabStop = False
+        Me.devparams.Text = "$devparams"
+        '
+        'gazzasaicar
+        '
+        Me.gazzasaicar.AutoSize = True
+        Me.gazzasaicar.Location = New System.Drawing.Point(105, 87)
+        Me.gazzasaicar.Name = "gazzasaicar"
+        Me.gazzasaicar.Size = New System.Drawing.Size(88, 17)
+        Me.gazzasaicar.TabIndex = 14
+        Me.gazzasaicar.Text = "$gazzasaicar"
+        Me.gazzasaicar.UseVisualStyleBackColor = True
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Enabled = False
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(198, 62)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(94, 21)
+        Me.ComboBox2.TabIndex = 13
+        '
+        'tvtime
+        '
+        Me.tvtime.AutoSize = True
+        Me.tvtime.Location = New System.Drawing.Point(6, 87)
+        Me.tvtime.Name = "tvtime"
+        Me.tvtime.Size = New System.Drawing.Size(60, 17)
+        Me.tvtime.TabIndex = 12
+        Me.tvtime.Text = "$tvtime"
+        Me.tvtime.UseVisualStyleBackColor = True
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Enabled = False
+        Me.TextBox8.Location = New System.Drawing.Point(260, 40)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(32, 20)
+        Me.TextBox8.TabIndex = 11
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Enabled = False
+        Me.TextBox7.Location = New System.Drawing.Point(213, 40)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(33, 20)
+        Me.TextBox7.TabIndex = 10
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Location = New System.Drawing.Point(176, 40)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox6.TabIndex = 9
+        '
+        'aspect
+        '
+        Me.aspect.AutoSize = True
+        Me.aspect.Location = New System.Drawing.Point(105, 42)
+        Me.aspect.Name = "aspect"
+        Me.aspect.Size = New System.Drawing.Size(64, 17)
+        Me.aspect.TabIndex = 8
+        Me.aspect.Text = "$aspect"
+        Me.aspect.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(234, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(12, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "x"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(250, 17)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox5.TabIndex = 6
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(185, 17)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(42, 20)
+        Me.TextBox4.TabIndex = 5
+        '
+        'winmode
+        '
+        Me.winmode.AutoSize = True
+        Me.winmode.Location = New System.Drawing.Point(105, 19)
+        Me.winmode.Name = "winmode"
+        Me.winmode.Size = New System.Drawing.Size(74, 17)
+        Me.winmode.TabIndex = 4
+        Me.winmode.Text = "$winmode"
+        Me.winmode.UseVisualStyleBackColor = True
+        '
+        'profile
+        '
+        Me.profile.AutoSize = True
+        Me.profile.Location = New System.Drawing.Point(105, 64)
+        Me.profile.Name = "profile"
+        Me.profile.Size = New System.Drawing.Size(88, 17)
+        Me.profile.TabIndex = 3
+        Me.profile.Text = "$profileselect"
+        Me.profile.UseVisualStyleBackColor = True
+        '
+        'noloadingscr
+        '
+        Me.noloadingscr.AutoSize = True
+        Me.noloadingscr.Location = New System.Drawing.Point(6, 64)
+        Me.noloadingscr.Name = "noloadingscr"
+        Me.noloadingscr.Size = New System.Drawing.Size(110, 17)
+        Me.noloadingscr.TabIndex = 2
+        Me.noloadingscr.Text = "$noloadingscreen"
+        Me.noloadingscr.UseVisualStyleBackColor = True
+        '
+        'nointro
+        '
+        Me.nointro.AutoSize = True
+        Me.nointro.Location = New System.Drawing.Point(6, 42)
+        Me.nointro.Name = "nointro"
+        Me.nointro.Size = New System.Drawing.Size(64, 17)
+        Me.nointro.TabIndex = 1
+        Me.nointro.Text = "$nointro"
+        Me.nointro.UseVisualStyleBackColor = True
+        '
+        'devmode
+        '
+        Me.devmode.AutoSize = True
+        Me.devmode.Location = New System.Drawing.Point(6, 19)
+        Me.devmode.Name = "devmode"
+        Me.devmode.Size = New System.Drawing.Size(76, 17)
+        Me.devmode.TabIndex = 0
+        Me.devmode.Text = "$devmode"
+        Me.devmode.UseVisualStyleBackColor = True
+        '
         'pathtoexe
         '
         Me.pathtoexe.Controls.Add(Me.TextBox2)
@@ -221,169 +383,7 @@ Partial Class settings
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'devparams
-        '
-        Me.devparams.Controls.Add(Me.gazzasaicar)
-        Me.devparams.Controls.Add(Me.ComboBox2)
-        Me.devparams.Controls.Add(Me.tvtime)
-        Me.devparams.Controls.Add(Me.TextBox8)
-        Me.devparams.Controls.Add(Me.TextBox7)
-        Me.devparams.Controls.Add(Me.TextBox6)
-        Me.devparams.Controls.Add(Me.aspect)
-        Me.devparams.Controls.Add(Me.Label1)
-        Me.devparams.Controls.Add(Me.TextBox5)
-        Me.devparams.Controls.Add(Me.TextBox4)
-        Me.devparams.Controls.Add(Me.winmode)
-        Me.devparams.Controls.Add(Me.profile)
-        Me.devparams.Controls.Add(Me.noloadingscr)
-        Me.devparams.Controls.Add(Me.nointro)
-        Me.devparams.Controls.Add(Me.devmode)
-        Me.devparams.Location = New System.Drawing.Point(8, 101)
-        Me.devparams.Name = "devparams"
-        Me.devparams.Size = New System.Drawing.Size(298, 116)
-        Me.devparams.TabIndex = 2
-        Me.devparams.TabStop = False
-        Me.devparams.Text = "$devparams"
-        '
-        'devmode
-        '
-        Me.devmode.AutoSize = True
-        Me.devmode.Location = New System.Drawing.Point(6, 19)
-        Me.devmode.Name = "devmode"
-        Me.devmode.Size = New System.Drawing.Size(76, 17)
-        Me.devmode.TabIndex = 0
-        Me.devmode.Text = "$devmode"
-        Me.devmode.UseVisualStyleBackColor = True
-        '
-        'nointro
-        '
-        Me.nointro.AutoSize = True
-        Me.nointro.Location = New System.Drawing.Point(6, 42)
-        Me.nointro.Name = "nointro"
-        Me.nointro.Size = New System.Drawing.Size(64, 17)
-        Me.nointro.TabIndex = 1
-        Me.nointro.Text = "$nointro"
-        Me.nointro.UseVisualStyleBackColor = True
-        '
-        'noloadingscr
-        '
-        Me.noloadingscr.AutoSize = True
-        Me.noloadingscr.Location = New System.Drawing.Point(6, 64)
-        Me.noloadingscr.Name = "noloadingscr"
-        Me.noloadingscr.Size = New System.Drawing.Size(110, 17)
-        Me.noloadingscr.TabIndex = 2
-        Me.noloadingscr.Text = "$noloadingscreen"
-        Me.noloadingscr.UseVisualStyleBackColor = True
-        '
-        'profile
-        '
-        Me.profile.AutoSize = True
-        Me.profile.Location = New System.Drawing.Point(105, 64)
-        Me.profile.Name = "profile"
-        Me.profile.Size = New System.Drawing.Size(88, 17)
-        Me.profile.TabIndex = 3
-        Me.profile.Text = "$profileselect"
-        Me.profile.UseVisualStyleBackColor = True
-        '
-        'winmode
-        '
-        Me.winmode.AutoSize = True
-        Me.winmode.Location = New System.Drawing.Point(105, 19)
-        Me.winmode.Name = "winmode"
-        Me.winmode.Size = New System.Drawing.Size(74, 17)
-        Me.winmode.TabIndex = 4
-        Me.winmode.Text = "$winmode"
-        Me.winmode.UseVisualStyleBackColor = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(185, 17)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox4.TabIndex = 5
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(250, 17)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox5.TabIndex = 6
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(234, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(12, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "x"
-        '
-        'aspect
-        '
-        Me.aspect.AutoSize = True
-        Me.aspect.Location = New System.Drawing.Point(105, 42)
-        Me.aspect.Name = "aspect"
-        Me.aspect.Size = New System.Drawing.Size(64, 17)
-        Me.aspect.TabIndex = 8
-        Me.aspect.Text = "$aspect"
-        Me.aspect.UseVisualStyleBackColor = True
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(176, 40)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(31, 20)
-        Me.TextBox6.TabIndex = 9
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(213, 40)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(33, 20)
-        Me.TextBox7.TabIndex = 10
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(260, 40)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(32, 20)
-        Me.TextBox8.TabIndex = 11
-        '
-        'tvtime
-        '
-        Me.tvtime.AutoSize = True
-        Me.tvtime.Location = New System.Drawing.Point(6, 87)
-        Me.tvtime.Name = "tvtime"
-        Me.tvtime.Size = New System.Drawing.Size(60, 17)
-        Me.tvtime.TabIndex = 12
-        Me.tvtime.Text = "$tvtime"
-        Me.tvtime.UseVisualStyleBackColor = True
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(198, 62)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(94, 21)
-        Me.ComboBox2.TabIndex = 13
-        '
-        'gazzasaicar
-        '
-        Me.gazzasaicar.AutoSize = True
-        Me.gazzasaicar.Location = New System.Drawing.Point(105, 87)
-        Me.gazzasaicar.Name = "gazzasaicar"
-        Me.gazzasaicar.Size = New System.Drawing.Size(88, 17)
-        Me.gazzasaicar.TabIndex = 14
-        Me.gazzasaicar.Text = "$gazzasaicar"
-        Me.gazzasaicar.UseVisualStyleBackColor = True
+        Me.OpenFileDialog1.Filter = "(*.exe)|*.exe"
         '
         'settings
         '
@@ -406,10 +406,10 @@ Partial Class settings
         Me.chatsettings.ResumeLayout(False)
         Me.chatsettings.PerformLayout()
         Me.gamesettings.ResumeLayout(False)
-        Me.pathtoexe.ResumeLayout(False)
-        Me.pathtoexe.PerformLayout()
         Me.devparams.ResumeLayout(False)
         Me.devparams.PerformLayout()
+        Me.pathtoexe.ResumeLayout(False)
+        Me.pathtoexe.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

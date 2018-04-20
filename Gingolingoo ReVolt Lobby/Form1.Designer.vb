@@ -53,6 +53,7 @@ Partial Class MainWindow
         Me.RVGLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.devtools = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeveloperManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.userlistContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -133,7 +134,7 @@ Partial Class MainWindow
         'lanip
         '
         Me.lanip.Name = "lanip"
-        Me.lanip.Size = New System.Drawing.Size(152, 22)
+        Me.lanip.Size = New System.Drawing.Size(122, 22)
         Me.lanip.Text = "$lan_ip_1"
         '
         'ToolStripSeparator3
@@ -291,7 +292,7 @@ Partial Class MainWindow
         '
         'devtools
         '
-        Me.devtools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsoleToolStripMenuItem})
+        Me.devtools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsoleToolStripMenuItem, Me.DeveloperManagerToolStripMenuItem})
         Me.devtools.Name = "devtools"
         Me.devtools.Size = New System.Drawing.Size(72, 20)
         Me.devtools.Text = "Developer"
@@ -301,8 +302,15 @@ Partial Class MainWindow
         '
         Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal
         Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
-        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.ConsoleToolStripMenuItem.Text = "Console"
+        '
+        'DeveloperManagerToolStripMenuItem
+        '
+        Me.DeveloperManagerToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.chart_curve
+        Me.DeveloperManagerToolStripMenuItem.Name = "DeveloperManagerToolStripMenuItem"
+        Me.DeveloperManagerToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.DeveloperManagerToolStripMenuItem.Text = "Program Monitor"
         '
         'SplitContainer1
         '
@@ -756,4 +764,5 @@ Partial Class MainWindow
     Friend WithEvents bgwUserlist As System.ComponentModel.BackgroundWorker
     Friend WithEvents wanip As ToolStripSplitButton
     Friend WithEvents lanip As ToolStripMenuItem
+    Friend WithEvents DeveloperManagerToolStripMenuItem As ToolStripMenuItem
 End Class

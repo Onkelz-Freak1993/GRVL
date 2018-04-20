@@ -21,41 +21,52 @@ Public Class rvglupdater
     Private Sub rvglupdater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox1.Text = "Alpha"
         OpenFileDialog1.FileName = My.Settings.revolt_path
-        Dim fs As Stream = OpenFileDialog1.OpenFile()
-        Dim br As BinaryReader = New BinaryReader(fs)
-        Dim mz As UInt16 = br.ReadUInt16()
-        If mz = 23117 Then
-            fs.Position = 60
-            Dim peoffset As UInt32 = br.ReadUInt32()
-            fs.Position = peoffset + 4
-            Dim machine As UInt16 = br.ReadUInt16()
-            If machine = 34404 Then
-                architecture.Text = "x64"
-                rvglarch = "win64"
-            ElseIf machine = 332 Then
-                architecture.Text = "x86"
-                rvglarch = "win32"
-            ElseIf machine = 512 Then
-                architecture.Text = "IA64_x64"
-                rvglarch = "win32"
+try_again:
+        Try
+            Dim fs As Stream = OpenFileDialog1.OpenFile()
+            Dim br As BinaryReader = New BinaryReader(fs)
+            Dim mz As UInt16 = br.ReadUInt16()
+            If mz = 23117 Then
+                fs.Position = 60
+                Dim peoffset As UInt32 = br.ReadUInt32()
+                fs.Position = peoffset + 4
+                Dim machine As UInt16 = br.ReadUInt16()
+                If machine = 34404 Then
+                    architecture.Text = "x64"
+                    rvglarch = "win64"
+                ElseIf machine = 332 Then
+                    architecture.Text = "x86"
+                    rvglarch = "win32"
+                ElseIf machine = 512 Then
+                    architecture.Text = "IA64_x64"
+                    rvglarch = "win32"
+                Else
+                    architecture.Text = "Unknown"
+                End If
             Else
-                architecture.Text = "Unknown"
+                architecture.Text = "Invalid image"
             End If
-        Else
-            architecture.Text = "Invalid image"
-        End If
-        br.Close()
-        RichTextBox1.Text = changelocrd.ReadToEnd
-        installedrvglver.Text = GetFileVersionInfo(My.Settings.revolt_path).ToString.Substring(4)
-        updatervglver.Text = reader.ReadToEnd.ToString.Normalize
-
+            br.Close()
+            RichTextBox1.Text = changelocrd.ReadToEnd
+            installedrvglver.Text = GetFileVersionInfo(My.Settings.revolt_path).ToString.Substring(4)
+            updatervglver.Text = reader.ReadToEnd.ToString.Normalize
+        Catch exc As Exception
+            MsgBox("No valid RVGL-Path found. If needed, install RVGL first and try again.", vbInformation)
+            settings.Show()
+            settings.gamesettings.Show()
+            settings.browsebtn.PerformClick()
+            Me.Close()
+            'GoTo try_again
+        End Try
         Dim downloadpath As String = "http://rvgl.re-volt.io/downloads/rvgl_" & updatervglver.Text & rvglas & "_setup_" & rvglarch & ".exe"
         Try
             rvglfilesize = GetDownloadSize(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
             rvglsize.Text = Math.Round(rvglfilesize / 1024 / 1024, 2, MidpointRounding.AwayFromZero) & " MB"
         Catch ex As Exception
-            MsgBox(ex.ToString)
-            MsgBox(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
+            If My.Settings.devtools = True Then
+                MsgBox(ex.ToString)
+                MsgBox(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", ""))
+            End If
         End Try
     End Sub
 

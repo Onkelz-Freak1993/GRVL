@@ -149,6 +149,18 @@ Namespace My
                 Me("token") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property devtools() As Boolean
+            Get
+                Return CType(Me("devtools"),Boolean)
+            End Get
+            Set
+                Me("devtools") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

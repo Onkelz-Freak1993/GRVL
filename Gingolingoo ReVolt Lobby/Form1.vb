@@ -290,9 +290,11 @@ Public Class MainWindow
             Select Case args(i).ToLower
                 Case "dev"
                     devtools.Visible = True
+                    My.Settings.devtools = True
 
                 Case "console"
                     devtools.Visible = True
+                    My.Settings.devtools = True
                     console.Show()
 
                 Case Else
@@ -534,7 +536,7 @@ Public Class MainWindow
                 udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
             End Using
         Catch ex As Exception
-            If devtools.Visible = True Then
+            If My.Settings.devtools = True Then
                 MsgBox(ex.ToString)
                 console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
             Else
@@ -584,7 +586,7 @@ Public Class MainWindow
                 Next
             End Using
         Catch ex As Exception
-            If devtools.Visible = True Then
+            If My.Settings.devtools = True Then
                 MsgBox(ex.ToString)
                 console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
             Else
@@ -601,6 +603,10 @@ Public Class MainWindow
 
     Private Sub lanip_Click(sender As Object, e As EventArgs) Handles lanip.Click
         Clipboard.SetText(lanip.Text)
+    End Sub
+
+    Private Sub DeveloperManagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeveloperManagerToolStripMenuItem.Click
+        prgmonitor.Show()
     End Sub
 End Class
 
