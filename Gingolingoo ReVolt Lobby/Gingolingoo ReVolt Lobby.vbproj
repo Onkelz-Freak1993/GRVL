@@ -336,6 +336,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\parrot.gif" />
+    <None Include="Resources\egg.wav" />
     <None Include="Resources\chart_curve.png" />
     <None Include="Resources\re-volt_logo.png" />
     <None Include="Resources\RVGL_16x16.ico" />

@@ -25,7 +25,7 @@
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
-            My.Computer.Audio.Play(My.Resources.credits, AudioPlayMode.Background)
+            My.Computer.Audio.Play(My.Resources.credits, AudioPlayMode.BackgroundLoop)
         Else
             My.Computer.Audio.Stop()
         End If
@@ -33,5 +33,11 @@
 
     Private Sub aboutus_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Computer.Audio.Stop()
+    End Sub
+
+    Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
+        'PictureBox1.BackgroundImage = Nothing
+        PictureBox1.Image = My.Resources.parrot
+        My.Computer.Audio.Play(My.Resources.egg, AudioPlayMode.BackgroundLoop)
     End Sub
 End Class

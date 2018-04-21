@@ -87,6 +87,11 @@ GRVL
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.egg">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+</summary>
+</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.folder">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -117,26 +122,6 @@ GRVL
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.loginbg">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.loginbg1">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.loginbg2">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.loginbg3">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.message">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
@@ -148,6 +133,11 @@ GRVL
 </summary>
 </member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.page_edit">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.parrot">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>

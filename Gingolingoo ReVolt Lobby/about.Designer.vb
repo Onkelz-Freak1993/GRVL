@@ -24,8 +24,8 @@ Partial Class aboutus
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aboutus))
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,25 +42,26 @@ Partial Class aboutus
         Me.CheckBox1.Text = "Music"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.Gingolingoo_Logo_100x100
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(90, 90)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
         'WebBrowser1
         '
         Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.WebBrowser1.Location = New System.Drawing.Point(108, 12)
+        Me.WebBrowser1.Location = New System.Drawing.Point(146, 12)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(592, 357)
+        Me.WebBrowser1.Size = New System.Drawing.Size(554, 357)
         Me.WebBrowser1.TabIndex = 2
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.Gingolingoo_Logo_100x100
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'aboutus
         '
