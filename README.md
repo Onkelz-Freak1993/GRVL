@@ -4,8 +4,6 @@ A fresh, RV House-like Lobby Program for Re-Volt.
 
 This project is a work in progress, and is also OpenSource, so feel free to contribute to it.
 
-Note: The latest Build is always in the 'release candidate'-Folder.
-
 Install:
 Put the files inside the 'release candidate'-folder in your Re-Volt Game folder, alongside rvgl.exe
 
