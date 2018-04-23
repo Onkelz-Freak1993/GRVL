@@ -327,7 +327,7 @@ Partial Class MainWindow
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(757, 443)
+        Me.SplitContainer1.Size = New System.Drawing.Size(757, 440)
         Me.SplitContainer1.SplitterDistance = 202
         Me.SplitContainer1.TabIndex = 2
         '
@@ -341,7 +341,7 @@ Partial Class MainWindow
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.SelectedImageIndex = 0
-        Me.TreeView1.Size = New System.Drawing.Size(202, 443)
+        Me.TreeView1.Size = New System.Drawing.Size(202, 440)
         Me.TreeView1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.TreeView1, "$nicklist")
         '
@@ -387,8 +387,8 @@ Partial Class MainWindow
         Me.SplitContainer2.Panel2.Controls.Add(Me.ToolStrip2)
         Me.SplitContainer2.Panel2.Controls.Add(Me.TextBox1)
         Me.SplitContainer2.Panel2.Controls.Add(Me.RichTextBox1)
-        Me.SplitContainer2.Size = New System.Drawing.Size(551, 443)
-        Me.SplitContainer2.SplitterDistance = 141
+        Me.SplitContainer2.Size = New System.Drawing.Size(551, 440)
+        Me.SplitContainer2.SplitterDistance = 139
         Me.SplitContainer2.TabIndex = 0
         '
         'serverlist
@@ -398,7 +398,7 @@ Partial Class MainWindow
         Me.serverlist.FullRowSelect = True
         Me.serverlist.Location = New System.Drawing.Point(0, 0)
         Me.serverlist.Name = "serverlist"
-        Me.serverlist.Size = New System.Drawing.Size(551, 141)
+        Me.serverlist.Size = New System.Drawing.Size(551, 139)
         Me.serverlist.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.serverlist, "$serverlist")
         Me.serverlist.UseCompatibleStateImageBehavior = False
@@ -412,17 +412,17 @@ Partial Class MainWindow
         'servernamecol
         '
         Me.servernamecol.Text = "$server_name"
-        Me.servernamecol.Width = 145
+        Me.servernamecol.Width = 247
         '
         'playercountcol
         '
         Me.playercountcol.Text = "$playercount"
-        Me.playercountcol.Width = 100
+        Me.playercountcol.Width = 108
         '
         'ipcol
         '
         Me.ipcol.Text = "$ip"
-        Me.ipcol.Width = 100
+        Me.ipcol.Width = 170
         '
         'ToolStrip2
         '
@@ -478,7 +478,7 @@ Partial Class MainWindow
         'TextBox1
         '
         Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TextBox1.Location = New System.Drawing.Point(0, 278)
+        Me.TextBox1.Location = New System.Drawing.Point(0, 277)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(551, 20)
         Me.TextBox1.TabIndex = 1
@@ -491,7 +491,7 @@ Partial Class MainWindow
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.Location = New System.Drawing.Point(0, 25)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(551, 253)
+        Me.RichTextBox1.Size = New System.Drawing.Size(551, 252)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '

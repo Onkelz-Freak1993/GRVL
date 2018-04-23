@@ -336,6 +336,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\minimize_focused_pressed.png" />
+    <None Include="Resources\minimize_focused_prelight.png" />
+    <None Include="Resources\minimize_focused_normal.png" />
+    <None Include="Resources\maximize_focused_pressed.png" />
+    <None Include="Resources\maximize_focused_prelight.png" />
+    <None Include="Resources\maximize_focused_normal.png" />
+    <None Include="Resources\close_focused_pressed.png" />
+    <None Include="Resources\close_focused_prelight.png" />
+    <None Include="Resources\close_focused_normal.png" />
     <None Include="Resources\parrot.gif" />
     <None Include="Resources\egg.wav" />
     <None Include="Resources\chart_curve.png" />

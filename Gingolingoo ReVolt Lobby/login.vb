@@ -14,6 +14,7 @@ Public Class login
 
     Dim token
     Dim loginCheck
+    Dim uuid
 
     Dim chatBold As New Font("Arial", 12, FontStyle.Bold)
     Dim chatStandart As New Font("Arial", 9, FontStyle.Regular)
@@ -88,7 +89,8 @@ Public Class login
                 Dim logR = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
                 Dim logD() = logR.Split(";")
                 loginCheck = logD(0)
-                My.Settings.token = logD(1)
+                token = logD(1)
+                uuid = logD(2)
             End Using
         End If
     End Sub
@@ -111,6 +113,9 @@ Public Class login
             If loginCheck <> "0" Then
                 console.RichTextBox1.AppendText("Logging on as " & TextBox1.Text & vbNewLine)
                 My.Settings.nickname = TextBox1.Text
+                My.Settings.token = token
+                My.Settings.uuid = uuid
+
                 MainWindow.RichTextBox1.SelectionFont = chatBold
                 MainWindow.ToolStripLabel2.Text = loginCheck
                 MainWindow.RichTextBox1.SelectionFont = chatStandart

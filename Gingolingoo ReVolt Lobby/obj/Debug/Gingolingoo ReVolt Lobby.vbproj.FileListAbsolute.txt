@@ -16,10 +16,6 @@ C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\ob
 C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
 C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.aboutus.resources
 C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.MainWindow.resources
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe.config
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.pdb
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.xml
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.aboutus.resources
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.console.resources
@@ -31,9 +27,6 @@ C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolin
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.settings.resources
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.GenerateResource.Cache
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.CoreCompileInputs.cache
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.exe
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.xml
-C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.pdb
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.register.resources
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.modloader.resources
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.rvglupdater.resources
@@ -59,3 +52,11 @@ C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.pdb
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.prgmonitor.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\GRVL.exe.config
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\GRVL.exe
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\GRVL.pdb
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\GRVL.xml
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.prgmonitor.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.exe
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.xml
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.pdb

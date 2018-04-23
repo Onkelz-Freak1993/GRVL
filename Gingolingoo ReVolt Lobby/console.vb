@@ -50,8 +50,4 @@
             TextBox1.Clear()
         End If
     End Sub
-
-    Private Sub console_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

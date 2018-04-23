@@ -73,12 +73,10 @@ Public Class MainWindow
         reloadall()
 
         lanip.Text = GetIpV4()
-
-        bgwChatConnect.RunWorkerAsync()
-        bgwUserlist.RunWorkerAsync()
     End Sub
 
     Private Sub refreshServerlist()
+        serverlist.Items.Clear()
         Dim server()
         Dim servercount As Integer = 0
         Using wc As New System.Net.WebClient()
@@ -95,7 +93,7 @@ Public Class MainWindow
                     End If
                     serverlist.Items(servercount).SubItems.Add(mdt(0))
                     serverlist.Items(servercount).SubItems.Add(mdt(1) & " / " & mdt(2))
-                    serverlist.Items(servercount).SubItems.Add(" - ")
+                    serverlist.Items(servercount).SubItems.Add(mdt(4))
                     servercount = servercount + 1
                 End If
             Next
@@ -140,7 +138,13 @@ Public Class MainWindow
         TreeView1.Nodes.Add(Nodes(1))
         TreeView1.Nodes.Add(Nodes(2))
         TreeView1.Nodes.Add(Nodes(3))
-
+        If Not bgwChatConnect.IsBusy Then
+            bgwChatConnect.RunWorkerAsync()
+        End If
+        If Not bgwUserlist.IsBusy Then
+            bgwUserlist.RunWorkerAsync()
+        End If
+        refreshServerlist()
         Return Nothing
     End Function
 
@@ -463,11 +467,10 @@ Public Class MainWindow
             t.Interrupt()
             t.Abort()
             Using wc As New System.Net.WebClient()
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=0&removeToken=1")
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=0&removeToken=1")
             End Using
         Catch ex As Exception
         End Try
-        Application.ExitThread()
         Application.Exit()
     End Sub
 
@@ -477,25 +480,25 @@ Public Class MainWindow
 
     Private Sub onlinemenu_Click(sender As Object, e As EventArgs) Handles onlinemenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=1")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=1")
         End Using
     End Sub
 
     Private Sub ingamemenu_Click(sender As Object, e As EventArgs) Handles ingamemenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=2")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=2")
         End Using
     End Sub
 
     Private Sub dndmenu_Click(sender As Object, e As EventArgs) Handles dndmenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=3")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=3")
         End Using
     End Sub
 
     Private Sub invismenu_Click(sender As Object, e As EventArgs) Handles invismenu.Click
         Using wc As New System.Net.WebClient()
-            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&st=" + My.Settings.token + "&state=0")
+            Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=0")
         End Using
     End Sub
 
