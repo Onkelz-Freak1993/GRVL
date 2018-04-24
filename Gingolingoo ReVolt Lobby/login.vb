@@ -25,7 +25,6 @@ Public Class login
         Dim di As New IO.DirectoryInfo(Application.StartupPath & "\languages\")
         Dim diar1 As IO.FileInfo() = di.GetFiles("*.ini")
         Dim dra As IO.FileInfo
-        'list the names of all files in the specified directory
         For Each dra In diar1
             ComboBox1.Items.Add(dra)
         Next
@@ -45,7 +44,6 @@ Public Class login
     End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
         ok.Image = My.Resources.scp_ajax_loader
-        'ok.Enabled = False
         bgwLogin.RunWorkerAsync()
     End Sub
 
