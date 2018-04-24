@@ -45,6 +45,7 @@ Public Class prgmonitor
         ' !! REVISION: This does not deliver what was wanted? - !!
         '    cpuload.Text = CPUUsage() & " %"
         '    cpuprgr.Value = CPUUsage()
+        '    ?!?
         ' !! ---------------------------------------------------!!
 
         ramusg.Text = Math.Round((My.Computer.Info.AvailablePhysicalMemory / My.Computer.Info.TotalPhysicalMemory.ToString) * 100, 0, MidpointRounding.AwayFromZero) & "%"
