@@ -72,6 +72,7 @@ Partial Class aboutus
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.CheckBox1)
+        Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

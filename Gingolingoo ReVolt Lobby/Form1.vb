@@ -536,7 +536,9 @@ Public Class MainWindow
         Try
             Using wc As New System.Net.WebClient()
                 console.RichTextBox1.AppendText("Trying API call 'udata' ..." & vbNewLine)
+
                 udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+
             End Using
         Catch ex As Exception
             If My.Settings.devtools = True Then
@@ -554,49 +556,35 @@ Public Class MainWindow
         Dim tmpNode() As TreeNode = TreeView1.Nodes.Find("global", True)
         Dim tmpNodeOffline() As TreeNode = TreeView1.Nodes.Find("offline", True)
 
-        Try
-            Using wc As New System.Net.WebClient()
-                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+        users = udata.Split(";")
+        For Each item As String In users
 
-                users = udata.Split(";")
-                For Each item As String In users
-
-                    Dim userdata() = item.Split("|")
-                    If userdata(0) <> "" Then
-                        Nodes(uCount) = New TreeNode(userdata(0))
-                        If userdata(1) = 0 Then
-                            Nodes(uCount).ImageIndex = 1
-                            Nodes(uCount).SelectedImageIndex = 1
-                        End If
-                        If userdata(1) = 1 Then
-                            Nodes(uCount).ImageIndex = 2
-                            Nodes(uCount).SelectedImageIndex = 2
-                        End If
-                        If userdata(1) = 2 Then
-                            Nodes(uCount).ImageIndex = 3
-                            Nodes(uCount).SelectedImageIndex = 3
-                        End If
-                        If userdata(1) = 3 Then
-                            Nodes(uCount).ImageIndex = 4
-                            Nodes(uCount).SelectedImageIndex = 4
-                        End If
-                        If userdata(1) = 0 Then
-                            tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
-                        Else
-                            tmpNode(0).Nodes.Add(Nodes(uCount))
-                        End If
-                    End If
-                Next
-            End Using
-        Catch ex As Exception
-            If My.Settings.devtools = True Then
-                MsgBox(ex.ToString)
-                console.RichTextBox1.AppendText(ex.ToString & vbNewLine)
-            Else
-                MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
+            Dim userdata() = item.Split("|")
+            If userdata(0) <> "" Then
+                Nodes(uCount) = New TreeNode(userdata(0))
+                If userdata(1) = 0 Then
+                    Nodes(uCount).ImageIndex = 1
+                    Nodes(uCount).SelectedImageIndex = 1
+                End If
+                If userdata(1) = 1 Then
+                    Nodes(uCount).ImageIndex = 2
+                    Nodes(uCount).SelectedImageIndex = 2
+                End If
+                If userdata(1) = 2 Then
+                    Nodes(uCount).ImageIndex = 3
+                    Nodes(uCount).SelectedImageIndex = 3
+                End If
+                If userdata(1) = 3 Then
+                    Nodes(uCount).ImageIndex = 4
+                    Nodes(uCount).SelectedImageIndex = 4
+                End If
+                If userdata(1) = 0 Then
+                    tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
+                Else
+                    tmpNode(0).Nodes.Add(Nodes(uCount))
+                End If
             End If
-        End Try
-
+        Next
         TreeView1.ExpandAll()
     End Sub
 
