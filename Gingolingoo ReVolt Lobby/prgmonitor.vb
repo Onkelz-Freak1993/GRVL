@@ -4,8 +4,17 @@ Imports System.Diagnostics
 
 Public Class prgmonitor
     Dim ipv4Stats As System.Net.NetworkInformation.IPv4InterfaceStatistics
+    Dim regerevoltpathkey = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectPlay\Applications\Re-Volt", "", Nothing)
+    Dim regerevoltpathval = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectPlay\Applications\Re-Volt", "Path", Nothing)
 
     Private Sub prgmonitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If regerevoltpathval Is Nothing Then
+            regrevoltpath.Text = "Value does not exist."
+        Else
+            regrevoltpath.Text = regerevoltpathval
+        End If
+
         Dim nics As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces()
         If nics Is Nothing OrElse nics.Length < 1 Then
             ComboBox2.Items.Add("No network interfaces found.")
@@ -42,11 +51,8 @@ Public Class prgmonitor
             intip.Text = GetIpV4(ComboBox2.SelectedIndex).ToString
         End If
 
-        ' !! REVISION: This does not deliver what was wanted? - !!
-        '    cpuload.Text = CPUUsage() & " %"
-        '    cpuprgr.Value = CPUUsage()
-        '    ?!?
-        ' !! ---------------------------------------------------!!
+        cpuload.Text = CPUUsage() & " %"
+        cpuprgr.Value = CPUUsage()
 
         ramusg.Text = Math.Round((My.Computer.Info.AvailablePhysicalMemory / My.Computer.Info.TotalPhysicalMemory.ToString) * 100, 0, MidpointRounding.AwayFromZero) & "%"
         ramprgr.Value = Math.Round((My.Computer.Info.AvailablePhysicalMemory / My.Computer.Info.TotalPhysicalMemory.ToString) * 100, 0, MidpointRounding.AwayFromZero)
@@ -82,4 +88,9 @@ Public Class prgmonitor
         End Try
         Return ip
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit", "LastKey", regerevoltpathval)
+        Process.Start("regedit.exe" & regerevoltpathkey)
+    End Sub
 End Class

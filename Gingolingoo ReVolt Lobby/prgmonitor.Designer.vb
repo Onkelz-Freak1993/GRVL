@@ -24,46 +24,54 @@ Partial Class prgmonitor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.cpuprgr = New System.Windows.Forms.ProgressBar()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cpuload = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ramprgr = New System.Windows.Forms.ProgressBar()
-        Me.netinlbl = New System.Windows.Forms.Label()
-        Me.netoutlbl = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ramusg = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.osname = New System.Windows.Forms.Label()
-        Me.osver = New System.Windows.Forms.Label()
-        Me.totalphysmem = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.totalvirtmem = New System.Windows.Forms.Label()
-        Me.avphysmem = New System.Windows.Forms.Label()
-        Me.avvirtmem = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.intip = New System.Windows.Forms.Label()
+        Me.extip = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.netout = New System.Windows.Forms.Label()
         Me.netin = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.extip = New System.Windows.Forms.Label()
+        Me.netinlbl = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.intip = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.netoutlbl = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.avvirtmem = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.avphysmem = New System.Windows.Forms.Label()
+        Me.totalvirtmem = New System.Windows.Forms.Label()
+        Me.totalphysmem = New System.Windows.Forms.Label()
+        Me.osver = New System.Windows.Forms.Label()
+        Me.osname = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ramprgr = New System.Windows.Forms.ProgressBar()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ramusg = New System.Windows.Forms.Label()
+        Me.cpuload = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cpuprgr = New System.Windows.Forms.ProgressBar()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.regrevoltpath = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -85,67 +93,79 @@ Partial Class prgmonitor
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "System"
         '
-        'TabControl1
+        'GroupBox3
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(647, 580)
-        Me.TabControl1.TabIndex = 1
+        Me.GroupBox3.Controls.Add(Me.intip)
+        Me.GroupBox3.Controls.Add(Me.extip)
+        Me.GroupBox3.Controls.Add(Me.ComboBox2)
+        Me.GroupBox3.Controls.Add(Me.netout)
+        Me.GroupBox3.Controls.Add(Me.netin)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.netinlbl)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.netoutlbl)
+        Me.GroupBox3.Location = New System.Drawing.Point(9, 106)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(304, 120)
+        Me.GroupBox3.TabIndex = 12
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Network"
         '
-        'TabPage1
+        'intip
         '
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(639, 554)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "System Monitor"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.intip.Location = New System.Drawing.Point(198, 97)
+        Me.intip.Name = "intip"
+        Me.intip.Size = New System.Drawing.Size(100, 16)
+        Me.intip.TabIndex = 11
+        Me.intip.Text = "###.###.###.###"
+        Me.intip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'cpuprgr
+        'extip
         '
-        Me.cpuprgr.Location = New System.Drawing.Point(9, 32)
-        Me.cpuprgr.Name = "cpuprgr"
-        Me.cpuprgr.Size = New System.Drawing.Size(304, 23)
-        Me.cpuprgr.TabIndex = 0
+        Me.extip.Location = New System.Drawing.Point(52, 97)
+        Me.extip.Name = "extip"
+        Me.extip.Size = New System.Drawing.Size(100, 16)
+        Me.extip.TabIndex = 11
+        Me.extip.Text = "###.###.###.###"
+        Me.extip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label1
+        'ComboBox2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "CPU Load:"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(40, 18)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(258, 21)
+        Me.ComboBox2.TabIndex = 1
         '
-        'cpuload
+        'netout
         '
-        Me.cpuload.Location = New System.Drawing.Point(71, 16)
-        Me.cpuload.Name = "cpuload"
-        Me.cpuload.Size = New System.Drawing.Size(242, 13)
-        Me.cpuload.TabIndex = 2
-        Me.cpuload.Text = "-%"
-        Me.cpuload.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.netout.Location = New System.Drawing.Point(45, 67)
+        Me.netout.Name = "netout"
+        Me.netout.Size = New System.Drawing.Size(253, 23)
+        Me.netout.TabIndex = 9
+        Me.netout.Text = "-"
+        Me.netout.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label2
+        'netin
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 58)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "RAM Usage:"
+        Me.netin.Location = New System.Drawing.Point(33, 42)
+        Me.netin.Name = "netin"
+        Me.netin.Size = New System.Drawing.Size(265, 23)
+        Me.netin.TabIndex = 10
+        Me.netin.Text = "-"
+        Me.netin.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'ramprgr
+        'Label4
         '
-        Me.ramprgr.Location = New System.Drawing.Point(9, 74)
-        Me.ramprgr.Name = "ramprgr"
-        Me.ramprgr.Size = New System.Drawing.Size(304, 23)
-        Me.ramprgr.TabIndex = 4
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 23)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(28, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "NIC:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'netinlbl
         '
@@ -157,6 +177,26 @@ Partial Class prgmonitor
         Me.netinlbl.Text = "IN:"
         Me.netinlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(158, 99)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(37, 13)
+        Me.Label13.TabIndex = 8
+        Me.Label13.Text = "int. IP:"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 99)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "ext. IP:"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'netoutlbl
         '
         Me.netoutlbl.AutoSize = True
@@ -166,37 +206,6 @@ Partial Class prgmonitor
         Me.netoutlbl.TabIndex = 8
         Me.netoutlbl.Text = "OUT:"
         Me.netoutlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Timer1
-        '
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Slow (1s)", "Normal (0.5s)", "Fast (0.25s)"})
-        Me.ComboBox1.Location = New System.Drawing.Point(496, 205)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(411, 208)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Refresh speed:"
-        '
-        'ramusg
-        '
-        Me.ramusg.Location = New System.Drawing.Point(80, 58)
-        Me.ramusg.Name = "ramusg"
-        Me.ramusg.Size = New System.Drawing.Size(233, 13)
-        Me.ramusg.TabIndex = 2
-        Me.ramusg.Text = "-%"
-        Me.ramusg.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox2
         '
@@ -219,59 +228,14 @@ Partial Class prgmonitor
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "OS Information"
         '
-        'osname
+        'Label12
         '
-        Me.osname.Location = New System.Drawing.Point(37, 16)
-        Me.osname.Name = "osname"
-        Me.osname.Size = New System.Drawing.Size(255, 23)
-        Me.osname.TabIndex = 0
-        Me.osname.Text = "-"
-        Me.osname.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'osver
-        '
-        Me.osver.Location = New System.Drawing.Point(75, 39)
-        Me.osver.Name = "osver"
-        Me.osver.Size = New System.Drawing.Size(217, 23)
-        Me.osver.TabIndex = 1
-        Me.osver.Text = "-"
-        Me.osver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'totalphysmem
-        '
-        Me.totalphysmem.Location = New System.Drawing.Point(128, 62)
-        Me.totalphysmem.Name = "totalphysmem"
-        Me.totalphysmem.Size = New System.Drawing.Size(164, 23)
-        Me.totalphysmem.TabIndex = 2
-        Me.totalphysmem.Text = "-"
-        Me.totalphysmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(25, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "OS:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 44)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 13)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "OS Version:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 67)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(116, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Total Physical Memory:"
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 136)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(108, 13)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Avail. Virtual Memory:"
         '
         'Label8
         '
@@ -282,23 +246,32 @@ Partial Class prgmonitor
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Total Virtual Memory:"
         '
-        'totalvirtmem
+        'Label11
         '
-        Me.totalvirtmem.Location = New System.Drawing.Point(118, 85)
-        Me.totalvirtmem.Name = "totalvirtmem"
-        Me.totalvirtmem.Size = New System.Drawing.Size(174, 23)
-        Me.totalvirtmem.TabIndex = 2
-        Me.totalvirtmem.Text = "-"
-        Me.totalvirtmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 113)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(118, 13)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Avail. Physical Memory:"
         '
-        'avphysmem
+        'Label7
         '
-        Me.avphysmem.Location = New System.Drawing.Point(130, 108)
-        Me.avphysmem.Name = "avphysmem"
-        Me.avphysmem.Size = New System.Drawing.Size(162, 23)
-        Me.avphysmem.TabIndex = 2
-        Me.avphysmem.Text = "-"
-        Me.avphysmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 67)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(116, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Total Physical Memory:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(63, 13)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "OS Version:"
         '
         'avvirtmem
         '
@@ -309,117 +282,211 @@ Partial Class prgmonitor
         Me.avvirtmem.Text = "-"
         Me.avvirtmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label11
+        'Label3
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 113)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(118, 13)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Avail. Physical Memory:"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(25, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "OS:"
         '
-        'Label12
+        'avphysmem
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 136)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(108, 13)
-        Me.Label12.TabIndex = 6
-        Me.Label12.Text = "Avail. Virtual Memory:"
+        Me.avphysmem.Location = New System.Drawing.Point(130, 108)
+        Me.avphysmem.Name = "avphysmem"
+        Me.avphysmem.Size = New System.Drawing.Size(162, 23)
+        Me.avphysmem.TabIndex = 2
+        Me.avphysmem.Text = "-"
+        Me.avphysmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'GroupBox3
+        'totalvirtmem
         '
-        Me.GroupBox3.Controls.Add(Me.intip)
-        Me.GroupBox3.Controls.Add(Me.extip)
-        Me.GroupBox3.Controls.Add(Me.ComboBox2)
-        Me.GroupBox3.Controls.Add(Me.netout)
-        Me.GroupBox3.Controls.Add(Me.netin)
-        Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.netinlbl)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Controls.Add(Me.netoutlbl)
-        Me.GroupBox3.Location = New System.Drawing.Point(9, 106)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(304, 120)
-        Me.GroupBox3.TabIndex = 12
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Network"
+        Me.totalvirtmem.Location = New System.Drawing.Point(118, 85)
+        Me.totalvirtmem.Name = "totalvirtmem"
+        Me.totalvirtmem.Size = New System.Drawing.Size(174, 23)
+        Me.totalvirtmem.TabIndex = 2
+        Me.totalvirtmem.Text = "-"
+        Me.totalvirtmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'netout
+        'totalphysmem
         '
-        Me.netout.Location = New System.Drawing.Point(45, 67)
-        Me.netout.Name = "netout"
-        Me.netout.Size = New System.Drawing.Size(253, 23)
-        Me.netout.TabIndex = 9
-        Me.netout.Text = "-"
-        Me.netout.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.totalphysmem.Location = New System.Drawing.Point(128, 62)
+        Me.totalphysmem.Name = "totalphysmem"
+        Me.totalphysmem.Size = New System.Drawing.Size(164, 23)
+        Me.totalphysmem.TabIndex = 2
+        Me.totalphysmem.Text = "-"
+        Me.totalphysmem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'netin
+        'osver
         '
-        Me.netin.Location = New System.Drawing.Point(33, 42)
-        Me.netin.Name = "netin"
-        Me.netin.Size = New System.Drawing.Size(265, 23)
-        Me.netin.TabIndex = 10
-        Me.netin.Text = "-"
-        Me.netin.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.osver.Location = New System.Drawing.Point(75, 39)
+        Me.osver.Name = "osver"
+        Me.osver.Size = New System.Drawing.Size(217, 23)
+        Me.osver.TabIndex = 1
+        Me.osver.Text = "-"
+        Me.osver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'ComboBox2
+        'osname
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(40, 18)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(258, 21)
-        Me.ComboBox2.TabIndex = 1
+        Me.osname.Location = New System.Drawing.Point(37, 16)
+        Me.osname.Name = "osname"
+        Me.osname.Size = New System.Drawing.Size(255, 23)
+        Me.osname.TabIndex = 0
+        Me.osname.Text = "-"
+        Me.osname.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label4
+        'Label5
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 23)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(28, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "NIC:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(411, 208)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Refresh speed:"
         '
-        'Label9
+        'ComboBox1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 99)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "ext. IP:"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Slow (1s)", "Normal (0.5s)", "Fast (0.25s)"})
+        Me.ComboBox1.Location = New System.Drawing.Point(496, 205)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 9
         '
-        'extip
+        'ramprgr
         '
-        Me.extip.Location = New System.Drawing.Point(52, 97)
-        Me.extip.Name = "extip"
-        Me.extip.Size = New System.Drawing.Size(100, 16)
-        Me.extip.TabIndex = 11
-        Me.extip.Text = "###.###.###.###"
-        Me.extip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ramprgr.Location = New System.Drawing.Point(9, 74)
+        Me.ramprgr.Name = "ramprgr"
+        Me.ramprgr.Size = New System.Drawing.Size(304, 23)
+        Me.ramprgr.TabIndex = 4
         '
-        'Label13
+        'Label2
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(158, 99)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(37, 13)
-        Me.Label13.TabIndex = 8
-        Me.Label13.Text = "int. IP:"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 58)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "RAM Usage:"
         '
-        'intip
+        'ramusg
         '
-        Me.intip.Location = New System.Drawing.Point(198, 97)
-        Me.intip.Name = "intip"
-        Me.intip.Size = New System.Drawing.Size(100, 16)
-        Me.intip.TabIndex = 11
-        Me.intip.Text = "###.###.###.###"
-        Me.intip.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ramusg.Location = New System.Drawing.Point(80, 58)
+        Me.ramusg.Name = "ramusg"
+        Me.ramusg.Size = New System.Drawing.Size(233, 13)
+        Me.ramusg.TabIndex = 2
+        Me.ramusg.Text = "-%"
+        Me.ramusg.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cpuload
+        '
+        Me.cpuload.Location = New System.Drawing.Point(71, 16)
+        Me.cpuload.Name = "cpuload"
+        Me.cpuload.Size = New System.Drawing.Size(242, 13)
+        Me.cpuload.TabIndex = 2
+        Me.cpuload.Text = "-%"
+        Me.cpuload.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "CPU Load:"
+        '
+        'cpuprgr
+        '
+        Me.cpuprgr.Location = New System.Drawing.Point(9, 32)
+        Me.cpuprgr.Name = "cpuprgr"
+        Me.cpuprgr.Size = New System.Drawing.Size(304, 23)
+        Me.cpuprgr.TabIndex = 0
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(647, 580)
+        Me.TabControl1.TabIndex = 1
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(639, 554)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "System Monitor"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.GroupBox5)
+        Me.TabPage2.Controls.Add(Me.GroupBox4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(639, 554)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Program Monitor"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(623, 232)
+        Me.GroupBox4.TabIndex = 0
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "System Usage"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 13)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Re-Volt Path"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Button1)
+        Me.GroupBox5.Controls.Add(Me.regrevoltpath)
+        Me.GroupBox5.Controls.Add(Me.Label10)
+        Me.GroupBox5.Location = New System.Drawing.Point(8, 244)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(623, 190)
+        Me.GroupBox5.TabIndex = 1
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Registry Entries"
+        '
+        'regrevoltpath
+        '
+        Me.regrevoltpath.Location = New System.Drawing.Point(9, 32)
+        Me.regrevoltpath.Name = "regrevoltpath"
+        Me.regrevoltpath.Size = New System.Drawing.Size(506, 20)
+        Me.regrevoltpath.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(521, 30)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(96, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Open in RegEdit"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'prgmonitor
         '
@@ -430,15 +497,18 @@ Partial Class prgmonitor
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "prgmonitor"
-        Me.Text = "Program Monitor"
+        Me.Text = "Monitor"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -479,4 +549,10 @@ Partial Class prgmonitor
     Friend WithEvents extip As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents regrevoltpath As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents GroupBox4 As GroupBox
 End Class
