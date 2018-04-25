@@ -34,18 +34,19 @@ Partial Class MainWindow
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.file = New System.Windows.Forms.ToolStripMenuItem()
-        Me.newservermenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.quitmenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.edit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.settingsmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.playermenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.onlinemenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ingamemenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.dndmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.invismenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.file = New System.Windows.Forms.ToolStripMenuItem()
+        Me.newservermenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.quitmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.edit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.settingsmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.manage = New System.Windows.Forms.ToolStripMenuItem()
         Me.FriendlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mods = New System.Windows.Forms.ToolStripMenuItem()
@@ -173,59 +174,20 @@ Partial Class MainWindow
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.file, Me.edit, Me.playermenu, Me.manage, Me.devtools})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.playermenu, Me.ToolStripSeparator8, Me.file, Me.edit, Me.manage, Me.devtools})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.MenuStrip1.Size = New System.Drawing.Size(757, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(757, 27)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'file
-        '
-        Me.file.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.newservermenu, Me.ToolStripMenuItem1, Me.quitmenu})
-        Me.file.Name = "file"
-        Me.file.Size = New System.Drawing.Size(41, 20)
-        Me.file.Text = "$file"
-        '
-        'newservermenu
-        '
-        Me.newservermenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
-        Me.newservermenu.Name = "newservermenu"
-        Me.newservermenu.Size = New System.Drawing.Size(138, 22)
-        Me.newservermenu.Text = "$new_server"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(135, 6)
-        '
-        'quitmenu
-        '
-        Me.quitmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
-        Me.quitmenu.Name = "quitmenu"
-        Me.quitmenu.Size = New System.Drawing.Size(138, 22)
-        Me.quitmenu.Text = "$quit"
-        '
-        'edit
-        '
-        Me.edit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.settingsmenu})
-        Me.edit.Name = "edit"
-        Me.edit.Size = New System.Drawing.Size(45, 20)
-        Me.edit.Text = "$edit"
-        '
-        'settingsmenu
-        '
-        Me.settingsmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
-        Me.settingsmenu.Name = "settingsmenu"
-        Me.settingsmenu.Size = New System.Drawing.Size(121, 22)
-        Me.settingsmenu.Text = "$settings"
         '
         'playermenu
         '
         Me.playermenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.onlinemenu, Me.ingamemenu, Me.dndmenu, Me.ToolStripMenuItem2, Me.invismenu})
+        Me.playermenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_green
         Me.playermenu.Name = "playermenu"
-        Me.playermenu.Size = New System.Drawing.Size(57, 20)
+        Me.playermenu.Size = New System.Drawing.Size(73, 23)
         Me.playermenu.Text = "$player"
         '
         'onlinemenu
@@ -261,11 +223,56 @@ Partial Class MainWindow
         Me.invismenu.Size = New System.Drawing.Size(163, 22)
         Me.invismenu.Text = "$show_as_offline"
         '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 23)
+        '
+        'file
+        '
+        Me.file.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.newservermenu, Me.ToolStripMenuItem1, Me.quitmenu})
+        Me.file.Name = "file"
+        Me.file.Size = New System.Drawing.Size(41, 23)
+        Me.file.Text = "$file"
+        '
+        'newservermenu
+        '
+        Me.newservermenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
+        Me.newservermenu.Name = "newservermenu"
+        Me.newservermenu.Size = New System.Drawing.Size(138, 22)
+        Me.newservermenu.Text = "$new_server"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(135, 6)
+        '
+        'quitmenu
+        '
+        Me.quitmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
+        Me.quitmenu.Name = "quitmenu"
+        Me.quitmenu.Size = New System.Drawing.Size(138, 22)
+        Me.quitmenu.Text = "$quit"
+        '
+        'edit
+        '
+        Me.edit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.settingsmenu})
+        Me.edit.Name = "edit"
+        Me.edit.Size = New System.Drawing.Size(45, 23)
+        Me.edit.Text = "$edit"
+        '
+        'settingsmenu
+        '
+        Me.settingsmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
+        Me.settingsmenu.Name = "settingsmenu"
+        Me.settingsmenu.Size = New System.Drawing.Size(121, 22)
+        Me.settingsmenu.Text = "$settings"
+        '
         'manage
         '
         Me.manage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FriendlistToolStripMenuItem, Me.mods, Me.ToolStripMenuItem4, Me.RVGLToolStripMenuItem})
         Me.manage.Name = "manage"
-        Me.manage.Size = New System.Drawing.Size(68, 20)
+        Me.manage.Size = New System.Drawing.Size(68, 23)
         Me.manage.Text = "$manage"
         '
         'FriendlistToolStripMenuItem
@@ -299,7 +306,7 @@ Partial Class MainWindow
         '
         Me.devtools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsoleToolStripMenuItem, Me.DeveloperManagerToolStripMenuItem})
         Me.devtools.Name = "devtools"
-        Me.devtools.Size = New System.Drawing.Size(72, 20)
+        Me.devtools.Size = New System.Drawing.Size(72, 23)
         Me.devtools.Text = "Developer"
         Me.devtools.Visible = False
         '
@@ -528,7 +535,7 @@ Partial Class MainWindow
         '
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.quit, Me.ToolStripSeparator1, Me.create_server, Me.connect_server, Me.refreshserver, Me.ToolStripSeparator2, Me.settingstoolstrip, Me.ToolStripSeparator7, Me.friendlist, Me.ToolStripSeparator6, Me.refreshall, Me.about, Me.ToolStripButton1, Me.ToolStripLabel2, Me.ToolStripLabel3})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 27)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(5, 0, 1, 0)
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -799,4 +806,5 @@ Partial Class MainWindow
     Friend WithEvents ConnecttoipToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
     Friend WithEvents ServerinfoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
 End Class

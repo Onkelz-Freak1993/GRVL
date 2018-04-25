@@ -72,9 +72,13 @@ Public Class MainWindow
         console.RichTextBox1.AppendText("Available VRAM: " & My.Computer.Info.AvailableVirtualMemory & " bytes" & vbNewLine)
         console.RichTextBox1.AppendText("Is connected to a Network: " & My.Computer.Network.IsAvailable.ToString & vbNewLine)
 
+
+
         'use this to flash in taskbar:
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
+
+        playermenu.Text = My.Settings.nickname
 
         lanip.Text = GetIpV4()
     End Sub
@@ -308,6 +312,7 @@ Public Class MainWindow
     ' dev = enables the Developer-Menu
     Public Sub ExecuteParams()
         Dim args As String()
+        Dim arguments As String
         args = Environment.GetCommandLineArgs()
 
         For i As Integer = 1 To args.Length - 1
@@ -321,10 +326,21 @@ Public Class MainWindow
                     My.Settings.devtools = True
                     console.Show()
 
+                Case "ip " & arguments
+                    Try
+                        Process.Start(My.Settings.revolt_path, My.Settings.parameters & " -lobby " & arguments)
+                    Catch exc As Exception
+                        console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
+                        If My.Settings.devtools = True Then
+                            MsgBox(exc.ToString)
+                        End If
+                    End Try
+
                 Case Else
-                    MessageBox.Show("Unknown parameter:" & vbCrLf & args(i), "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    console.RichTextBox1.AppendText(args(i).ToString & " is no known Parameter." & vbNewLine)
             End Select
         Next
+
     End Sub
 
     Private Sub ConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsoleToolStripMenuItem.Click
@@ -368,7 +384,6 @@ Public Class MainWindow
         edit.Text = GetIniValue("language", "$edit", My.Settings.languagefile, "$edit")
         settingsmenu.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
         settingstoolstrip.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
-        playermenu.Text = GetIniValue("language", "$player", My.Settings.languagefile, "$player")
         onlinemenu.Text = GetIniValue("language", "$online", My.Settings.languagefile, "$online")
         ingamemenu.Text = GetIniValue("language", "$ingame", My.Settings.languagefile, "$ingame")
         dndmenu.Text = GetIniValue("language", "$do_not_disturb", My.Settings.languagefile, "$do_not_disturb")
@@ -382,6 +397,8 @@ Public Class MainWindow
         mods.Text = GetIniValue("language", "$mods", My.Settings.languagefile, "$mods")
         'pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
         'friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
+        'playermenu.Text = GetIniValue("language", "$player", My.Settings.languagefile, "$player")
+        playermenu.Text = My.Settings.nickname
 
         'Settings
         settings.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
@@ -502,24 +519,28 @@ Public Class MainWindow
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=1")
         End Using
+        playermenu.Image = My.Resources.user_green
     End Sub
 
     Private Sub ingamemenu_Click(sender As Object, e As EventArgs) Handles ingamemenu.Click
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=2")
         End Using
+        playermenu.Image = My.Resources.user_orange
     End Sub
 
     Private Sub dndmenu_Click(sender As Object, e As EventArgs) Handles dndmenu.Click
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=3")
         End Using
+        playermenu.Image = My.Resources.user_red
     End Sub
 
     Private Sub invismenu_Click(sender As Object, e As EventArgs) Handles invismenu.Click
         Using wc As New System.Net.WebClient()
             Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=setState&uuid=" + My.Settings.uuid + "&st=" + My.Settings.token + "&state=0")
         End Using
+        playermenu.Image = My.Resources.user_gray
     End Sub
 
     Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
