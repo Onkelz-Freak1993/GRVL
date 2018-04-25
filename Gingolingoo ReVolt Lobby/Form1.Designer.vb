@@ -35,25 +35,13 @@ Partial Class MainWindow
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.file = New System.Windows.Forms.ToolStripMenuItem()
-        Me.newservermenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.quitmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.edit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.settingsmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.playermenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.onlinemenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ingamemenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.dndmenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.invismenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.manage = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FriendlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mods = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.RVGLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.devtools = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeveloperManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.userlistContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -66,27 +54,15 @@ Partial Class MainWindow
         Me.playercountcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ipcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
-        Me.savechatas = New System.Windows.Forms.ToolStripButton()
-        Me.delchathistory = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.mutebtn = New System.Windows.Forms.ToolStripButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.quit = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.create_server = New System.Windows.Forms.ToolStripButton()
-        Me.connect_server = New System.Windows.Forms.ToolStripButton()
-        Me.refreshserver = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.settingstoolstrip = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.friendlist = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.refreshall = New System.Windows.Forms.ToolStripButton()
-        Me.about = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -94,6 +70,34 @@ Partial Class MainWindow
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.bgwChatConnect = New System.ComponentModel.BackgroundWorker()
         Me.bgwUserlist = New System.ComponentModel.BackgroundWorker()
+        Me.quit = New System.Windows.Forms.ToolStripButton()
+        Me.create_server = New System.Windows.Forms.ToolStripButton()
+        Me.connect_server = New System.Windows.Forms.ToolStripButton()
+        Me.refreshserver = New System.Windows.Forms.ToolStripButton()
+        Me.settingstoolstrip = New System.Windows.Forms.ToolStripButton()
+        Me.friendlist = New System.Windows.Forms.ToolStripButton()
+        Me.refreshall = New System.Windows.Forms.ToolStripButton()
+        Me.about = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.savechatas = New System.Windows.Forms.ToolStripButton()
+        Me.delchathistory = New System.Windows.Forms.ToolStripButton()
+        Me.mutebtn = New System.Windows.Forms.ToolStripButton()
+        Me.newservermenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.quitmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.settingsmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.onlinemenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ingamemenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dndmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.invismenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FriendlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mods = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RVGLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeveloperManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.servercontext = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ConnecttoipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ServerinfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,6 +111,7 @@ Partial Class MainWindow
         Me.SplitContainer2.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
+        Me.servercontext.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -183,24 +188,10 @@ Partial Class MainWindow
         Me.file.Size = New System.Drawing.Size(41, 20)
         Me.file.Text = "$file"
         '
-        'newservermenu
-        '
-        Me.newservermenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
-        Me.newservermenu.Name = "newservermenu"
-        Me.newservermenu.Size = New System.Drawing.Size(138, 22)
-        Me.newservermenu.Text = "$new_server"
-        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(135, 6)
-        '
-        'quitmenu
-        '
-        Me.quitmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
-        Me.quitmenu.Name = "quitmenu"
-        Me.quitmenu.Size = New System.Drawing.Size(138, 22)
-        Me.quitmenu.Text = "$quit"
         '
         'edit
         '
@@ -209,13 +200,6 @@ Partial Class MainWindow
         Me.edit.Size = New System.Drawing.Size(45, 20)
         Me.edit.Text = "$edit"
         '
-        'settingsmenu
-        '
-        Me.settingsmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
-        Me.settingsmenu.Name = "settingsmenu"
-        Me.settingsmenu.Size = New System.Drawing.Size(121, 22)
-        Me.settingsmenu.Text = "$settings"
-        '
         'playermenu
         '
         Me.playermenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.onlinemenu, Me.ingamemenu, Me.dndmenu, Me.ToolStripMenuItem2, Me.invismenu})
@@ -223,38 +207,10 @@ Partial Class MainWindow
         Me.playermenu.Size = New System.Drawing.Size(57, 20)
         Me.playermenu.Text = "$player"
         '
-        'onlinemenu
-        '
-        Me.onlinemenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_green
-        Me.onlinemenu.Name = "onlinemenu"
-        Me.onlinemenu.Size = New System.Drawing.Size(163, 22)
-        Me.onlinemenu.Text = "$online"
-        '
-        'ingamemenu
-        '
-        Me.ingamemenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_orange
-        Me.ingamemenu.Name = "ingamemenu"
-        Me.ingamemenu.Size = New System.Drawing.Size(163, 22)
-        Me.ingamemenu.Text = "$ingame"
-        '
-        'dndmenu
-        '
-        Me.dndmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_red
-        Me.dndmenu.Name = "dndmenu"
-        Me.dndmenu.Size = New System.Drawing.Size(163, 22)
-        Me.dndmenu.Text = "$do_not_disturb"
-        '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(160, 6)
-        '
-        'invismenu
-        '
-        Me.invismenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_gray
-        Me.invismenu.Name = "invismenu"
-        Me.invismenu.Size = New System.Drawing.Size(163, 22)
-        Me.invismenu.Text = "$show_as_offline"
         '
         'manage
         '
@@ -263,32 +219,10 @@ Partial Class MainWindow
         Me.manage.Size = New System.Drawing.Size(68, 20)
         Me.manage.Text = "$manage"
         '
-        'FriendlistToolStripMenuItem
-        '
-        Me.FriendlistToolStripMenuItem.Enabled = False
-        Me.FriendlistToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
-        Me.FriendlistToolStripMenuItem.Name = "FriendlistToolStripMenuItem"
-        Me.FriendlistToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
-        Me.FriendlistToolStripMenuItem.Text = "$friendlist"
-        '
-        'mods
-        '
-        Me.mods.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.wrench_orange
-        Me.mods.Name = "mods"
-        Me.mods.Size = New System.Drawing.Size(149, 22)
-        Me.mods.Text = "$mods"
-        '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(146, 6)
-        '
-        'RVGLToolStripMenuItem
-        '
-        Me.RVGLToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.RVGL_16x16
-        Me.RVGLToolStripMenuItem.Name = "RVGLToolStripMenuItem"
-        Me.RVGLToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
-        Me.RVGLToolStripMenuItem.Text = "RVGL-Updater"
         '
         'devtools
         '
@@ -297,20 +231,6 @@ Partial Class MainWindow
         Me.devtools.Size = New System.Drawing.Size(72, 20)
         Me.devtools.Text = "Developer"
         Me.devtools.Visible = False
-        '
-        'ConsoleToolStripMenuItem
-        '
-        Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal
-        Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
-        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.ConsoleToolStripMenuItem.Text = "Console"
-        '
-        'DeveloperManagerToolStripMenuItem
-        '
-        Me.DeveloperManagerToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.chart_curve
-        Me.DeveloperManagerToolStripMenuItem.Name = "DeveloperManagerToolStripMenuItem"
-        Me.DeveloperManagerToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.DeveloperManagerToolStripMenuItem.Text = "Program Monitor"
         '
         'SplitContainer1
         '
@@ -394,6 +314,7 @@ Partial Class MainWindow
         'serverlist
         '
         Me.serverlist.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.pwd, Me.servernamecol, Me.playercountcol, Me.ipcol})
+        Me.serverlist.ContextMenuStrip = Me.servercontext
         Me.serverlist.Dock = System.Windows.Forms.DockStyle.Fill
         Me.serverlist.FullRowSelect = True
         Me.serverlist.Location = New System.Drawing.Point(0, 0)
@@ -434,24 +355,6 @@ Partial Class MainWindow
         Me.ToolStrip2.TabIndex = 2
         Me.ToolStrip2.Text = "ToolStrip2"
         '
-        'savechatas
-        '
-        Me.savechatas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.savechatas.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_save
-        Me.savechatas.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.savechatas.Name = "savechatas"
-        Me.savechatas.Size = New System.Drawing.Size(23, 22)
-        Me.savechatas.Text = "$save_chat_log"
-        '
-        'delchathistory
-        '
-        Me.delchathistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.delchathistory.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_delete
-        Me.delchathistory.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.delchathistory.Name = "delchathistory"
-        Me.delchathistory.Size = New System.Drawing.Size(23, 22)
-        Me.delchathistory.Text = "$delete_chat_history"
-        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
@@ -463,17 +366,6 @@ Partial Class MainWindow
         Me.ToolStripLabel1.Size = New System.Drawing.Size(47, 22)
         Me.ToolStripLabel1.Text = "$typing"
         Me.ToolStripLabel1.Visible = False
-        '
-        'mutebtn
-        '
-        Me.mutebtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.mutebtn.CheckOnClick = True
-        Me.mutebtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.mutebtn.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.sound
-        Me.mutebtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mutebtn.Name = "mutebtn"
-        Me.mutebtn.Size = New System.Drawing.Size(23, 22)
-        Me.mutebtn.Text = "ToolStripButton1"
         '
         'TextBox1
         '
@@ -507,114 +399,25 @@ Partial Class MainWindow
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'quit
-        '
-        Me.quit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.quit.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
-        Me.quit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.quit.Name = "quit"
-        Me.quit.Size = New System.Drawing.Size(23, 22)
-        Me.quit.Text = "ToolStripButton2"
-        Me.quit.ToolTipText = "$quit"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'create_server
-        '
-        Me.create_server.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.create_server.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
-        Me.create_server.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.create_server.Name = "create_server"
-        Me.create_server.Size = New System.Drawing.Size(23, 22)
-        Me.create_server.Text = "$new_server"
-        Me.create_server.ToolTipText = "$create_server"
-        '
-        'connect_server
-        '
-        Me.connect_server.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.connect_server.Enabled = False
-        Me.connect_server.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_connect
-        Me.connect_server.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.connect_server.Name = "connect_server"
-        Me.connect_server.Size = New System.Drawing.Size(23, 22)
-        Me.connect_server.Text = "ToolStripButton3"
-        Me.connect_server.ToolTipText = "$join_server"
-        '
-        'refreshserver
-        '
-        Me.refreshserver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.refreshserver.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.arrow_refresh
-        Me.refreshserver.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.refreshserver.Name = "refreshserver"
-        Me.refreshserver.Size = New System.Drawing.Size(23, 22)
-        Me.refreshserver.Text = "$refresh_server"
-        Me.refreshserver.ToolTipText = "$refresh"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'settingstoolstrip
-        '
-        Me.settingstoolstrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.settingstoolstrip.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
-        Me.settingstoolstrip.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.settingstoolstrip.Name = "settingstoolstrip"
-        Me.settingstoolstrip.Size = New System.Drawing.Size(23, 22)
-        Me.settingstoolstrip.Text = "$settings"
-        '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
         Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 25)
         '
-        'friendlist
-        '
-        Me.friendlist.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.friendlist.Enabled = False
-        Me.friendlist.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
-        Me.friendlist.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.friendlist.Name = "friendlist"
-        Me.friendlist.Size = New System.Drawing.Size(23, 22)
-        Me.friendlist.Text = "$friendlist"
-        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 25)
-        '
-        'refreshall
-        '
-        Me.refreshall.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.refreshall.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.action_refresh_blue
-        Me.refreshall.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.refreshall.Name = "refreshall"
-        Me.refreshall.Size = New System.Drawing.Size(23, 22)
-        Me.refreshall.Text = "$refresh_all"
-        '
-        'about
-        '
-        Me.about.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.about.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.information
-        Me.about.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.about.Name = "about"
-        Me.about.Size = New System.Drawing.Size(23, 22)
-        Me.about.Text = "ToolStripButton1"
-        Me.about.ToolTipText = "$about"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'ToolStripLabel2
         '
@@ -656,6 +459,232 @@ Partial Class MainWindow
         Me.bgwUserlist.WorkerReportsProgress = True
         Me.bgwUserlist.WorkerSupportsCancellation = True
         '
+        'quit
+        '
+        Me.quit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.quit.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
+        Me.quit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.quit.Name = "quit"
+        Me.quit.Size = New System.Drawing.Size(23, 22)
+        Me.quit.Text = "ToolStripButton2"
+        Me.quit.ToolTipText = "$quit"
+        '
+        'create_server
+        '
+        Me.create_server.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.create_server.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
+        Me.create_server.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.create_server.Name = "create_server"
+        Me.create_server.Size = New System.Drawing.Size(23, 22)
+        Me.create_server.Text = "$new_server"
+        Me.create_server.ToolTipText = "$create_server"
+        '
+        'connect_server
+        '
+        Me.connect_server.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.connect_server.Enabled = False
+        Me.connect_server.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_connect
+        Me.connect_server.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.connect_server.Name = "connect_server"
+        Me.connect_server.Size = New System.Drawing.Size(23, 22)
+        Me.connect_server.Text = "ToolStripButton3"
+        Me.connect_server.ToolTipText = "$join_server"
+        '
+        'refreshserver
+        '
+        Me.refreshserver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.refreshserver.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.arrow_refresh
+        Me.refreshserver.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.refreshserver.Name = "refreshserver"
+        Me.refreshserver.Size = New System.Drawing.Size(23, 22)
+        Me.refreshserver.Text = "$refresh_server"
+        Me.refreshserver.ToolTipText = "$refresh"
+        '
+        'settingstoolstrip
+        '
+        Me.settingstoolstrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.settingstoolstrip.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
+        Me.settingstoolstrip.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.settingstoolstrip.Name = "settingstoolstrip"
+        Me.settingstoolstrip.Size = New System.Drawing.Size(23, 22)
+        Me.settingstoolstrip.Text = "$settings"
+        '
+        'friendlist
+        '
+        Me.friendlist.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.friendlist.Enabled = False
+        Me.friendlist.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
+        Me.friendlist.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.friendlist.Name = "friendlist"
+        Me.friendlist.Size = New System.Drawing.Size(23, 22)
+        Me.friendlist.Text = "$friendlist"
+        '
+        'refreshall
+        '
+        Me.refreshall.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.refreshall.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.action_refresh_blue
+        Me.refreshall.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.refreshall.Name = "refreshall"
+        Me.refreshall.Size = New System.Drawing.Size(23, 22)
+        Me.refreshall.Text = "$refresh_all"
+        '
+        'about
+        '
+        Me.about.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.about.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.information
+        Me.about.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.about.Name = "about"
+        Me.about.Size = New System.Drawing.Size(23, 22)
+        Me.about.Text = "ToolStripButton1"
+        Me.about.ToolTipText = "$about"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'savechatas
+        '
+        Me.savechatas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.savechatas.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_save
+        Me.savechatas.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.savechatas.Name = "savechatas"
+        Me.savechatas.Size = New System.Drawing.Size(23, 22)
+        Me.savechatas.Text = "$save_chat_log"
+        '
+        'delchathistory
+        '
+        Me.delchathistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.delchathistory.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_delete
+        Me.delchathistory.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.delchathistory.Name = "delchathistory"
+        Me.delchathistory.Size = New System.Drawing.Size(23, 22)
+        Me.delchathistory.Text = "$delete_chat_history"
+        '
+        'mutebtn
+        '
+        Me.mutebtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.mutebtn.CheckOnClick = True
+        Me.mutebtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.mutebtn.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.sound
+        Me.mutebtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mutebtn.Name = "mutebtn"
+        Me.mutebtn.Size = New System.Drawing.Size(23, 22)
+        Me.mutebtn.Text = "ToolStripButton1"
+        '
+        'newservermenu
+        '
+        Me.newservermenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_add
+        Me.newservermenu.Name = "newservermenu"
+        Me.newservermenu.Size = New System.Drawing.Size(138, 22)
+        Me.newservermenu.Text = "$new_server"
+        '
+        'quitmenu
+        '
+        Me.quitmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cancel
+        Me.quitmenu.Name = "quitmenu"
+        Me.quitmenu.Size = New System.Drawing.Size(138, 22)
+        Me.quitmenu.Text = "$quit"
+        '
+        'settingsmenu
+        '
+        Me.settingsmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.cog
+        Me.settingsmenu.Name = "settingsmenu"
+        Me.settingsmenu.Size = New System.Drawing.Size(121, 22)
+        Me.settingsmenu.Text = "$settings"
+        '
+        'onlinemenu
+        '
+        Me.onlinemenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_green
+        Me.onlinemenu.Name = "onlinemenu"
+        Me.onlinemenu.Size = New System.Drawing.Size(163, 22)
+        Me.onlinemenu.Text = "$online"
+        '
+        'ingamemenu
+        '
+        Me.ingamemenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_orange
+        Me.ingamemenu.Name = "ingamemenu"
+        Me.ingamemenu.Size = New System.Drawing.Size(163, 22)
+        Me.ingamemenu.Text = "$ingame"
+        '
+        'dndmenu
+        '
+        Me.dndmenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_red
+        Me.dndmenu.Name = "dndmenu"
+        Me.dndmenu.Size = New System.Drawing.Size(163, 22)
+        Me.dndmenu.Text = "$do_not_disturb"
+        '
+        'invismenu
+        '
+        Me.invismenu.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user_gray
+        Me.invismenu.Name = "invismenu"
+        Me.invismenu.Size = New System.Drawing.Size(163, 22)
+        Me.invismenu.Text = "$show_as_offline"
+        '
+        'FriendlistToolStripMenuItem
+        '
+        Me.FriendlistToolStripMenuItem.Enabled = False
+        Me.FriendlistToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
+        Me.FriendlistToolStripMenuItem.Name = "FriendlistToolStripMenuItem"
+        Me.FriendlistToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.FriendlistToolStripMenuItem.Text = "$friendlist"
+        '
+        'mods
+        '
+        Me.mods.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.wrench_orange
+        Me.mods.Name = "mods"
+        Me.mods.Size = New System.Drawing.Size(149, 22)
+        Me.mods.Text = "$mods"
+        '
+        'RVGLToolStripMenuItem
+        '
+        Me.RVGLToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.RVGL_16x16
+        Me.RVGLToolStripMenuItem.Name = "RVGLToolStripMenuItem"
+        Me.RVGLToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.RVGLToolStripMenuItem.Text = "RVGL-Updater"
+        '
+        'ConsoleToolStripMenuItem
+        '
+        Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal
+        Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
+        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.ConsoleToolStripMenuItem.Text = "Console"
+        '
+        'DeveloperManagerToolStripMenuItem
+        '
+        Me.DeveloperManagerToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.chart_curve
+        Me.DeveloperManagerToolStripMenuItem.Name = "DeveloperManagerToolStripMenuItem"
+        Me.DeveloperManagerToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.DeveloperManagerToolStripMenuItem.Text = "Program Monitor"
+        '
+        'servercontext
+        '
+        Me.servercontext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnecttoipToolStripMenuItem, Me.ToolStripMenuItem3, Me.ServerinfoToolStripMenuItem})
+        Me.servercontext.Name = "servercontext"
+        Me.servercontext.Size = New System.Drawing.Size(175, 76)
+        '
+        'ConnecttoipToolStripMenuItem
+        '
+        Me.ConnecttoipToolStripMenuItem.Name = "ConnecttoipToolStripMenuItem"
+        Me.ConnecttoipToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ConnecttoipToolStripMenuItem.Text = "$connect_to_%ip%"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(171, 6)
+        '
+        'ServerinfoToolStripMenuItem
+        '
+        Me.ServerinfoToolStripMenuItem.Name = "ServerinfoToolStripMenuItem"
+        Me.ServerinfoToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ServerinfoToolStripMenuItem.Text = "$server_info"
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -690,6 +719,7 @@ Partial Class MainWindow
         Me.ToolStrip2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.servercontext.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -765,4 +795,8 @@ Partial Class MainWindow
     Friend WithEvents wanip As ToolStripSplitButton
     Friend WithEvents lanip As ToolStripMenuItem
     Friend WithEvents DeveloperManagerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents servercontext As ContextMenuStrip
+    Friend WithEvents ConnecttoipToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
+    Friend WithEvents ServerinfoToolStripMenuItem As ToolStripMenuItem
 End Class

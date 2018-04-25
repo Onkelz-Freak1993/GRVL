@@ -68,14 +68,6 @@ Public Class login
         Process.Start("https://www.gingolingoo.de/")
     End Sub
 
-    Private Sub visitgithub_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitgithub.LinkClicked
-        Process.Start("https://github.com/Onkelz-Freak1993/GRVL-Development")
-    End Sub
-
-    Private Sub visitproject_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles visitproject.LinkClicked
-        Process.Start("https://www.gingolingoo.de/grvl-project/")
-    End Sub
-
     Private Sub bgwLogin_DoWork(sender As Object, e As ComponentModel.DoWorkEventArgs) Handles bgwLogin.DoWork
         If TextBox2.Text = "" Then
             Using wd As New System.Net.WebClient()
@@ -129,5 +121,24 @@ Public Class login
             End If
         End If
     End Sub
-End Class
 
+    Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyData = Keys.Enter Then
+            ok.PerformClick()
+        End If
+    End Sub
+
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
+        If e.KeyData = Keys.Enter Then
+            ok.PerformClick()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Process.Start("https://www.gingolingoo.de/grvl-project/")
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Process.Start("https://github.com/Onkelz-Freak1993/GRVL-Development")
+    End Sub
+End Class

@@ -37,13 +37,13 @@ Partial Class login
         Me.version = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.visitus = New System.Windows.Forms.LinkLabel()
-        Me.visitgithub = New System.Windows.Forms.LinkLabel()
-        Me.visitproject = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.bgwLogin = New System.ComponentModel.BackgroundWorker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,11 +63,11 @@ Partial Class login
         Me.TextBox1.Location = New System.Drawing.Point(449, 43)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(323, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TextBox1.TabIndex = 0
         '
         'quit
         '
-        Me.quit.Location = New System.Drawing.Point(624, 415)
+        Me.quit.Location = New System.Drawing.Point(624, 420)
         Me.quit.Name = "quit"
         Me.quit.Size = New System.Drawing.Size(148, 23)
         Me.quit.TabIndex = 2
@@ -78,10 +78,10 @@ Partial Class login
         '
         Me.ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ok.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ok.Location = New System.Drawing.Point(449, 415)
+        Me.ok.Location = New System.Drawing.Point(449, 420)
         Me.ok.Name = "ok"
         Me.ok.Size = New System.Drawing.Size(159, 23)
-        Me.ok.TabIndex = 3
+        Me.ok.TabIndex = 2
         Me.ok.Text = "$ok"
         Me.ok.UseVisualStyleBackColor = True
         '
@@ -111,7 +111,7 @@ Partial Class login
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(323, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.TextBox2.TabIndex = 1
         Me.TextBox2.UseSystemPasswordChar = True
         '
         'password
@@ -150,7 +150,7 @@ Partial Class login
         Me.RichTextBox1.Location = New System.Drawing.Point(449, 212)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(323, 184)
+        Me.RichTextBox1.Size = New System.Drawing.Size(323, 189)
         Me.RichTextBox1.TabIndex = 10
         Me.RichTextBox1.Text = ""
         '
@@ -189,32 +189,6 @@ Partial Class login
         Me.visitus.TabStop = True
         Me.visitus.Text = "©2018 Gingolingoo"
         Me.visitus.VisitedLinkColor = System.Drawing.Color.White
-        '
-        'visitgithub
-        '
-        Me.visitgithub.AutoSize = True
-        Me.visitgithub.BackColor = System.Drawing.Color.Transparent
-        Me.visitgithub.LinkColor = System.Drawing.Color.White
-        Me.visitgithub.Location = New System.Drawing.Point(306, 425)
-        Me.visitgithub.Name = "visitgithub"
-        Me.visitgithub.Size = New System.Drawing.Size(90, 13)
-        Me.visitgithub.TabIndex = 14
-        Me.visitgithub.TabStop = True
-        Me.visitgithub.Text = "Visit GitHub Page"
-        Me.visitgithub.VisitedLinkColor = System.Drawing.Color.White
-        '
-        'visitproject
-        '
-        Me.visitproject.AutoSize = True
-        Me.visitproject.BackColor = System.Drawing.Color.Transparent
-        Me.visitproject.LinkColor = System.Drawing.Color.White
-        Me.visitproject.Location = New System.Drawing.Point(210, 425)
-        Me.visitproject.Name = "visitproject"
-        Me.visitproject.Size = New System.Drawing.Size(90, 13)
-        Me.visitproject.TabIndex = 15
-        Me.visitproject.TabStop = True
-        Me.visitproject.Text = "Visit Project Page"
-        Me.visitproject.VisitedLinkColor = System.Drawing.Color.White
         '
         'Label1
         '
@@ -268,6 +242,25 @@ Partial Class login
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(274, 420)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(126, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Visit GitHub Page"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(147, 420)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(121, 23)
+        Me.Button2.TabIndex = 20
+        Me.Button2.Text = "Visit Project Page"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -276,11 +269,11 @@ Partial Class login
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.visitproject)
-        Me.Controls.Add(Me.visitgithub)
         Me.Controls.Add(Me.visitus)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.version)
@@ -324,11 +317,11 @@ Partial Class login
     Friend WithEvents version As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents visitus As LinkLabel
-    Friend WithEvents visitgithub As LinkLabel
-    Friend WithEvents visitproject As LinkLabel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents bgwLogin As System.ComponentModel.BackgroundWorker
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

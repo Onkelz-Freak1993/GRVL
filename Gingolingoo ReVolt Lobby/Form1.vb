@@ -15,6 +15,10 @@ Public Class MainWindow
     Private Delegate Sub DAddItem(ByVal s As String)
     Dim grvlClose As Boolean = False
     Dim nick As String
+    Dim friendscount As Int32 = 0
+    Dim globalcount As Int32 = 0
+    Dim localcount As Int32 = 0
+    Dim offlinecount As Int64 = 0
 
     Private Sub AddItem(ByVal s As String)
         'ListBox1.Items.Add(s)
@@ -116,20 +120,32 @@ Public Class MainWindow
     Public Function reloadall()
         'reloads the Nicklist in the Main-Window
         Dim treeview1nodes As TreeNodeCollection = TreeView1.Nodes
+
+        'Dim friendscount = Nodes(0).GetNodeCount(True)
+        'Dim globalcount = Nodes(1).GetNodeCount(True)
+        'Dim localcount = Nodes(2).GetNodeCount(True)
+        'Dim offlinecount = Nodes(3).GetNodeCount(True)
+
+        Dim friendsnode As String = GetIniValue("language", "$friends", My.Settings.languagefile, "$friends")
+        Dim globalnode As String = GetIniValue("language", "$global", My.Settings.languagefile, "$global")
+        Dim localnode As String = GetIniValue("language", "$local", My.Settings.languagefile, "$local")
+        Dim offlinenode As String = GetIniValue("language", "$offline", My.Settings.languagefile, "$offline")
+
         TreeView1.Nodes.Clear()
-        Nodes(0) = New TreeNode(GetIniValue("language", "$friends", My.Settings.languagefile, "$friends"))
+
+        Nodes(0) = New TreeNode(friendsnode)
         Nodes(0).ImageIndex = 0
         Nodes(0).SelectedImageIndex = 0
         Nodes(0).Name = "friends"
-        Nodes(1) = New TreeNode(GetIniValue("language", "$global", My.Settings.languagefile, "$global"))
+        Nodes(1) = New TreeNode(globalnode)
         Nodes(1).ImageIndex = 5
         Nodes(1).SelectedImageIndex = 5
         Nodes(1).Name = "global"
-        Nodes(2) = New TreeNode(GetIniValue("language", "$local", My.Settings.languagefile, "$local"))
+        Nodes(2) = New TreeNode(localnode)
         Nodes(2).ImageIndex = 6
         Nodes(2).SelectedImageIndex = 6
         Nodes(2).Name = "local"
-        Nodes(3) = New TreeNode(GetIniValue("language", "$offline", My.Settings.languagefile, "$offline"))
+        Nodes(3) = New TreeNode(offlinenode)
         Nodes(3).ImageIndex = 1
         Nodes(3).SelectedImageIndex = 1
         Nodes(3).Name = "offline"
@@ -138,6 +154,9 @@ Public Class MainWindow
         TreeView1.Nodes.Add(Nodes(1))
         TreeView1.Nodes.Add(Nodes(2))
         TreeView1.Nodes.Add(Nodes(3))
+
+        TreeView1.Refresh()
+
         If Not bgwChatConnect.IsBusy Then
             bgwChatConnect.RunWorkerAsync()
         End If
@@ -201,6 +220,7 @@ Public Class MainWindow
                 console.Show()
             ElseIf TextBox1.Text = "/dev" Then
                 devtools.Visible = True
+                My.Settings.devtools = True
             ElseIf TextBox1.Text = "/createserver" Then
                 createserver.Show()
             ElseIf TextBox1.Text = "/cs" Then
@@ -598,6 +618,28 @@ Public Class MainWindow
 
     Private Sub DeveloperManagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeveloperManagerToolStripMenuItem.Click
         prgmonitor.Show()
+    End Sub
+
+    Private Function connectToServer()
+        If serverlist.SelectedItems Is Nothing Then
+            'nothing :P
+        Else
+            Try
+                Process.Start(My.Settings.revolt_path, My.Settings.parameters & " -lobby " & serverlist.SelectedItems.Item(0).SubItems(3).Text)
+            Catch exc As Exception
+                console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
+                If My.Settings.devtools = True Then
+                    MsgBox(exc.ToString)
+                End If
+            End Try
+        End If
+    End Function
+    Private Sub serverlist_DoubleClick(sender As Object, e As EventArgs) Handles serverlist.DoubleClick
+        connectToServer()
+    End Sub
+
+    Private Sub ConnecttoipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConnecttoipToolStripMenuItem.Click
+        connectToServer()
     End Sub
 End Class
 

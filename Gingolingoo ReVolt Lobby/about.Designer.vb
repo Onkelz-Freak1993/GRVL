@@ -55,7 +55,7 @@ Partial Class aboutus
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.Gingolingoo_Logo_100x100
+        Me.PictureBox1.BackgroundImage = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.Gingolingoo_Logo_2_1_100x100
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"

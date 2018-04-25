@@ -93,4 +93,8 @@ Public Class prgmonitor
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit", "LastKey", regerevoltpathval)
         Process.Start("regedit.exe" & regerevoltpathkey)
     End Sub
+
+    Private Sub prgmonitor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Timer1.Stop()
+    End Sub
 End Class
