@@ -34,18 +34,18 @@ Partial Class settings
         Me.gamesettings = New System.Windows.Forms.TabPage()
         Me.devparams = New System.Windows.Forms.GroupBox()
         Me.gazzasaicar = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.profilebox = New System.Windows.Forms.ComboBox()
         Me.tvtime = New System.Windows.Forms.CheckBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.aspectfov = New System.Windows.Forms.TextBox()
+        Me.aspecty = New System.Windows.Forms.TextBox()
+        Me.aspectx = New System.Windows.Forms.TextBox()
         Me.aspect = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.winy = New System.Windows.Forms.TextBox()
+        Me.winx = New System.Windows.Forms.TextBox()
         Me.winmode = New System.Windows.Forms.CheckBox()
         Me.profile = New System.Windows.Forms.CheckBox()
-        Me.noloadingscr = New System.Windows.Forms.CheckBox()
+        Me.sload = New System.Windows.Forms.CheckBox()
         Me.nointro = New System.Windows.Forms.CheckBox()
         Me.devmode = New System.Windows.Forms.CheckBox()
         Me.pathtoexe = New System.Windows.Forms.GroupBox()
@@ -159,18 +159,18 @@ Partial Class settings
         'devparams
         '
         Me.devparams.Controls.Add(Me.gazzasaicar)
-        Me.devparams.Controls.Add(Me.ComboBox2)
+        Me.devparams.Controls.Add(Me.profilebox)
         Me.devparams.Controls.Add(Me.tvtime)
-        Me.devparams.Controls.Add(Me.TextBox8)
-        Me.devparams.Controls.Add(Me.TextBox7)
-        Me.devparams.Controls.Add(Me.TextBox6)
+        Me.devparams.Controls.Add(Me.aspectfov)
+        Me.devparams.Controls.Add(Me.aspecty)
+        Me.devparams.Controls.Add(Me.aspectx)
         Me.devparams.Controls.Add(Me.aspect)
         Me.devparams.Controls.Add(Me.Label1)
-        Me.devparams.Controls.Add(Me.TextBox5)
-        Me.devparams.Controls.Add(Me.TextBox4)
+        Me.devparams.Controls.Add(Me.winy)
+        Me.devparams.Controls.Add(Me.winx)
         Me.devparams.Controls.Add(Me.winmode)
         Me.devparams.Controls.Add(Me.profile)
-        Me.devparams.Controls.Add(Me.noloadingscr)
+        Me.devparams.Controls.Add(Me.sload)
         Me.devparams.Controls.Add(Me.nointro)
         Me.devparams.Controls.Add(Me.devmode)
         Me.devparams.Location = New System.Drawing.Point(8, 101)
@@ -183,64 +183,66 @@ Partial Class settings
         'gazzasaicar
         '
         Me.gazzasaicar.AutoSize = True
+        Me.gazzasaicar.Enabled = False
         Me.gazzasaicar.Location = New System.Drawing.Point(105, 87)
         Me.gazzasaicar.Name = "gazzasaicar"
-        Me.gazzasaicar.Size = New System.Drawing.Size(88, 17)
+        Me.gazzasaicar.Size = New System.Drawing.Size(85, 17)
         Me.gazzasaicar.TabIndex = 14
-        Me.gazzasaicar.Text = "$gazzasaicar"
+        Me.gazzasaicar.Text = "-gazzasaicar"
         Me.gazzasaicar.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'profilebox
         '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(198, 62)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(94, 21)
-        Me.ComboBox2.TabIndex = 13
+        Me.profilebox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.profilebox.Enabled = False
+        Me.profilebox.FormattingEnabled = True
+        Me.profilebox.Location = New System.Drawing.Point(198, 62)
+        Me.profilebox.Name = "profilebox"
+        Me.profilebox.Size = New System.Drawing.Size(94, 21)
+        Me.profilebox.TabIndex = 13
         '
         'tvtime
         '
         Me.tvtime.AutoSize = True
         Me.tvtime.Location = New System.Drawing.Point(6, 87)
         Me.tvtime.Name = "tvtime"
-        Me.tvtime.Size = New System.Drawing.Size(60, 17)
+        Me.tvtime.Size = New System.Drawing.Size(57, 17)
         Me.tvtime.TabIndex = 12
-        Me.tvtime.Text = "$tvtime"
+        Me.tvtime.Text = "-tvtime"
         Me.tvtime.UseVisualStyleBackColor = True
         '
-        'TextBox8
+        'aspectfov
         '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(260, 40)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(32, 20)
-        Me.TextBox8.TabIndex = 11
+        Me.aspectfov.Enabled = False
+        Me.aspectfov.Location = New System.Drawing.Point(260, 40)
+        Me.aspectfov.Name = "aspectfov"
+        Me.aspectfov.Size = New System.Drawing.Size(32, 20)
+        Me.aspectfov.TabIndex = 11
         '
-        'TextBox7
+        'aspecty
         '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(213, 40)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(33, 20)
-        Me.TextBox7.TabIndex = 10
+        Me.aspecty.Enabled = False
+        Me.aspecty.Location = New System.Drawing.Point(213, 40)
+        Me.aspecty.Name = "aspecty"
+        Me.aspecty.Size = New System.Drawing.Size(33, 20)
+        Me.aspecty.TabIndex = 10
         '
-        'TextBox6
+        'aspectx
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(176, 40)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(31, 20)
-        Me.TextBox6.TabIndex = 9
+        Me.aspectx.Enabled = False
+        Me.aspectx.Location = New System.Drawing.Point(176, 40)
+        Me.aspectx.Name = "aspectx"
+        Me.aspectx.Size = New System.Drawing.Size(31, 20)
+        Me.aspectx.TabIndex = 9
         '
         'aspect
         '
         Me.aspect.AutoSize = True
         Me.aspect.Location = New System.Drawing.Point(105, 42)
         Me.aspect.Name = "aspect"
-        Me.aspect.Size = New System.Drawing.Size(64, 17)
+        Me.aspect.Size = New System.Drawing.Size(61, 17)
         Me.aspect.TabIndex = 8
-        Me.aspect.Text = "$aspect"
+        Me.aspect.Text = "-aspect"
         Me.aspect.UseVisualStyleBackColor = True
         '
         'Label1
@@ -252,30 +254,30 @@ Partial Class settings
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "x"
         '
-        'TextBox5
+        'winy
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(250, 17)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox5.TabIndex = 6
+        Me.winy.Enabled = False
+        Me.winy.Location = New System.Drawing.Point(250, 17)
+        Me.winy.Name = "winy"
+        Me.winy.Size = New System.Drawing.Size(42, 20)
+        Me.winy.TabIndex = 6
         '
-        'TextBox4
+        'winx
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(185, 17)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(42, 20)
-        Me.TextBox4.TabIndex = 5
+        Me.winx.Enabled = False
+        Me.winx.Location = New System.Drawing.Point(185, 17)
+        Me.winx.Name = "winx"
+        Me.winx.Size = New System.Drawing.Size(42, 20)
+        Me.winx.TabIndex = 5
         '
         'winmode
         '
         Me.winmode.AutoSize = True
         Me.winmode.Location = New System.Drawing.Point(105, 19)
         Me.winmode.Name = "winmode"
-        Me.winmode.Size = New System.Drawing.Size(74, 17)
+        Me.winmode.Size = New System.Drawing.Size(65, 17)
         Me.winmode.TabIndex = 4
-        Me.winmode.Text = "$winmode"
+        Me.winmode.Text = "-window"
         Me.winmode.UseVisualStyleBackColor = True
         '
         'profile
@@ -283,29 +285,29 @@ Partial Class settings
         Me.profile.AutoSize = True
         Me.profile.Location = New System.Drawing.Point(105, 64)
         Me.profile.Name = "profile"
-        Me.profile.Size = New System.Drawing.Size(88, 17)
+        Me.profile.Size = New System.Drawing.Size(57, 17)
         Me.profile.TabIndex = 3
-        Me.profile.Text = "$profileselect"
+        Me.profile.Text = "-profile"
         Me.profile.UseVisualStyleBackColor = True
         '
-        'noloadingscr
+        'sload
         '
-        Me.noloadingscr.AutoSize = True
-        Me.noloadingscr.Location = New System.Drawing.Point(6, 64)
-        Me.noloadingscr.Name = "noloadingscr"
-        Me.noloadingscr.Size = New System.Drawing.Size(110, 17)
-        Me.noloadingscr.TabIndex = 2
-        Me.noloadingscr.Text = "$noloadingscreen"
-        Me.noloadingscr.UseVisualStyleBackColor = True
+        Me.sload.AutoSize = True
+        Me.sload.Location = New System.Drawing.Point(6, 64)
+        Me.sload.Name = "sload"
+        Me.sload.Size = New System.Drawing.Size(54, 17)
+        Me.sload.TabIndex = 2
+        Me.sload.Text = "-sload"
+        Me.sload.UseVisualStyleBackColor = True
         '
         'nointro
         '
         Me.nointro.AutoSize = True
         Me.nointro.Location = New System.Drawing.Point(6, 42)
         Me.nointro.Name = "nointro"
-        Me.nointro.Size = New System.Drawing.Size(64, 17)
+        Me.nointro.Size = New System.Drawing.Size(61, 17)
         Me.nointro.TabIndex = 1
-        Me.nointro.Text = "$nointro"
+        Me.nointro.Text = "-nointro"
         Me.nointro.UseVisualStyleBackColor = True
         '
         'devmode
@@ -313,9 +315,9 @@ Partial Class settings
         Me.devmode.AutoSize = True
         Me.devmode.Location = New System.Drawing.Point(6, 19)
         Me.devmode.Name = "devmode"
-        Me.devmode.Size = New System.Drawing.Size(76, 17)
+        Me.devmode.Size = New System.Drawing.Size(47, 17)
         Me.devmode.TabIndex = 0
-        Me.devmode.Text = "$devmode"
+        Me.devmode.Text = "-dev"
         Me.devmode.UseVisualStyleBackColor = True
         '
         'pathtoexe
@@ -431,19 +433,19 @@ Partial Class settings
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents lang As Label
     Friend WithEvents devparams As GroupBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents aspectfov As TextBox
+    Friend WithEvents aspectx As TextBox
     Friend WithEvents aspect As CheckBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents winy As TextBox
+    Friend WithEvents winx As TextBox
     Friend WithEvents winmode As CheckBox
     Friend WithEvents profile As CheckBox
-    Friend WithEvents noloadingscr As CheckBox
+    Friend WithEvents sload As CheckBox
     Friend WithEvents nointro As CheckBox
     Friend WithEvents devmode As CheckBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents profilebox As ComboBox
     Friend WithEvents tvtime As CheckBox
     Friend WithEvents gazzasaicar As CheckBox
+    Friend WithEvents aspecty As TextBox
 End Class

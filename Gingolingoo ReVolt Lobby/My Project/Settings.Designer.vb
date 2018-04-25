@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -171,6 +171,174 @@ Namespace My
             End Get
             Set
                 Me("uuid") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramdevmode() As Boolean
+            Get
+                Return CType(Me("paramdevmode"),Boolean)
+            End Get
+            Set
+                Me("paramdevmode") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramnointro() As Boolean
+            Get
+                Return CType(Me("paramnointro"),Boolean)
+            End Get
+            Set
+                Me("paramnointro") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramnoloading() As Boolean
+            Get
+                Return CType(Me("paramnoloading"),Boolean)
+            End Get
+            Set
+                Me("paramnoloading") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramtvtime() As Boolean
+            Get
+                Return CType(Me("paramtvtime"),Boolean)
+            End Get
+            Set
+                Me("paramtvtime") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramwinmode() As Boolean
+            Get
+                Return CType(Me("paramwinmode"),Boolean)
+            End Get
+            Set
+                Me("paramwinmode") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("800")>  _
+        Public Property paramwinmodex() As Integer
+            Get
+                Return CType(Me("paramwinmodex"),Integer)
+            End Get
+            Set
+                Me("paramwinmodex") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("600")>  _
+        Public Property paramwinmodey() As Integer
+            Get
+                Return CType(Me("paramwinmodey"),Integer)
+            End Get
+            Set
+                Me("paramwinmodey") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramaspect() As Boolean
+            Get
+                Return CType(Me("paramaspect"),Boolean)
+            End Get
+            Set
+                Me("paramaspect") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("4")>  _
+        Public Property paramaspectx() As Integer
+            Get
+                Return CType(Me("paramaspectx"),Integer)
+            End Get
+            Set
+                Me("paramaspectx") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
+        Public Property paramaspecty() As Integer
+            Get
+                Return CType(Me("paramaspecty"),Integer)
+            End Get
+            Set
+                Me("paramaspecty") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("512")>  _
+        Public Property paramaspectfov() As Integer
+            Get
+                Return CType(Me("paramaspectfov"),Integer)
+            End Get
+            Set
+                Me("paramaspectfov") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramprofile() As Boolean
+            Get
+                Return CType(Me("paramprofile"),Boolean)
+            End Get
+            Set
+                Me("paramprofile") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property paramprofilename() As String
+            Get
+                Return CType(Me("paramprofilename"),String)
+            End Get
+            Set
+                Me("paramprofilename") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property paramaicar() As Boolean
+            Get
+                Return CType(Me("paramaicar"),Boolean)
+            End Get
+            Set
+                Me("paramaicar") = value
             End Set
         End Property
     End Class
