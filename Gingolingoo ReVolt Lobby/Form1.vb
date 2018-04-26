@@ -239,8 +239,13 @@ Public Class MainWindow
                 'friendlist.Show() [not implemented yet]
             Else
                 console.RichTextBox1.AppendText("Attempting to send Message: " & TextBox1.Text & vbNewLine)
-                streamw.WriteLine(TextBox1.Text)
-                streamw.Flush()
+                Try
+                    streamw.WriteLine(TextBox1.Text)
+                    streamw.Flush()
+                Catch
+                    RichTextBox1.AppendText("Unable to send message: " & TextBox1.Text & vbNewLine)
+                    console.RichTextBox1.AppendText("Unable to send message: " & TextBox1.Text & vbNewLine)
+                End Try
             End If
             e.SuppressKeyPress = True
             TextBox1.Clear()
@@ -300,8 +305,9 @@ Public Class MainWindow
         Try
             RichTextBox1.SaveFile(SaveFileDialog1.FileName, RichTextBoxStreamType.PlainText)
         Catch exc As Exception
-            If devtools.Visible = True Then
-                console.RichTextBox1.AppendText(exc.Message.ToString)
+            console.RichTextBox1.AppendText(exc.ToString)
+            If My.Settings.devtools = True Then
+                MsgBox(exc.Message.ToString)
             End If
         End Try
     End Sub
@@ -312,7 +318,7 @@ Public Class MainWindow
     ' dev = enables the Developer-Menu
     Public Sub ExecuteParams()
         Dim args As String()
-        Dim arguments As String
+        'Dim arguments As String
         args = Environment.GetCommandLineArgs()
 
         For i As Integer = 1 To args.Length - 1
@@ -326,15 +332,15 @@ Public Class MainWindow
                     My.Settings.devtools = True
                     console.Show()
 
-                Case "ip " & arguments
-                    Try
-                        Process.Start(My.Settings.revolt_path, My.Settings.parameters & " -lobby " & arguments)
-                    Catch exc As Exception
-                        console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
-                        If My.Settings.devtools = True Then
-                            MsgBox(exc.ToString)
-                        End If
-                    End Try
+                    'Case "ip" & arguments
+                    '     Try
+                    '    Process.Start(My.Settings.revolt_path, My.Settings.parameters & " -lobby " & arguments)
+                    '    Catch exc As Exception
+                    '    console.RichTextBox1.AppendText(exc.ToString & vbNewLine)
+                    '    If My.Settings.devtools = True Then
+                    '    MsgBox(exc.ToString)
+                    '   End If
+                    '   End Try
 
                 Case Else
                     console.RichTextBox1.AppendText(args(i).ToString & " is no known Parameter." & vbNewLine)
@@ -627,6 +633,7 @@ Public Class MainWindow
             End If
         Next
         TreeView1.ExpandAll()
+        TreeView1.Nodes(0).EnsureVisible()
     End Sub
 
     Private Sub wanip_ButtonClick(sender As Object, e As EventArgs) Handles wanip.ButtonClick

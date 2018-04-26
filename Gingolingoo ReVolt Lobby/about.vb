@@ -1,7 +1,7 @@
 ﻿Public Class aboutus
     Private Sub about_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CheckBox1.Checked Then
-            My.Computer.Audio.Play(My.Resources.credits, AudioPlayMode.Background)
+            My.Computer.Audio.Play(My.Resources.credits, AudioPlayMode.BackgroundLoop)
         Else
             My.Computer.Audio.Stop()
         End If

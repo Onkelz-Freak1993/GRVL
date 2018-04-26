@@ -329,7 +329,7 @@ Partial Class MainWindow
         Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 49)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 52)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -339,7 +339,7 @@ Partial Class MainWindow
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(757, 440)
+        Me.SplitContainer1.Size = New System.Drawing.Size(757, 437)
         Me.SplitContainer1.SplitterDistance = 202
         Me.SplitContainer1.TabIndex = 2
         '
@@ -353,7 +353,7 @@ Partial Class MainWindow
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.SelectedImageIndex = 0
-        Me.TreeView1.Size = New System.Drawing.Size(202, 440)
+        Me.TreeView1.Size = New System.Drawing.Size(202, 437)
         Me.TreeView1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.TreeView1, "$nicklist")
         '
@@ -399,8 +399,8 @@ Partial Class MainWindow
         Me.SplitContainer2.Panel2.Controls.Add(Me.ToolStrip2)
         Me.SplitContainer2.Panel2.Controls.Add(Me.TextBox1)
         Me.SplitContainer2.Panel2.Controls.Add(Me.RichTextBox1)
-        Me.SplitContainer2.Size = New System.Drawing.Size(551, 440)
-        Me.SplitContainer2.SplitterDistance = 139
+        Me.SplitContainer2.Size = New System.Drawing.Size(551, 437)
+        Me.SplitContainer2.SplitterDistance = 137
         Me.SplitContainer2.TabIndex = 0
         '
         'serverlist
@@ -410,8 +410,9 @@ Partial Class MainWindow
         Me.serverlist.Dock = System.Windows.Forms.DockStyle.Fill
         Me.serverlist.FullRowSelect = True
         Me.serverlist.Location = New System.Drawing.Point(0, 0)
+        Me.serverlist.MultiSelect = False
         Me.serverlist.Name = "serverlist"
-        Me.serverlist.Size = New System.Drawing.Size(551, 139)
+        Me.serverlist.Size = New System.Drawing.Size(551, 137)
         Me.serverlist.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.serverlist, "$serverlist")
         Me.serverlist.UseCompatibleStateImageBehavior = False
@@ -514,7 +515,7 @@ Partial Class MainWindow
         'TextBox1
         '
         Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TextBox1.Location = New System.Drawing.Point(0, 277)
+        Me.TextBox1.Location = New System.Drawing.Point(0, 276)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(551, 20)
         Me.TextBox1.TabIndex = 1
@@ -527,7 +528,7 @@ Partial Class MainWindow
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.Location = New System.Drawing.Point(0, 25)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(551, 252)
+        Me.RichTextBox1.Size = New System.Drawing.Size(551, 251)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
