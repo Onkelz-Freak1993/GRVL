@@ -302,9 +302,6 @@
     <None Include="Resources\script_code_red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\credits.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Gingolingoo_Logo_100x100.png" />
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +334,7 @@
   <ItemGroup>
     <Content Include="Gingolingoo-Logo_2.1.ico" />
     <Content Include="Gingolingoo.ico" />
+    <None Include="Resources\credits.wav" />
     <None Include="Resources\github icon_white.png" />
     <None Include="Resources\github icon_black.png" />
     <None Include="Resources\Gingolingoo-Logo_2.1_100x100.png" />
