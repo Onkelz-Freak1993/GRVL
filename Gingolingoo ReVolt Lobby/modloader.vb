@@ -1,12 +1,20 @@
-﻿Public Class modloader
-
-    Private Function addDownload(titel As String, desc As String, url As String, img As String, exists As Boolean)
+﻿Imports System
+Imports System.IO
+Public Class modloader
+    Private Function addDownload(titel As String, desc As String, url As String, img As String, exists As Boolean, count As String)
         Dim dPan As New Panel()
-        dPan.Height = 380
+        dPan.Height = 220
         dPan.Width = 160
         dPan.BackColor = Color.Transparent
         dPan.BackgroundImage = My.Resources.dbg
+        dPan.Tag = count
         Dim dBtn As New Button()
+        Dim dProgress As New ProgressBar()
+        dProgress.Location = New Point(5, 190)
+        dProgress.Size = New Point(150, 25)
+        dProgress.Name = "pbar" & count
+        dProgress.Visible = False
+
         If exists Then
             dBtn.Text = "Remove"
             AddHandler dBtn.Click, AddressOf Me.Uninstall_Button_Click
@@ -14,7 +22,7 @@
             dBtn.Text = "Install"
             AddHandler dBtn.Click, AddressOf Me.Install_Button_Click
         End If
-        dBtn.Location = New Point(5, 350)
+        dBtn.Location = New Point(5, 190)
         dBtn.Size = New Point(150, 25)
         dBtn.Tag = url
         Dim dPic As New PictureBox()
@@ -27,74 +35,55 @@
         dTit.Location = New Point(5, 160)
         dTit.Size = New Point(150, 20)
         dTit.TextAlign = ContentAlignment.MiddleCenter
-        dTit.Font = New Font("Sans Serif", 10, FontStyle.Bold)
+        dTit.Font = New Font("Sans Serif", 8, FontStyle.Bold)
+        dTit.AutoEllipsis = True
         dTit.ForeColor = ColorTranslator.FromHtml("#33b5e5")
-        Dim aF As New Label()
-        aF.Size = New Point(150, 15)
-        aF.Location = New Point(27, 187)
-        aF.Text = "Author:"
-        aF.ForeColor = ColorTranslator.FromHtml("#33b5e5")
-        Dim dl As New Label()
-        dl.Size = New Point(63, 15)
-        dl.Location = New Point(5, 201)
-        dl.Text = "Downloads:"
-        dl.ForeColor = ColorTranslator.FromHtml("#33b5e5")
-        Dim rat As New Label()
-        rat.Size = New Point(41, 15)
-        rat.Location = New Point(27, 216)
-        rat.Text = "Rating:"
-        rat.ForeColor = ColorTranslator.FromHtml("#33b5e5")
-        Dim descl As New Label()
-        descl.Size = New Point(63, 15)
-        descl.Location = New Point(5, 230)
-        descl.Text = "Description:"
-        '-----
-        descl.ForeColor = ColorTranslator.FromHtml("#33b5e5")
-        Dim aL As New Label()
-        aL.Size = New Point(150, 15)
-        aL.Location = New Point(66, 187)
-        aL.Name = "modauthor"
-        aL.Text = "DB Data"
-        aL.ForeColor = ColorTranslator.FromHtml("#dadada")
-
-        Dim dll As New Label()
-        dll.Size = New Point(100, 15)
-        dll.Location = New Point(66, 201)
-        dll.Text = "3"
-        dll.Name = "moddownloads"
-        dll.ForeColor = ColorTranslator.FromHtml("#dadada")
-
-        Dim rating As New Label()
-        rating.Size = New Point(100, 15)
-        rating.Location = New Point(66, 216)
-        rating.Text = "5/5"
-        rating.Name = "modrating"
-        rating.ForeColor = ColorTranslator.FromHtml("#dadada")
-
-        Dim dDesc As New Label()
-        dDesc.Size = New Point(150, 100)
-        dDesc.Location = New Point(5, 245)
-        dDesc.Text = desc
-        dDesc.Name = "moddescription"
-        dDesc.ForeColor = ColorTranslator.FromHtml("#dadada")
 
         dPan.Controls.Add(dBtn)
         dPan.Controls.Add(dPic)
         dPan.Controls.Add(dTit)
-        dPan.Controls.Add(dDesc)
-        dPan.Controls.Add(descl)
-        dPan.Controls.Add(aL)
-        dPan.Controls.Add(aF)
-        dPan.Controls.Add(dl)
-        dPan.Controls.Add(dll)
-        dPan.Controls.Add(rat)
-        dPan.Controls.Add(rating)
-        FlowLayoutPanel1.Controls.Add(dPan)
+        dPan.Controls.Add(dProgress)
+        If exists Then
+            FlowLayoutPanel2.Controls.Add(dPan)
+        Else
+            FlowLayoutPanel1.Controls.Add(dPan)
+        End If
+
         Return True
     End Function
 
-    Private Sub modloader_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Function getVehicleParameter(ByVal filename As String, ByVal param As String) As String
+        If Not My.Computer.FileSystem.FileExists(filename) Then
+            Return ""
+        End If
+        Dim auswahlListe As New List(Of String)
+        For Each zeile As String In IO.File.ReadAllLines(filename)
+            If zeile.Contains(param) Then
+                Dim cn() = zeile.Split(Convert.ToChar(34))
+                Return cn(1)
+            End If
+        Next
+    End Function
+    Dim modCount As Integer = 1
+    Private Sub loadMods()
+        FlowLayoutPanel1.Controls.Clear()
+        FlowLayoutPanel2.Controls.Clear()
         Dim mods()
+        Dim di As New System.IO.DirectoryInfo(Application.StartupPath & "\cars\")
+        For Each fi As System.IO.DirectoryInfo In di.GetDirectories()
+
+            Dim tImg As String = Application.StartupPath & "\" & getVehicleParameter(Application.StartupPath & "\cars\" & fi.Name & "\parameters.txt", "TCARBOX")
+            If Not My.Computer.FileSystem.FileExists(tImg) Then
+                tImg = Application.StartupPath & "\carbox_unknown.bmp"
+            End If
+
+            Dim cName As String = getVehicleParameter(Application.StartupPath & "\cars\" & fi.Name & "\parameters.txt", "Name")
+            'Dim cName As String = ReadLine(Application.StartupPath & "\cars\" & fi.Name & "\parameters.txt", 8)
+
+            addDownload(cName, "", "", tImg, True, modCount.ToString)
+            modCount += 1
+        Next
+
         Using wd As New System.Net.WebClient()
             Dim modData
             Try
@@ -104,9 +93,10 @@
                     If mData <> "" Then
                         Dim mdt() = mData.Split("|")
                         If My.Computer.FileSystem.DirectoryExists(Application.StartupPath & "\cars\" & mdt(4)) Then
-                            addDownload(mdt(0), mdt(1), mdt(2), mdt(3), True)
+                            'addDownload(mdt(0), mdt(1), mdt(2), mdt(3), True)
                         Else
-                            addDownload(mdt(0), mdt(1), mdt(2), mdt(3), False)
+                            addDownload(mdt(0), mdt(1), mdt(2), mdt(3), False, modCount.ToString)
+                            modCount += 1
                         End If
                     End If
                 Next
@@ -114,12 +104,52 @@
                 MsgBox("Loading mods failed!")
             End Try
         End Using
+
+    End Sub
+
+    Private Sub modloader_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadMods()
+    End Sub
+    Public Sub DownloadFile(ByVal link As String, ByVal ziel As String, pbar As Control)
+        pbar.Visible = False
+        Dim prb As ProgressBar = pbar.Parent.Controls("pbar" + pbar.Parent.Tag.ToString)
+        prb.Visible = True
+        Dim _FileRequest As System.Net.WebRequest = System.Net.WebRequest.Create(link)
+        Dim _FileResponse As System.Net.WebResponse = _FileRequest.GetResponse()
+        Dim _myStream As System.IO.Stream = _FileResponse.GetResponseStream()
+        Dim _myReader As New System.IO.BinaryReader(_myStream)
+        Dim _myFile As New System.IO.FileStream(ziel, System.IO.FileMode.Create)
+        Dim size As Long = _FileResponse.ContentLength()
+        Dim i As Long
+        For i = 1 To size
+            _myFile.WriteByte(_myReader.ReadByte())
+            prb.Value = ((i / size) * 100)
+        Next i
+        'Dim cu As New ClassUnzip(ziel, Path.Combine(Path.GetDirectoryName(Application.StartupPath & "/tempmod.zip"), "test_unzip_folder"))
+        ' AddHandler cu.UnzipFinishd, AddressOf Unziped
+        ' cu.UnzipNow()
+
+        _myFile.Flush()
+        _myFile.Close()
+        loadMods()
+    End Sub
+
+    Private Sub Unziped()
+        MessageBox.Show("Unzipping finished")
     End Sub
 
     Private Sub Uninstall_Button_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        MsgBox("Remove Mod!")
+
     End Sub
     Private Sub Install_Button_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        MsgBox("Install Mod!")
+        DownloadFile(sender.tag, Application.StartupPath & "/tempmod.zip", sender)
+    End Sub
+
+    Private Sub InstallModFromFileToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub RefreshModsToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        loadMods()
     End Sub
 End Class

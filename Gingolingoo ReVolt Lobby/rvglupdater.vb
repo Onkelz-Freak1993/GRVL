@@ -127,7 +127,21 @@ try_again:
             End Try
         Else
             Try
-                My.Computer.Network.DownloadFile(New Uri(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", "")), localpath)
+                ''  My.Computer.Network.DownloadFile(New Uri(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", "")), localpath)
+                Dim time As Integer = 0
+                Dim _FileRequest As System.Net.WebRequest = System.Net.WebRequest.Create(New Uri(Regex.Replace(downloadpath, "[^a-zA-Z0-9-/:._]", "")))
+                Dim _FileResponse As System.Net.WebResponse = _FileRequest.GetResponse()
+                Dim _myStream As System.IO.Stream = _FileResponse.GetResponseStream()
+                Dim _myReader As New System.IO.BinaryReader(_myStream)
+                Dim _myFile As New System.IO.FileStream(localpath, System.IO.FileMode.Create)
+                Dim size As Long = _FileResponse.ContentLength()
+                Dim i As Long
+                For i = 1 To size
+                    _myFile.WriteByte(_myReader.ReadByte())
+                    Invoke(Sub() ProgressBar1.Value = ((i / size) * 100))
+                Next i
+                _myFile.Flush()
+                _myFile.Close()
             Catch ex As Exception
                 downloadrvglbgw.CancelAsync()
                 MsgBox("File not found. Try another Version of " & updatervglver.Text)

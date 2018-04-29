@@ -35,6 +35,8 @@ Partial Class rvglupdater
         Me.architecture = New System.Windows.Forms.TextBox()
         Me.updatervglver = New System.Windows.Forms.MaskedTextBox()
         Me.rvglsize = New System.Windows.Forms.TextBox()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -87,7 +89,7 @@ Partial Class rvglupdater
         Me.RichTextBox1.Location = New System.Drawing.Point(15, 12)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(607, 451)
+        Me.RichTextBox1.Size = New System.Drawing.Size(607, 435)
         Me.RichTextBox1.TabIndex = 7
         Me.RichTextBox1.Text = ""
         '
@@ -150,11 +152,28 @@ Partial Class rvglupdater
         Me.rvglsize.TabIndex = 16
         Me.rvglsize.Text = "5,18 MB"
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(15, 453)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(607, 10)
+        Me.ProgressBar1.TabIndex = 17
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(189, 484)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
+        Me.Label2.TabIndex = 18
+        '
         'rvglupdater
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 511)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.rvglsize)
         Me.Controls.Add(Me.updatervglver)
         Me.Controls.Add(Me.architecture)
@@ -189,4 +208,6 @@ Partial Class rvglupdater
     Friend WithEvents architecture As TextBox
     Friend WithEvents updatervglver As MaskedTextBox
     Friend WithEvents rvglsize As TextBox
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label2 As Label
 End Class

@@ -60,3 +60,5 @@ C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolin
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.exe
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.xml
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\GRVL.pdb
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Interop.Shell32.dll
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.ResolveComReference.cache

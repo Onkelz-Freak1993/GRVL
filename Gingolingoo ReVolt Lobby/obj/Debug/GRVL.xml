@@ -62,6 +62,11 @@ GRVL
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.carbox_unknown">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.chart_curve">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -296,6 +301,37 @@ GRVL
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
+</member>
+<member name="E:Gingolingoo_ReVolt_Lobby.ClassUnzip.Unzipstart">
+ <summary>Event welches vor dem Entpacken (Unzip) ausgeführt wird.</summary>
+ <remarks></remarks>
+</member>
+<member name="E:Gingolingoo_ReVolt_Lobby.ClassUnzip.UnzipFinishd">
+ <summary>Event welches nach dem Entpacken (Unzip) ausgeführt wird.</summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gingolingoo_ReVolt_Lobby.ClassUnzip.#ctor(System.String,System.String)">
+ <summary>Neue Instanz der ClassUnzip Klasse.</summary>
+ <param name="file">Datei welche entpackt werden soll.</param>
+ <param name="towhere">Zielordner.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gingolingoo_ReVolt_Lobby.ClassUnzip.UnzipNow">
+ <summary>Das Entpacken (Unzip) wird ausgeführt.</summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.ClassUnzip.UnZipFile">
+ <summary>Gibt den Namen der gepackten Datei zurück, oder setzt diesen.</summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.ClassUnzip.UnzipTo">
+ <summary>Gibt den Zielort (entpacken) zurück, oder setzt diesen.</summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
 </member>
 </members>
 </doc>
