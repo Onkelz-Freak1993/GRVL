@@ -1,7 +1,7 @@
 ﻿Imports System
 Imports System.IO
 Public Class modloader
-    Private Function addDownload(titel As String, desc As String, url As String, img As String, exists As Boolean, count As String)
+    Private Function addDownload(titel As String, desc As String, url As String, img As String, exists As Boolean, count As String, folder As String)
         Dim dPan As New Panel()
         dPan.Height = 220
         dPan.Width = 160
@@ -30,6 +30,8 @@ Public Class modloader
         dPic.Location = New Point(5, 5)
         dPic.SizeMode = PictureBoxSizeMode.Zoom
         dPic.ImageLocation = img
+        dPic.Tag = folder
+        AddHandler dPic.DoubleClick, AddressOf Me.openFolder
         Dim dTit As New Label()
         dTit.Text = titel
         dTit.Location = New Point(5, 160)
@@ -80,7 +82,7 @@ Public Class modloader
             Dim cName As String = getVehicleParameter(Application.StartupPath & "\cars\" & fi.Name & "\parameters.txt", "Name")
             'Dim cName As String = ReadLine(Application.StartupPath & "\cars\" & fi.Name & "\parameters.txt", 8)
 
-            addDownload(cName, "", "", tImg, True, modCount.ToString)
+            addDownload(cName, "", "", tImg, True, modCount.ToString, fi.Name)
             modCount += 1
         Next
 
@@ -95,7 +97,7 @@ Public Class modloader
                         If My.Computer.FileSystem.DirectoryExists(Application.StartupPath & "\cars\" & mdt(4)) Then
                             'addDownload(mdt(0), mdt(1), mdt(2), mdt(3), True)
                         Else
-                            addDownload(mdt(0), mdt(1), mdt(2), mdt(3), False, modCount.ToString)
+                            addDownload(mdt(0), mdt(1), mdt(2), mdt(3), False, modCount.ToString, mdt(4))
                             modCount += 1
                         End If
                     End If
@@ -143,6 +145,10 @@ Public Class modloader
     End Sub
     Private Sub Install_Button_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         DownloadFile(sender.tag, Application.StartupPath & "/tempmod.zip", sender)
+    End Sub
+    Private Sub openFolder(ByVal sender As Object, ByVal e As System.EventArgs)
+
+        Process.Start("explorer.exe", Application.StartupPath & "\cars\" & sender.Tag)
     End Sub
 
     Private Sub InstallModFromFileToolStripMenuItem_Click(sender As Object, e As EventArgs)
